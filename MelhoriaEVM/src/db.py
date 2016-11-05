@@ -165,7 +165,7 @@ with open('gva.csv') as csvfile:
     "CPI Histórico Estimado"
     """ Nesta função para cada pv acumulado da fase onde a fase anterior é diferente da fase atual e a fase """
     i = 1
-    verdadeiro = 0
+    criatividade = 0
     faseAnterior = nomeFase[0]
     for n in pvAcumF:
         if (i == (len(nomeFase))) and (criatividade == 0):
@@ -191,7 +191,7 @@ with open('gva.csv') as csvfile:
                 faseAnterior = nomeFase[i]
                 j=+1
         i += 1
-
+    print nomeFaseF
     i=0
     for m in indiceCPIHist:
         if (indiceFase[i] < m):

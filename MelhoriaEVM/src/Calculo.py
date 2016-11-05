@@ -1,6 +1,7 @@
 # coding=UTF-8
 
-from operator import truediv
+#from operator import truediv
+import math
 
 class Calculo(object):
 
@@ -39,195 +40,255 @@ class Calculo(object):
 
     # Calcula os CPIs tradicionais dos projetos, dividindo o PV acumulado pelo EV acumulado
     def CalculaCPITrad (self, pvAcum, evAcum ):
-        cpiTrad = map(truediv, pvAcum, evAcum)
+        #cpiTrad = map(truediv, pvAcum, evAcum)
+        cpiTrad= list()
+        i=0
+        for medida in pvAcum:
+            if (evAcum[i] > 0):
+                cpi= medida/evAcum[i]
+            else:
+                cpi = 0
+            i+=1
+            cpiTrad.append(cpi)
         return cpiTrad
 
-    def CalculaCPIHistFase(self, pvAcumF):
-        for n in pvAcumF:
-            if()
+    def CalculaCPIHistFase(self, lista_cpi_acum_f, lista_id_fase, real_acum_fase, est_acum_fase, est_acum_projeto, real_acum_projeto):
 
-
-
-    def CalculaCPIHist(self, nomeFase, pvAcumP, pvAcumF, acAcumP, despHist, despHistNome, cpiTradF):
-        valorCPIHist = list()
-        pvFase = list()
-        cpiTrad = list()
+        fase_anterior = lista_id_fase[0]
+        lista_cpi_hist_fase, lista_id_fase_unica, lista_real_acum_fase, num_atividade, lista_est_acum_fase= [], [], [], [], []
+        lista_real_acum_projeto, lista_est_acum_projeto = [], []
         i = 0
-        for m in despHistNome:
-            verdadeiro = 0
-            for n in nomeFase:
-                if (n == m[1]):
-                    if (verdadeiro == 0):
-                        valorCPIHist.append(m[1])
-                        pvFase.append(pvAcumF)
-                        cpiTrad.append(cpiTradF)
-                        i += 1
-                        verdadeiro = 1
-        print valorCPIHist
 
-        # # Utlizando os valores obtidos anteiormente, pvTotalFaseAcum e cpiDivHistAcum, para cada valor pvAcumP,
-        # i = 0
-        # for n in pvAcumP:
-        #     pvTotalFaseAcum = 0
-        #     cpiDivHistAcum = 0
-        #     j = 0
-        #
-        # "CPI Histórico"
-        # # Nesta função para cada pv acumulado da fase onde a fase anterior é diferente da fase atual e a fase
-        # cpiPart = list()
-        # j = 0
-        # pvTotalFase = list()
-        # cipHistF = list()
-        # idFaseF = list()
-        # idProjetoF = list()
-        # cpitHistA = list()
-        # CPIHistFim = 0
-        # i = 1
-        # verdadeiro = 0
-        # faseAnterior = idFase[0]
-        # for n in pvAcumF:
-        #     if (i == (len(idFase))) and (verdadeiro == 0):
-        #         i -= 1
-        #         verdadeiro = 1
-        #     if (i <= len(idFase)):
-        #         if (i == (len(idFase) - 1)) and (verdadeiro == 1):
-        #             pvDivDesHist = n / valorCPIHist[j]
-        #             cpiPart.append(pvDivDesHist)
-        #             pvTotalFase.append(n)
-        #             faseAnterior = idFase[i]
-        #             cipHistF.append(cpiTradF[i])
-        #             idProjetoF.append(idProjeto[i])
-        #             idFaseF.append(idFase[i])
-        #             j += 1
-        #         elif (idFase[i] != faseAnterior):
-        #             pvDivDesHist = n / valorCPIHist[j]
-        #             cpiPart.append(pvDivDesHist)
-        #             pvTotalFase.append(n)
-        #             cipHistF.append(cpiTradF[i - 1])
-        #             idProjetoF.append(idProjeto[i - 1])
-        #             idFaseF.append(idFase[i - 1])
-        #             faseAnterior = idFase[i]
-        #             j = +1
-        #     i += 1
-        #     i = 0
-        #     for m in indiceCPIHist:
-        #         if (indiceFase[i] < m):
-        #             pvTotalFaseAcum = pvTotalFaseAcum + pvTotalFase[j]
-        #             cpiDivHistAcum = cpiDivHistAcum + cpiPart[j]
-        #         j += 1
-        #         CPIHistFim = (n + pvTotalFaseAcum) / (acAcumP[i] + cpiDivHistAcum)
-        #     cpitHistA.append(CPIHistFim)
-        #     i += 1
-        # return cipHistF
+        for cpi_acum_f in lista_cpi_acum_f:
+            if(lista_id_fase[i] != fase_anterior):
+                lista_cpi_hist_fase.append(lista_cpi_acum_f[i-1])
+                lista_id_fase_unica.append(lista_id_fase[i-1])
+                lista_real_acum_fase.append(real_acum_fase[i-1])
+                lista_est_acum_fase.append(est_acum_fase[i-1])
+                lista_real_acum_projeto.append(real_acum_projeto[i-1])
+                lista_est_acum_projeto.append(est_acum_projeto[i-1])
+            fase_anterior = lista_id_fase[i]
+            i += 1
+        lista_id_fase_unica.append(lista_id_fase[len(lista_id_fase)-1])
+        lista_cpi_hist_fase.append(lista_cpi_acum_f[len(lista_cpi_acum_f)-1])
+        lista_real_acum_fase.append(real_acum_fase[len(real_acum_fase)-1])
+        lista_est_acum_fase.append(est_acum_fase[len(est_acum_fase)-1])
+        lista_real_acum_projeto.append(real_acum_projeto[len(real_acum_fase)-1])
+        lista_est_acum_projeto.append(est_acum_projeto[len(est_acum_projeto)-1])
 
-    # "Precisão Exatidao e EAC tradicionais"
-    # def CalculaExatidaoPrecisaoEAC (self, cpiTradP, acAcumP, pvAcumP):
-    #     erroCPITrad = list()
-    #     precCPITrad = list()
-    #     eacTrad = list()
-    #     precAnterior = 0
-    #     i=0
-    #     #Em cada elemento de cpiTradP
-    #     for n in cpiTradP:
-    #         #cheque se n for maior que zero.
-    #         if n > 0:
-    #
-    #             # pegue o último elemendo do AC acumulado do projeto e o subtraia por 1, a seguir divida esse
-    #             # elemento pelo último valor do pv acumulado do projeto divido pelo CPI Tradicional do projeto
-    #             erro = (1 - acAcumP[len(acAcumP) - 1]) / (pvAcumP[len(pvAcumP) - 1] / n)
-    #         # caso o CPI tradicional seja igual a 0, a variável erro recebe zero
-    #         else:
-    #             erro = 0
-    #         # adiciona a variavel erro no array
-    #         erroCPITrad.append(erro)
-    #         i += 1
-    #         # Checa que se a a precisao anterior é igual a zero.
-    #         if precAnterior == 0:
-    #             precisao = 0
-    #         # Se for igual a zero a variavel precisao recebe 0, caso contrário precisao recebe a divisão do valor atual CPI
-    #         # tradicional acumulado dividido pelo valor anterior do CPI tradicional acumulado
-    #         else:
-    #             precisao = n / precAnterior
-    #         # O array precCPITrad recebe os valores de precisao
-    #         precCPITrad.append(precisao)
-    #         precAnterior = n
-    #         # O eacT recebe o útimo valor do Pv acumulado do projeto dividido pelo CPI atual
-    #         eacT = pvAcumP[len(pvAcumP) - 1] / n
-    #         # O array eacTrad recebe o eacT
-    #         eacTrad.append(eacT)
-    #     return erroCPITrad, precCPITrad, eacTrad
-    #
-    # "EAC Histórico"
-    # def CalculaEACHist(self, cpiHistA, pvAcumP):
-    #     eacH =0
-    #     eacHist = list()
-    #     for atividade in cpiHistA:
-    #         # O eacT recebe o útimo valor do Pv acumulado do projeto dividido pelo CPI atual
-    #         eacH = pvAcumP[len(pvAcumP) - 1] / n
-    #         # O array eacTrad recebe o eacT
-    #         eacHist.append(eacH)
-    #     return eacHist
-    #
-    # "Precisão Acum Trad"
-    # def CalculaPrecisaoAcumTrad(self, precCPITrad):
-    #     precCPIAcumTrad = list()
-    #     i = 1
-    #     precAcumT = 0
-    #     for n in precCPITrad:
-    #         if (precAcumT + n == 0):
-    #             precAcumT = 0
-    #         else:
-    #             precAcumT = (precAcumT + n) / i
-    #         precCPIAcumTrad.append(precAcumT)
-    #         i += 1
-    #     return precCPIAcumTrad
-    #
-    # "Precisão Acum Hist"
-    # def CalculaPrecisaoAcumHist (self, CPIHistA):
-    #     precCPIAcumHist = list()
-    #     i = 1
-    #     precAcumH = 0
-    #     for n in CPIHistA:
-    #         if (precAcumH + n == 0):
-    #             precAcumH = 0
-    #         else:
-    #             precAcumH = (precAcumH + n) / i
-    #         precCPIAcumHist.append(precAcumH)
-    #         i += 1
-    #     return precCPIAcumHist
-    #
-    # "Exatidao Acum Trad"
-    # def CalculaExatidaoTrad(self, CPITrad):
-    #     erroCPIAcumTrad = list()
-    #     i = 1
-    #     extidaoAcumT = 0
-    #     for n in CPITrad:
-    #         if (extidaoAcumT + n == 0):
-    #             extidaoAcumT = 0
-    #         else:
-    #             extidaoAcumT = (extidaoAcumT + n) / i
-    #         erroCPIAcumTrad.append(extidaoAcumT)
-    #         i += 1
-    #     return erroCPIAcumTrad
-    #
-    # "Exatidao Acum Hist"
-    # def CalculaExatidaoAcumHist(self, CPIEstHist):
-    #     erroCPIAcumHist = list()
-    #     i = 1
-    #     extidaoAcumH = 0
-    #     for n in CPIEstHist:
-    #         if (extidaoAcumH + n == 0):
-    #             extidaoAcumH = 0
-    #         else:
-    #             extidaoAcumH = (extidaoAcumH + n) / i
-    #         erroCPIAcumHist.append(extidaoAcumH)
-    #         i += 1
-    #     return erroCPIAcumHist
-    #
-    # "BAC"
-    # def CalculaBAC(self, pvAcumP):
-    #     bac = -1
-    #     ONT = pvAcumP[len(pvAcumP) - 1]
-    #     bac = ONT
-    #     return bac
+        for id_fase_unica in lista_id_fase_unica:
+            contadorfase = 0
+            for id_fase in lista_id_fase:
+                if id_fase == id_fase_unica:
+                    contadorfase += 1
+            num_atividade.append(contadorfase)
 
+        return lista_id_fase_unica, lista_cpi_hist_fase, num_atividade, lista_est_acum_fase, lista_real_acum_fase, \
+               lista_real_acum_projeto, lista_est_acum_projeto
+
+
+        # print ("\n ***************************************** \n ")
+        # print ("CPI HISTÓRICO FASE > " + str(cpiHistF))
+        # print ("\n PV ACUMULADO FASE > " + str(pvAcumF))
+        # print ("\n CPI TRADICIONAL FASE > " + str(cpiTradF))
+        # print ("\n AC ACUMULADO DO PROJETO > " + str(acAcumP))
+        # print ("\n ID LISTA FASE > " + str(listaIdFase))
+        # print ("\n ***************************************** \n ")
+
+    "CPI Histórico"
+    # Nesta função para cada pv acumulado da fase onde a fase anterior é diferente da fase atual e a fase
+    def CalculaCPIEst(self, lista_cpi_hist_fase, lista_pv_acum_fase, lista_cpi_trad_fase, lista_ac_acum_projeto,
+                      lista_pv_acum_projeto, lista_id_fase):
+
+        lista_fase_unica, lista_cpi_part, lista_pv_total_fase, lista_cip_hist_unico, lista_cpi_est_hist  = [], [], [], [], []
+        j, i=0, 0
+        fase_anterior = lista_id_fase[0]
+        for id_fase in lista_id_fase:
+            if (fase_anterior != id_fase):
+                pv_div_des_hist = lista_pv_acum_fase[j] / lista_cpi_hist_fase[i]
+                lista_cpi_part.append(pv_div_des_hist)
+                lista_pv_total_fase.append(lista_pv_acum_fase[j])
+                lista_cip_hist_unico.append(lista_cpi_trad_fase[j])
+                lista_fase_unica.append(id_fase)
+                i+=1
+            fase_anterior = id_fase
+            j += 1
+
+        lista_pv_total_fase.append(lista_pv_acum_fase[len(lista_pv_acum_fase)-1])
+        pv_div_des_hist = lista_pv_acum_fase[len(lista_pv_acum_fase)-1] / lista_cpi_hist_fase[len(lista_cpi_hist_fase) - 1]
+        lista_cpi_part.append(pv_div_des_hist)
+        lista_cip_hist_unico.append(lista_cpi_trad_fase[len(lista_cpi_trad_fase)-1])
+        lista_fase_unica.append(lista_id_fase[len(lista_id_fase) -1])
+
+        i = 0
+        for id_fase in lista_id_fase:
+            j = 0
+            pv_total_fase_acum = 0
+            cpi_div_hist_acum = 0
+            for indice_cpi_medio in lista_fase_unica:
+                if (id_fase < indice_cpi_medio):
+                    pv_total_fase_acum = pv_total_fase_acum + lista_pv_total_fase[j]
+                    cpi_div_hist_acum = cpi_div_hist_acum + lista_cpi_part[j]
+                j += 1
+            cpi_est_hist = (pv_total_fase_acum + lista_pv_acum_projeto[i]) / (lista_ac_acum_projeto[i] + cpi_div_hist_acum)
+            print cpi_div_hist_acum
+            lista_cpi_est_hist.append(cpi_est_hist)
+            i +=1
+        exit
+        return lista_cpi_est_hist
+
+
+    "Precisão Exatidao e tradicionais"
+    def CalculaExatidaoPrecisao (self, lista_cpi_projeto, ac_acum_projeto, pv_acum_projeto, lista_id_fase):
+        erro_CPI, precisao_CPI = [], []
+        cpi_anterior = 0
+        i=0
+        j=0
+        #Em cada elemento de cpiTradP
+        for cpi in lista_cpi_projeto:
+            #cheque se n for maior que zero.
+            if cpi > 0:
+
+                # pegue o último elemendo do AC acumulado do projeto e o subtraia por 1, a seguir divida esse
+                # elemento pelo último valor do pv acumulado do projeto divido pelo CPI Tradicional do projeto
+                erro = 100*(1 - (ac_acum_projeto[len(ac_acum_projeto) - 1] / (pv_acum_projeto[len(pv_acum_projeto) - 1] / cpi)))
+            # caso o CPI tradicional seja igual a 0, a variável erro recebe zero
+            else:
+                erro = 0
+            # adiciona a variavel erro no array
+            erro_CPI.append(math.fabs(erro))
+            i += 1
+            # Checa que se a a precisao anterior é igual a zero.
+            if(lista_id_fase[j] == lista_id_fase[j-1]):
+                if cpi_anterior == 0:
+                    precisao = 0
+                # Se for igual a zero a variavel precisao recebe 0, caso contrário precisao recebe a divisão do valor atual CPI
+                # tradicional acumulado dividido pelo valor anterior do CPI tradicional acumulado
+                else:
+                    precisao = 100*(1-(cpi_anterior/cpi))
+                # O array precCPITrad recebe os valores de precisao
+            else:
+                precisao = 0
+            precisao_CPI.append(math.fabs(precisao))
+            cpi_anterior = cpi
+            j+=1
+
+        return precisao_CPI, erro_CPI
+
+    "EAC"
+    def CalculaEAC(self, listaCpi, pvAcumP):
+        eacList = list()
+        for cpi in listaCpi:
+            # O eacT recebe o útimo valor do Pv acumulado do projeto dividido pelo CPI atual
+            if (cpi != 0):
+                eac = pvAcumP[len(pvAcumP) - 1] / cpi
+            else:
+                eac = 0
+            # O array eacTrad recebe o eacT
+            eacList.append(eac)
+        return eacList
+
+    "Precisão Acum"
+    def CalculaPrecisaoAcum(self, precCPI, listaIdFase):
+        precCPIAcum = list()
+        i = 1
+        precAcum = 0
+        for n in precCPI:
+            if(listaIdFase[i-1] == listaIdFase[i-2] ):
+                if (precAcum + n == 0):
+                    precAcum = 0
+                else:
+                    precAcum = (precAcum + n) / i
+            else:
+                precAcum=0
+            precCPIAcum.append(precAcum)
+            i += 1
+        return precCPIAcum
+
+    "Exatidao Acum"
+    def CalculaExatidaoAcum(self, erro):
+        erroCPIAcum = list()
+        i = 1
+        extidaoAcum = 0
+        for n in erro:
+            if (extidaoAcum + n == 0):
+                extidaoAcum = 0
+            else:
+                extidaoAcum = (extidaoAcum + n) / i
+            erroCPIAcum.append(extidaoAcum)
+            i += 1
+        return erroCPIAcum
+
+    "BAC"
+    def CalculaBAC(self, lista_pv_acum_p,lista_id_projeto, lista_cpi_projeto ):
+        bac = lista_pv_acum_p[len(lista_pv_acum_p) - 1]
+        cpi_projeto_final = lista_cpi_projeto[len(lista_cpi_projeto) -1]
+        id_projeto = (lista_id_projeto[len(lista_id_projeto)-1])
+        return id_projeto, bac, cpi_projeto_final
+
+    "CPI Histórico"
+    def CalculaCPI (self, pvAcumF, listaIdFase, cpiHistF, evAcumF, acAcumP, acAcumF, evAcumP):
+        cpiPart = list()
+        pvTotalFase = list()
+        listaCRPrev = list()
+        listaFaseF = list()
+        DiferencaACCPI = list()
+        evTotalFase = list()
+        i=1
+        faseAnterior = listaIdFase[0]
+        verdadeiro = 0
+        j = 0
+        for n in pvAcumF:
+            if (i == (len(listaIdFase))) and (verdadeiro == 0):
+                i -= 1
+                verdadeiro = 1
+            if (i <= len(listaIdFase)):
+                if (i == (len(listaIdFase) - 1)) and (verdadeiro == 1):
+                    DiferencaPVeEVDaFase = n - evAcumF[i]
+                    cpiPart.append(DiferencaPVeEVDaFase)
+                    pvTotalFase.append(n)
+                    evTotalFase.append(evAcumF[i])
+                    faseAnterior = listaIdFase[j]
+                    CRPrevisto = pvAcumF[i]/cpiHistF[j]
+                    listaCRPrev.append(CRPrevisto)
+                    DiferencaACeCPIMedio = CRPrevisto - acAcumF[i]
+                    DiferencaACCPI.append(DiferencaACeCPIMedio)
+                    listaFaseF.append(listaIdFase[i])
+                    j+=1
+                elif (listaIdFase[i] != faseAnterior):
+                    DiferencaPVeEVDaFase = n - evAcumF[i-1]
+                    cpiPart.append(DiferencaPVeEVDaFase)
+                    pvTotalFase.append(n)
+                    evTotalFase.append(evAcumF[i-1])
+                    faseAnterior = listaIdFase[i]
+                    CRPrevisto = pvAcumF[i-1]/cpiHistF[j]
+                    listaCRPrev.append(CRPrevisto)
+                    DiferencaEveCPIMedio = CRPrevisto - acAcumF[i-1]
+                    DiferencaACCPI.append(DiferencaEveCPIMedio)
+                    listaFaseF.append(listaIdFase[i-1])
+                    j+=1
+            i+=1
+        i=0
+        "--------------------------------------"
+        # print DiferencaACCPI
+        cpiHist = list()
+        for indiceIdProjeto in listaIdFase:
+            pvTotalFaseAtual = 0
+            CRPrev = 0
+            EACFase = 0
+            pvAcumTotalFase = 0
+            j = 0
+            EACFasesNaoExecutadas = 0
+            for indiceCPIMedio in listaFaseF:
+                if (indiceIdProjeto == indiceCPIMedio):
+                    pvTotalFaseAtual = pvTotalFase[j]
+                    EACFase = listaCRPrev[j]
+                if(indiceIdProjeto < indiceCPIMedio):
+                    EACFasesNaoExecutadas = listaCRPrev[j] + EACFasesNaoExecutadas
+                    pvAcumTotalFase = pvTotalFase[j] + pvAcumTotalFase
+                j+=1
+            CPIHistFim = (evAcumP[i] + (pvTotalFaseAtual - evAcumF[i]) + pvAcumTotalFase) / (acAcumP[i] + (EACFase - acAcumF[i]) + EACFasesNaoExecutadas)
+            cpiHist.append(CPIHistFim)
+            i += 1
+
+        return cpiHist

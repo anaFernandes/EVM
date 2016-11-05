@@ -13,34 +13,40 @@ import csv  # CSV
 # 3 - dataInicio
 # 4 - dataFim
 # 5 - nomeFase
+# 6 - numRequisito
 
 class LeiaCSV(object):
 
     def Leia(self):
-        nomeFase = list()
-        ests = list()
-        reais = list()
-        nomeProjeto = list()
-        dataInicio = list()
-        dataFim = list()
+        lista_nome_fase = list()
+        lista_est = list()
+        lista_real = list()
+        lista_responsavel = list()
+        lista_nome_projeto = list()
+        lista_data_inicio = list()
+        lista_data_fim = list()
+        lista_numero_requisito = list()
+        lista_trimestre = list()
 
         # Metodo para abrir o arquivo em CSV
         clear = lambda: os.system('cls')
         clear()
 
         pp = pprint.PrettyPrinter(indent=3)
-        with open('gva.csv') as csvfile:
+        with open('EVM_v03.csv') as csvfile:
             reader = csv.DictReader(csvfile)
 
             # le varias linhas de cada coluna
             for row in reader:
-                ests.append(float(row['est']))
-                reais.append(float(row['real']))
-                nomeProjeto.append(row.get('nomeProjeto'))
-                dataInicio.append(row.get('dataInicio'))
-                dataFim.append(row.get('dataFim'))
-                nomeFase.append(row.get('nomeFase'))
-            dadosCSV = zip(ests, reais, nomeProjeto, dataInicio, dataFim, nomeFase)
+                lista_est.append(float(row['est']))
+                lista_real.append(float(row['real']))
+                lista_responsavel.append(row.get('responsavel'))
+                lista_nome_projeto.append(row.get('nomeProjeto'))
+                lista_data_inicio.append(row.get('dataInicio'))
+                lista_data_fim.append(row.get('dataFim'))
+                lista_nome_fase.append(row.get('nomeFase'))
+                lista_numero_requisito.append(row.get('numeroRequisito'))
+                lista_trimestre.append(row.get('trimestre'))
+            dadosCSV = zip(lista_est, lista_real, lista_responsavel, lista_nome_projeto, lista_data_inicio, lista_data_fim, lista_nome_fase, lista_numero_requisito, lista_trimestre)
 
-        #return dadosCSV, ests, reais, nomeProjeto, dataInicio, dataFim, nomeFase
         return dadosCSV

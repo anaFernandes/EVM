@@ -9,8 +9,8 @@ class Database(object):
     def __init__(self):
         # Cria primeira conexão
         if(Database.con is None):
-            MySQLdb.connect(host='localhost', user='root', passwd='',db='gva')
-            Database.con = MySQLdb.connect(user='root', db='gva')
+            MySQLdb.connect(host='localhost', user='root', passwd='',db='mydb')
+            Database.con = MySQLdb.connect(user='root', db='mydb')
             Database.c = Database.con.cursor()
 
     # Método utilizado sempre que for inserir no Banco
@@ -39,7 +39,9 @@ class Database(object):
     def update (query):
         Database()
         Database.c.execute(query)
+        Database.con.commit()
         return Database.c.fetchall() # Converte todas as linhas retornadas para uma matriz
+
 
     # Método utilizado para realizar outras tarefas no BD, como criar uma tabela
     @staticmethod

@@ -1,26 +1,77 @@
 # coding=UTF-8
 
 import numpy as np
+from datetime import datetime
+import pandas as pd
 
 class Classificacao(object):
 
     def __init__(self, todas_fases):
         self.todas_fases = todas_fases
 
-    def SeparaFases(self, lista_fases):
-        #Seleciona os ids dos projetos sem repetir
+    def Separa_Pela_Data(self, id_projeto, lista_projetos):
+        lista_id_projetos = []
+
+        for projeto in lista_projetos:
+            print projeto.id
+            if (id_projeto == projeto.id):
+                ano_projeto_atual, mes_projeto_atual, dia_projeto_atual = str(projeto.dt_inicio).split('-')
+
+        for projeto in lista_projetos:
+            if (id_projeto > projeto.id):
+                print projeto.dt_fim
+                ano_projeto_anterior, mes_projeto_anterior, dia_projeto_anterior = str(projeto.dt_fim).split('-')
+                if (ano_projeto_atual > ano_projeto_anterior):
+                    lista_id_projetos.append(projeto.id)
+                elif (ano_projeto_anterior == ano_projeto_atual):
+                    if(mes_projeto_atual > mes_projeto_anterior):
+                        lista_id_projetos.append(projeto.id)
+
+        print lista_id_projetos
+        return lista_id_projetos
+
+    def Seleciona_Fases(self, lista_fases, lista_id_projetos_selecionados, lista_projetos, id_projeto):
+
+        lista_duracao, lista_cpi_projeto, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase,\
+        lista_est_acum_projeto, lista_est_acum_fase, lista_perfil_equipe_fase, lista_num_atividades, \
+        = [], [], [], [], [], [], [], [], []
+
+        for fase in lista_fases:
+            if (id_projeto > lista_projetos) or (id_projeto == fase.projetos_id_projeto):
+                if (fase.cpi_hist < 6):
+                    if (fase.cpi_hist != 0):
+                        for projeto in lista_id_projetos_selecionados:
+                            if (projeto.id == fase.projetos_id_projeto):
+                                lista_duracao.append(projeto.duracao)
+                                lista_cpi_projeto.append(projeto.cpi_projeto)
+                        lista_nome_fase.append(fase.nome)
+                        lista_cpi_fase.append(fase.cpi_hist)
+                        lista_id_projeto_fase.append(fase.projetos_id_projeto)
+                        lista_est_acum_fase.append(fase.esforco_estimado_fase)
+                        lista_est_acum_projeto.append(fase.esforco_estimado_projeto)
+                        lista_perfil_equipe_fase.append(fase.perfil_equipe)
+                        lista_num_atividades.append(fase.num_atividades)
+
+        fases_lista = np.array(zip(lista_duracao, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase,
+                                     lista_est_acum_fase, lista_est_acum_projeto, lista_perfil_equipe_fase,
+                                     lista_num_atividades, lista_cpi_projeto))
+
+        return fases_lista
+
+
+    def SeparaFases(self, lista_fases, lista_id_projeto):
+
+        # Seleciona os ids dos projetos sem repetir
         projeto_anterior = lista_fases[0][3]
         lista_id_projeto = []
         lista_id_projeto.append(projeto_anterior)
 
-        #Cria uma lista de ids de projetos, sem repetir o id
-        for fases in lista_fases:
-            if(projeto_anterior != fases[3]):
-                lista_id_projeto.append(fases[3])
-            projeto_anterior = fases[3]
-
         implementacao, teste, elaboracao, correcao, copy = [], [], [], [], []
 
+        for id_projeto in lista_fases:
+            if (projeto_anterior != id_projeto[3]):
+                lista_id_projeto.append(id_projeto[3])
+            projeto_anterior = id_projeto[3]
         #Separa cada fase dentro da fase correspondente.
         #Para conseguir fazer o append na fase, primeiro tem q transformar o array em lista
         for id_projeto in lista_id_projeto:

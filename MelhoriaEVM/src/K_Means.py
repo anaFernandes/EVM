@@ -323,11 +323,6 @@ class K_Means(object):
         for cluster in cluster_3:
             media_3 = cluster + media_3
             media_cluster_3 = media_3 / len(cluster_3)
-        print " ______Media______"
-        print media_cluster_0
-        print media_cluster_1
-        print media_cluster_2
-        print media_cluster_3
         return media_cluster_0, media_cluster_1, media_cluster_2, media_cluster_3
 
     def Mediana_Clusters(self, cluster_0, cluster_1, cluster_2, cluster_3):

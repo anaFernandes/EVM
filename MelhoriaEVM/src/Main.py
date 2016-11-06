@@ -161,28 +161,30 @@ def CalculaEVM():
             while(Fase.todas_fases[i].projetos_id_projeto < id_projeto) :
                 #Soma os elementos de cada fase
                 if Fase.todas_fases[i].nome !=0 :
-                    if Fase.todas_fases[i].nome == "elaboracao" :
-                        #Soma os valores da fase ao cpiFasesSum.
-                        cpi_fases_soma[0] = cpi_fases_soma[0] + Fase.todas_fases[i].cpi_hist
-                        contador_fases[0] = contador_fases[0] + 1
-                    elif Fase.todas_fases[i].nome == "implementacao" :
-                        # Soma os valores da fase ao cpiFasesSum.
-                        cpi_fases_soma[1] = cpi_fases_soma[1] + Fase.todas_fases[i].cpi_hist
-                        contador_fases[1] = contador_fases[1] + 1
-                    elif (Fase.todas_fases[i].nome == "testes" ) :
-                        # Soma os valores da fase ao cpiFasesSum.
-                        cpi_fases_soma[2] = cpi_fases_soma[2] + Fase.todas_fases[i].cpi_hist
-                        contador_fases[2] = contador_fases[2] + 1
-                    elif (Fase.todas_fases[i].nome == "correcao" ):
-                        # Soma os valores da fase ao cpiFasesSum.
-                        # print ("CPI FASES SUM : " + str(cpiFasesSum[3]) + " \n FASES CPI HIST : " + str(Fase.todas_fases[i].cpi_hist))
-                        # print Fase.todas_fases[i].projetos_id_projeto
-                        cpi_fases_soma[3] = cpi_fases_soma[3] + Fase.todas_fases[i].cpi_hist
-                        contador_fases[3] = contador_fases[3] + 1
-                    i += 1
+                    # if(fase.todas_fases[i].cpi_hist !=0):
+                    #     if(fase.todas_fases[i].cpi_hist < 5):
+                            if Fase.todas_fases[i].nome == "elaboracao" :
+                                #Soma os valores da fase ao cpiFasesSum.
+                                cpi_fases_soma[0] = cpi_fases_soma[0] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[0] = contador_fases[0] + 1
+                            elif Fase.todas_fases[i].nome == "implementacao" :
+                                # Soma os valores da fase ao cpiFasesSum.
+                                cpi_fases_soma[1] = cpi_fases_soma[1] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[1] = contador_fases[1] + 1
+                            elif (Fase.todas_fases[i].nome == "testes" ) :
+                                # Soma os valores da fase ao cpiFasesSum.
+                                cpi_fases_soma[2] = cpi_fases_soma[2] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[2] = contador_fases[2] + 1
+                            elif (Fase.todas_fases[i].nome == "correcao" ):
+                                # Soma os valores da fase ao cpiFasesSum.
+                                # print ("CPI FASES SUM : " + str(cpiFasesSum[3]) + " \n FASES CPI HIST : " + str(Fase.todas_fases[i].cpi_hist))
+                                # print Fase.todas_fases[i].projetos_id_projeto
+                                cpi_fases_soma[3] = cpi_fases_soma[3] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[3] = contador_fases[3] + 1
+                            i += 1
 
         #Separar Médias
-        if (contador_fases[0] !=0):
+        if (id_projeto != 1):
             cpi_medio = [ cpi_fases_soma[0] / contador_fases[0],
                           cpi_fases_soma[1] / contador_fases[1],
                           cpi_fases_soma[2] / contador_fases[2],
@@ -191,58 +193,62 @@ def CalculaEVM():
 
         i=0
         if (id_projeto != 1):
-            cpi_hist_acum = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio, ev_acum_f, ac_acum_p, ac_acum_f, ev_acum_p)
-            cpi_hist_est = calculoInfo.CalculaCPIEst(cpi_medio, pv_acum_f, cpi_trad_f, ac_acum_p, pv_acum_p, lista_id_fase)
-            prec_cpi_hist, erro_cpi_hist = calculoInfo.CalculaExatidaoPrecisao(cpi_hist_est, ac_acum_p, pv_acum_p, lista_id_fase)
-            prec_cpi_acum_hist = calculoInfo.CalculaPrecisaoAcum(prec_cpi_hist, lista_id_fase)
-            erro_cpi_acum_hist = calculoInfo.CalculaExatidaoAcum(erro_cpi_hist)
-            eac_hist = calculoInfo.CalculaEAC(cpi_hist_est, pv_acum_p)
+            if(cpi_medio != 0):
+                cpi_hist_acum = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio, ev_acum_f, ac_acum_p, ac_acum_f, ev_acum_p)
+                cpi_hist_est = calculoInfo.CalculaCPIEst(cpi_medio, pv_acum_f, cpi_trad_f, ac_acum_p, pv_acum_p, lista_id_fase)
+                prec_cpi_hist, erro_cpi_hist = calculoInfo.CalculaExatidaoPrecisao(cpi_hist_est, ac_acum_p, pv_acum_p, lista_id_fase)
+                prec_cpi_acum_hist = calculoInfo.CalculaPrecisaoAcum(prec_cpi_hist, lista_id_fase)
+                erro_cpi_acum_hist = calculoInfo.CalculaExatidaoAcum(erro_cpi_hist)
+                eac_hist = calculoInfo.CalculaEAC(cpi_hist_est, pv_acum_p)
 
-            i=0
-            for idAtividade in lista_id_atividades:
-                Medidas.UpdateMedidas(cpi_hist_acum[i], prec_cpi_hist[i], erro_cpi_hist[i], prec_cpi_acum_hist[i], erro_cpi_acum_hist[i], eac_hist[i], idAtividade)
-                i+=1
+                i=0
+                for idAtividade in lista_id_atividades:
+                    Medidas.UpdateMedidas(cpi_hist_acum[i], prec_cpi_hist[i], erro_cpi_hist[i], prec_cpi_acum_hist[i], erro_cpi_acum_hist[i], eac_hist[i], idAtividade)
+                    i+=1
 
         if(id_projeto > 13):
-            i=0
-            lista_duracao, lista_cpi_projeto, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase, lista_real_acum_fase, \
-            lista_est_acum_projeto, lista_real_acum_projeto, lista_est_acum_fase, lista_perfil_equipe_fase, lista_num_atividades, \
-            lista_data_inicio_projeto, lista_data_fim_projeto = [], [], [], [], [], [], [], [], [], [], [], [], []
+            Classification = Classificacao(Fase.todas_fases)
+            lista_id_projetos_selecionados = Classification.Separa_Pela_Data(id_projeto, Projeto.todos_projetos)
+            fases_anteriores, fase_atual = Classification.Seleciona_Fases(Fase.todas_fases, Projeto.todos_projetos, lista_id_projetos_selecionados, id_projeto)
+            implementacao, teste, elaboracao, correcao = Classification.SeparaFases(fases_anteriores, lista_id_projetos_selecionados, id_projeto)
+            dados_projeto = Classification.JuntaFases(implementacao, teste, elaboracao, correcao, lista_id_projetos_selecionados, id_projeto)
 
-            for fase in Fase.todas_fases:
-                j = 0
-                if (id_projeto > Fase.todas_fases[i].projetos_id_projeto):
-                    if (Fase.todas_fases[i].cpi_hist < 6):
-                        if (Fase.todas_fases[i].cpi_hist != 0):
-                            for projeto in Projeto.todos_projetos:
-                                if (projeto.id == Fase.todas_fases[i].projetos_id_projeto):
-                                    lista_duracao.append(Projeto.todos_projetos[j].duracao)
-                                    lista_cpi_projeto.append(Projeto.todos_projetos[j].cpi_projeto)
-                                    lista_data_inicio_projeto.append(Projeto.todos_projetos[j].dt_inicio)
-                                    lista_data_fim_projeto.append(Projeto.todos_projetos[j].dt_fim)
-                                j += 1
-                            lista_nome_fase.append(Fase.todas_fases[i].nome)
-                            lista_cpi_fase.append(Fase.todas_fases[i].cpi_hist)
-                            lista_id_projeto_fase.append(Fase.todas_fases[i].projetos_id_projeto)
-                            lista_real_acum_fase.append(Fase.todas_fases[i].esforco_real_fase)
-                            lista_est_acum_fase.append(Fase.todas_fases[i].esforco_estimado_fase)
-                            lista_real_acum_projeto.append(Fase.todas_fases[i].esforco_real_projeto)
-                            lista_est_acum_projeto.append(Fase.todas_fases[i].esforco_estimado_projeto)
-                            lista_perfil_equipe_fase.append(Fase.todas_fases[i].perfil_equipe)
-                            lista_num_atividades.append(Fase.todas_fases[i].num_atividades)
-                i += 1
+            # i=0
+            # lista_duracao, lista_cpi_projeto, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase, lista_real_acum_fase, \
+            # lista_est_acum_projeto, lista_real_acum_projeto, lista_est_acum_fase, lista_perfil_equipe_fase, lista_num_atividades, \
+            # lista_data_inicio_projeto, lista_data_fim_projeto = [], [], [], [], [], [], [], [], [], [], [], [], []
+            #
+            # for fase in Fase.todas_fases:
+            #     j = 0
+            #     if (id_projeto > Fase.todas_fases[i].projetos_id_projeto):
+            #         if (Fase.todas_fases[i].cpi_hist < 6):
+            #             if (Fase.todas_fases[i].cpi_hist != 0):
+            #                 for projeto in Projeto.todos_projetos:
+            #                     if (projeto.id == Fase.todas_fases[i].projetos_id_projeto):
+            #                         lista_duracao.append(Projeto.todos_projetos[j].duracao)
+            #                         lista_cpi_projeto.append(Projeto.todos_projetos[j].cpi_projeto)
+            #                         lista_data_inicio_projeto.append(Projeto.todos_projetos[j].dt_inicio)
+            #                         lista_data_fim_projeto.append(Projeto.todos_projetos[j].dt_fim)
+            #                     j += 1
+            #                 lista_nome_fase.append(Fase.todas_fases[i].nome)
+            #                 lista_cpi_fase.append(Fase.todas_fases[i].cpi_hist)
+            #                 lista_id_projeto_fase.append(Fase.todas_fases[i].projetos_id_projeto)
+            #                 lista_real_acum_fase.append(Fase.todas_fases[i].esforco_real_fase)
+            #                 lista_est_acum_fase.append(Fase.todas_fases[i].esforco_estimado_fase)
+            #                 lista_real_acum_projeto.append(Fase.todas_fases[i].esforco_real_projeto)
+            #                 lista_est_acum_projeto.append(Fase.todas_fases[i].esforco_estimado_projeto)
+            #                 lista_perfil_equipe_fase.append(Fase.todas_fases[i].perfil_equipe)
+            #                 lista_num_atividades.append(Fase.todas_fases[i].num_atividades)
+            #     i += 1
 
-            fases_cluster= np.array(zip(lista_duracao, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase,
-                                        lista_real_acum_fase, lista_est_acum_fase, lista_est_acum_projeto, lista_real_acum_projeto,
-                                        lista_perfil_equipe_fase, lista_num_atividades, lista_cpi_projeto, lista_data_inicio_projeto,
-                                        lista_data_fim_projeto))
-            Agrupamento = K_Means(Fase.todas_fases)
-            implementacao, teste, elaboracao, correcao = Agrupamento.SeparaFases(fases_cluster)
-            dados_projeto = Agrupamento.JuntaFases(fases_cluster, lista_id_projeto_fase)
+            # fases_cluster= np.array(zip(lista_duracao, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase,
+            #                             lista_real_acum_fase, lista_est_acum_fase, lista_est_acum_projeto, lista_real_acum_projeto,
+            #                             lista_perfil_equipe_fase, lista_num_atividades, lista_cpi_projeto, lista_data_inicio_projeto,
+            #                             lista_data_fim_projeto))
+            # Agrupamento = K_Means(Fase.todas_fases)
+            # implementacao, teste, elaboracao, correcao = Agrupamento.SeparaFases(fases_cluster)
+            # dados_projeto = Agrupamento.JuntaFases(fases_cluster, lista_id_projeto_fase)
 
-            Classificacao = Classificacao(Fase.todas_fases)
-            implementacao, teste, elaboracao, correcao = Classificacao.SeparaFases(fases_cluster, lista_id_projeto_fase)
-            dados_projeto = Classificacao.JuntaFases(fases_cluster, lista_id_projeto_fase)
 
             # lista_cluster_teste = Agrupamento.Kmeans(teste)
             # lista_cluster_implementacao = Agrupamento.Kmeans(implementacao)

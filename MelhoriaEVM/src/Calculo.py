@@ -133,7 +133,7 @@ class Calculo(object):
             cpi_est_hist = (pv_total_fase_acum + lista_pv_acum_projeto[i]) / (lista_ac_acum_projeto[i] + cpi_div_hist_acum)
             lista_cpi_est_hist.append(cpi_est_hist)
             i +=1
-        exit
+
         return lista_cpi_est_hist
 
 

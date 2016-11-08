@@ -101,7 +101,8 @@ class Calculo(object):
                       lista_pv_acum_projeto, lista_id_fase):
 
         lista_fase_unica, lista_cpi_part, lista_pv_total_fase, lista_cip_hist_unico, lista_cpi_est_hist  = [], [], [], [], []
-        j, i=0, 0
+        j = 0
+        i = 0
         fase_anterior = lista_id_fase[0]
         for id_fase in lista_id_fase:
             if (fase_anterior != id_fase):
@@ -119,7 +120,6 @@ class Calculo(object):
         lista_cpi_part.append(pv_div_des_hist)
         lista_cip_hist_unico.append(lista_cpi_trad_fase[len(lista_cpi_trad_fase)-1])
         lista_fase_unica.append(lista_id_fase[len(lista_id_fase) -1])
-
         i = 0
         for id_fase in lista_id_fase:
             j = 0

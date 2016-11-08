@@ -36,12 +36,13 @@ class Responsavel(object):
             i=0
             for id in lista_id:
                 if(id_unico == id):
-                    if (lista_perfil_responsavel[i] !=0):
+                    if (lista_perfil_responsavel[i] != 0):
                         soma_perfil += lista_perfil_responsavel[i]
                         contador += 1
                 i+=1
             lista_soma_perfil.append(soma_perfil)
             lista_contador.append(contador)
+
         i=0
         for soma_perfil in lista_soma_perfil:
             media_perfil = float(soma_perfil)/float(lista_contador[i])

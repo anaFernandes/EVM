@@ -150,8 +150,8 @@ def CalculaEVM():
 
         #Pega os dados do banco para calcular o CPI histórico médio de cada fase
         # Reseta os valores inicias do projeto não inserido no banco
+        cpi_medio = [0, 0, 0, 0]
         contador_fases = [0, 0, 0, 0]
-        cpi_fases_soma = [0, 0, 0, 0]
 
         i = 0
         # print ("*********************** INTERACAO ******************************* \n\n\n")
@@ -161,37 +161,37 @@ def CalculaEVM():
             while(Fase.todas_fases[i].projetos_id_projeto < id_projeto) :
                 #Soma os elementos de cada fase
                 if Fase.todas_fases[i].nome !=0 :
-                    # if(fase.todas_fases[i].cpi_hist !=0):
-                    #     if(fase.todas_fases[i].cpi_hist < 5):
+                    if(fase.todas_fases[i].cpi_hist !=-1):
+                        if(fase.todas_fases[i].cpi_hist < 5):
                             if Fase.todas_fases[i].nome == "elaboracao" :
                                 #Soma os valores da fase ao cpiFasesSum.
-                                cpi_fases_soma[0] = cpi_fases_soma[0] + Fase.todas_fases[i].cpi_hist
+                                cpi_medio[0] = cpi_medio[0] + Fase.todas_fases[i].cpi_hist
                                 contador_fases[0] = contador_fases[0] + 1
                             elif Fase.todas_fases[i].nome == "implementacao" :
                                 # Soma os valores da fase ao cpiFasesSum.
-                                cpi_fases_soma[1] = cpi_fases_soma[1] + Fase.todas_fases[i].cpi_hist
+                                cpi_medio[1] = cpi_medio[1] + Fase.todas_fases[i].cpi_hist
                                 contador_fases[1] = contador_fases[1] + 1
                             elif (Fase.todas_fases[i].nome == "testes" ) :
                                 # Soma os valores da fase ao cpiFasesSum.
-                                cpi_fases_soma[2] = cpi_fases_soma[2] + Fase.todas_fases[i].cpi_hist
+                                cpi_medio[2] = cpi_medio[2] + Fase.todas_fases[i].cpi_hist
                                 contador_fases[2] = contador_fases[2] + 1
                             elif (Fase.todas_fases[i].nome == "correcao" ):
-                                # Soma os valores da fase ao cpiFasesSum.
-                                # print ("CPI FASES SUM : " + str(cpiFasesSum[3]) + " \n FASES CPI HIST : " + str(Fase.todas_fases[i].cpi_hist))
+                                # Soma os valores da fase ao cpi_fases_sum.
+                                # print ("CPI FASES SUM : " + str(cpi_medio[3]) + " \n FASES CPI HIST : " + str(Fase.todas_fases[i].cpi_hist))
                                 # print Fase.todas_fases[i].projetos_id_projeto
-                                cpi_fases_soma[3] = cpi_fases_soma[3] + Fase.todas_fases[i].cpi_hist
+                                cpi_medio[3] = cpi_medio[3] + Fase.todas_fases[i].cpi_hist
                                 contador_fases[3] = contador_fases[3] + 1
-                            i += 1
+                i += 1
 
         #Separar Médias
         if(id_projeto != 1):
             if (contador_fases[0] != 0 or contador_fases[1] != 0 or contador_fases[2] != 0 or contador_fases[3] != 0):
-                cpi_medio = [ cpi_fases_soma[0] / contador_fases[0],
-                              cpi_fases_soma[1] / contador_fases[1],
-                              cpi_fases_soma[2] / contador_fases[2],
-                              cpi_fases_soma[3] / contador_fases[3],
+                cpi_medio = [ cpi_medio[0] / contador_fases[0],
+                              cpi_medio[1] / contador_fases[1],
+                              cpi_medio[2] / contador_fases[2],
+                              cpi_medio[3] / contador_fases[3],
                             ]
-
+                # print "cpi_medio" + str(cpi_medio)
                 cpi_hist_acum = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio, ev_acum_f, ac_acum_p, ac_acum_f, ev_acum_p)
                 cpi_hist_est = calculoInfo.CalculaCPIEst(cpi_medio, pv_acum_f, cpi_trad_f, ac_acum_p, pv_acum_p, lista_id_fase)
                 prec_cpi_hist, erro_cpi_hist = calculoInfo.CalculaExatidaoPrecisao(cpi_hist_est, ac_acum_p, pv_acum_p, lista_id_fase)

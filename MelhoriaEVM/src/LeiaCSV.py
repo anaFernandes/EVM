@@ -33,7 +33,7 @@ class LeiaCSV(object):
         clear()
 
         pp = pprint.PrettyPrinter(indent=3)
-        with open('EVM_v03.csv') as csvfile:
+        with open('gva.csv') as csvfile:
             reader = csv.DictReader(csvfile)
 
             # le varias linhas de cada coluna

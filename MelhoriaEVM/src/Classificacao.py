@@ -11,27 +11,41 @@ class Classificacao(object):
         self.todas_fases = todas_fases
         self.todos_projetos = todos_projetos
 
+    #Separa os projetos pela data, projetos com datas parecidas não podem ser usados para fazer a classificação
+    #Pois a ideia é prever o CPI
     def Separa_Pela_Data(self, id_projeto):
         lista_id_projetos = []
 
+        #Utiliza o for each para verificar ql o projeto atual
         for projeto in self.todos_projetos :
-            if (id_projeto == projeto.id):
+            if id_projeto == projeto.id:
+                #após encontrar o projeto, a função slipt é utilizada para separa o ano, o mes e o dia do projeto
                 ano_projeto_atual, mes_projeto_atual, dia_projeto_atual = str(projeto.dt_inicio).split('-')
-        print 'Atual' + str(ano_projeto_atual) + str(mes_projeto_atual) + str(dia_projeto_atual)
+
+        #Percorre toda a lista de projetos, e verifica se o id do projeto é menor que o do projeto atual
         for projeto in self.todos_projetos:
-            if (id_projeto > projeto.id):
+            if id_projeto > projeto.id:
+                #a função slipt é utilizada para dividir a data do projeto antigo
                 ano_projeto_anterior, mes_projeto_anterior, dia_projeto_anterior = str(projeto.dt_fim).split('-')
+                #Verifica se o ano do projeto atual é menor que o ano do projeto antigo
                 if (ano_projeto_atual > ano_projeto_anterior):
+                    #caso positivo add o projeto em uma nova lista
                     lista_id_projetos.append(projeto.id)
+                #se o ano do projeto anterior for igual ao do projeto antigo
                 elif (ano_projeto_anterior == ano_projeto_atual):
+                    #checa se o mês do projeto anterior é igual ao do projeto antigo
                     if(mes_projeto_atual == mes_projeto_anterior):
+                        #Se o dia do inicio do projeto atual for maior que o do projeto antigo
                         if(dia_projeto_atual > dia_projeto_anterior):
+                            #add o projeto antigo na lista de projetos
                             lista_id_projetos.append(projeto.id)
+                    #Se o mes do projeto atual for maior que o do projeto antigo
                     if(mes_projeto_atual > mes_projeto_anterior):
+                        #add o projeto na lista de projetos
                         lista_id_projetos.append(projeto.id)
+            #Se o id do projeto for igual ao do projeto atual tb add esse id na lista
             if(id_projeto == projeto.id):
                 lista_id_projetos.append(projeto.id)
-        print lista_id_projetos
         return lista_id_projetos
 
     def Seleciona_Fases(self, lista_id_projetos_selecionados, id_projeto):
@@ -54,7 +68,7 @@ class Classificacao(object):
                             lista_est_acum_projeto.append(fase.esforco_estimado_projeto)
                             lista_perfil_equipe_fase.append(fase.perfil_equipe)
                             lista_num_atividades.append(fase.num_atividades)
-        print lista_id_projeto_fase
+
         fases_lista = np.array(zip(lista_duracao, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase,
                                      lista_est_acum_fase, lista_est_acum_projeto, lista_perfil_equipe_fase,
                                      lista_num_atividades, lista_cpi_projeto))

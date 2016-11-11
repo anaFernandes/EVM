@@ -207,7 +207,7 @@ def CalculaEVM():
         if(id_projeto > 13):
             Classification = Classificacao(Fase.todas_fases, Projeto.todos_projetos)
             lista_id_projetos_selecionados = Classification.Separa_Pela_Data(id_projeto)
-            fases_selecionadas = Classification.Seleciona_Fases(lista_id_projetos_selecionados, id_projeto)
+            fases_selecionadas = Classification.Seleciona_Fases(lista_id_projetos_selecionados)
             implementacao, teste, elaboracao, correcao = Classification.SeparaFases(fases_selecionadas, lista_id_projetos_selecionados)
             dados_projeto = Classification.JuntaFases(fases_selecionadas, lista_id_projetos_selecionados)
             resultado_classes = Classification.RandomTree(dados_projeto)

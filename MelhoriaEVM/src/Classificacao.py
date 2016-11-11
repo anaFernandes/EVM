@@ -48,7 +48,7 @@ class Classificacao(object):
                 lista_id_projetos.append(projeto.id)
         return lista_id_projetos
 
-    def Seleciona_Fases(self, lista_id_projetos_selecionados, id_projeto):
+    def Seleciona_Fases(self, lista_id_projetos_selecionados):
 
         lista_duracao, lista_cpi_projeto, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase,\
         lista_est_acum_projeto, lista_est_acum_fase, lista_perfil_equipe_fase, lista_num_atividades, \
@@ -56,18 +56,18 @@ class Classificacao(object):
 
         for fase in self.todas_fases:
             for id in lista_id_projetos_selecionados:
-                if (fase.id == id):
-                            for projeto in self.todos_projetos:
-                                if (projeto.id == fase.projetos_id_projeto):
-                                    lista_duracao.append(projeto.duracao)
-                                    lista_cpi_projeto.append(projeto.cpi_projeto)
-                            lista_nome_fase.append(fase.nome)
-                            lista_cpi_fase.append(fase.cpi_hist)
-                            lista_id_projeto_fase.append(fase.projetos_id_projeto)
-                            lista_est_acum_fase.append(fase.esforco_estimado_fase)
-                            lista_est_acum_projeto.append(fase.esforco_estimado_projeto)
-                            lista_perfil_equipe_fase.append(fase.perfil_equipe)
-                            lista_num_atividades.append(fase.num_atividades)
+                if (fase.projetos_id_projeto == id):
+                    for projeto in self.todos_projetos:
+                        if (projeto.id == fase.projetos_id_projeto):
+                            lista_duracao.append(projeto.duracao)
+                            lista_cpi_projeto.append(projeto.cpi_projeto)
+                    lista_nome_fase.append(fase.nome)
+                    lista_cpi_fase.append(fase.cpi_hist)
+                    lista_id_projeto_fase.append(fase.projetos_id_projeto)
+                    lista_est_acum_fase.append(fase.esforco_estimado_fase)
+                    lista_est_acum_projeto.append(fase.esforco_estimado_projeto)
+                    lista_perfil_equipe_fase.append(fase.perfil_equipe)
+                    lista_num_atividades.append(fase.num_atividades)
 
         fases_lista = np.array(zip(lista_duracao, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase,
                                      lista_est_acum_fase, lista_est_acum_projeto, lista_perfil_equipe_fase,
@@ -158,26 +158,27 @@ class Classificacao(object):
                         primeiro = 1
             lista_projetos.append(copy)
             test = np.array(lista_projetos)
-            print test
         return test
 
     def RandomTree(self, lista_projetos):
         #lista_duracao, lista_cpi_projeto, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase
         # lista_est_acum_projeto, lista_est_acum_fase, lista_perfil_equipe_fase, lista_num_atividades
         class1, class2, class3, class4, class5, class6, class7 = [], [], [], [], [], [], []
+
+        print lista_projetos
         for projeto in lista_projetos:
-            if lista_projetos[5] >= 107.65 : #esforco_estimplementacao_projeto
-                if lista_projetos[1] >= 12.5 : #num_atividades
+            if projeto[5] >= 107.65 : #esforco_estimplementacao_projeto
+                if projeto[1] >= 12.5 : #num_atividades
                     projetos = np.array(projeto).tolist()
                     class7.append(projetos)
                 else:
                     projetos = np.array(projeto).tolist()
                     class5.append(projetos)
             else:
-                if lista_projetos[24] >= 8.85 : #esforco_est_elaboração_fase
+                if projeto[24] >= 8.85 : #esforco_est_elaboração_fase
                     projetos = np.array(projeto).tolist()
                     class3.append(projetos)
-                elif lista_projetos[11] >= 109.85 : #esforco_est_correcao_projeto
+                elif projeto[11] >= 109.85 : #esforco_est_correcao_projeto
                     projetos = np.array(projeto).tolist()
                     class4.append(projetos)
                 else:

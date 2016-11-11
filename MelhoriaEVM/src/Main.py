@@ -209,8 +209,24 @@ def CalculaEVM():
             lista_id_projetos_selecionados = Classification.Separa_Pela_Data(id_projeto)
             fases_selecionadas = Classification.Seleciona_Fases(lista_id_projetos_selecionados)
             implementacao, teste, elaboracao, correcao = Classification.SeparaFases(fases_selecionadas, lista_id_projetos_selecionados)
-            dados_projeto = Classification.JuntaFases(fases_selecionadas, lista_id_projetos_selecionados)
-            resultado_classes = Classification.RandomTree(dados_projeto)
+            lista_id_projeto = Classification.JuntaFases(fases_selecionadas, lista_id_projetos_selecionados)
+            class1, class2, class3, class4, class5, class6, class7 = Classification.DefineClass(lista_id_projeto)
+            resultado_classe = Classification.RandomTree(lista_id_projeto)
+            lista_id_projetos_CPI = Classification.comparaClasse(resultado_classe, class1, class2, class3, class4, class5, class6, class7)
+
+            cpi_medio_classificado = Classification.CalculaMediaCPI(lista_id_projetos_CPI, id_projeto)
+
+
+            # cpi_hist_acum_class = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio_classificado, ev_acum_f, ac_acum_p, ac_acum_f,
+            #                                        ev_acum_p)
+            # cpi_hist_est_class = calculoInfo.CalculaCPIEst(cpi_medio_classificado, pv_acum_f, cpi_trad_f, ac_acum_p, pv_acum_p,
+            #                                          lista_id_fase)
+            # prec_cpi_hist_class, erro_cpi_hist_class = calculoInfo.CalculaExatidaoPrecisao(cpi_hist_est_class, ac_acum_p, pv_acum_p,
+            #                                                                    lista_id_fase)
+            # prec_cpi_acum_hist_class = calculoInfo.CalculaPrecisaoAcum(prec_cpi_hist_class, lista_id_fase)
+            # erro_cpi_acum_hist_class = calculoInfo.CalculaExatidaoAcum(erro_cpi_hist_class)
+            # eac_hist_class = calculoInfo.CalculaEAC(cpi_hist_est_class, pv_acum_p)
+
 
             # fases_cluster= np.array(zip(lista_duracao, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase,
             #                             lista_real_acum_fase, lista_est_acum_fase, lista_est_acum_projeto, lista_real_acum_projeto,

@@ -116,7 +116,7 @@ class Classificacao(object):
 
         for id_projeto in lista_id_projetos_selecionados:
             copy = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
-                    '0', '0', '0', '0', '0', '0']
+                    '0', '0', '0', '0', '0', '0', '0']
             primeiro = 0
             for fases in fases_selecionadas:
                 fase = np.array(fases).tolist()
@@ -124,6 +124,7 @@ class Classificacao(object):
                     if primeiro == 0:
                         copy[0] = id_projeto
                         copy[1] = fase[7]
+                        copy[26] = fase[8]
                     if 'implementacao' == fase[1]:
                         copy[2] = fase[2]
                         copy[3] = fase[1]
@@ -160,31 +161,128 @@ class Classificacao(object):
             test = np.array(lista_projetos)
         return test
 
+    def DefineClass(self, lista_projetos):
+        class1, class2, class3, class4, class5, class6, class7 = [], [], [], [], [], [], []
+
+        for projeto in lista_projetos:
+            if(float(projeto[26]) <= 1.5):
+                projetos = np.array(projeto).tolist()
+                class2.append(projetos[0])
+            elif (float(projeto[26]) <= 2):
+                projetos = np.array(projeto).tolist()
+                class3.append(projetos[0])
+            elif (float(projeto[26]) <= 2.5):
+                projetos = np.array(projeto).tolist()
+                class4.append(projetos[0])
+            elif (float(projeto[26]) <= 3):
+                projetos = np.array(projeto).tolist()
+                class5.append(projetos[0])
+            elif (float(projeto[26]) <= 3.5):
+                projetos = np.array(projeto).tolist()
+                class6.append(projetos[0])
+            elif (float(projeto[26]) <= 4):
+                projetos = np.array(projeto).tolist()
+                class7.append(projetos[0])
+
+        return class1, class2, class3, class4, class5, class6, class7
+
     def RandomTree(self, lista_projetos):
         #lista_duracao, lista_cpi_projeto, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase
         # lista_est_acum_projeto, lista_est_acum_fase, lista_perfil_equipe_fase, lista_num_atividades
-        class1, class2, class3, class4, class5, class6, class7 = [], [], [], [], [], [], []
 
-        print lista_projetos
-        for projeto in lista_projetos:
-            if projeto[5] >= 107.65 : #esforco_estimplementacao_projeto
-                if projeto[1] >= 12.5 : #num_atividades
-                    projetos = np.array(projeto).tolist()
-                    class7.append(projetos)
-                else:
-                    projetos = np.array(projeto).tolist()
-                    class5.append(projetos)
+        projeto = lista_projetos[len(lista_projetos) -1]
+
+        # esforco_est_elaboracao < 8.85
+        # | esforco_est_acum_elaboracao < 7.55: Class2(2 / 0)
+        # | esforco_est_acum_elaboracao >= 7.55: Class4(2 / 0)
+        # esforco_est_elaboracao >= 8.85
+        # | esforco_est_elaboracao < 12.25: Class3(5 / 0)
+        # | esforco_est_elaboracao >= 12.25
+        # | | esforco_est_testes < 39.7: Class7(1 / 0)
+        # | | esforco_est_testes >= 39.7: Class5(1 / 0)
+
+        if float(projeto[23]) < 8.85 :
+            if float(projeto[24]) < 7.55 :
+                classe = "class2"
             else:
-                if projeto[24] >= 8.85 : #esforco_est_elaboração_fase
-                    projetos = np.array(projeto).tolist()
-                    class3.append(projetos)
-                elif projeto[11] >= 109.85 : #esforco_est_correcao_projeto
-                    projetos = np.array(projeto).tolist()
-                    class4.append(projetos)
-                else:
-                    projetos = np.array(projeto).tolist()
-                    class2.append(projetos)
+                classe = "class4"
+        else:
+            if float(projeto[24]) < 12.25 :
+                classe = "class3"
+            elif float(projeto[18]) >= 39.7 :
+                classe = "class7"
+            else :
+                classe = "class5"
 
-                print class2
+        return classe
 
-        return class1, class2, class3, class4, class5, class6, class7
+    def comparaClasse(self, classe, class1, class2, class3, class4, class5, class6, class7):
+
+        if classe == "class1":
+            lista_id_projetos = class1
+        if classe == "class2":
+            lista_id_projetos = class2
+        if classe == "class3":
+            lista_id_projetos = class3
+        if classe == "class4":
+            lista_id_projetos = class4
+        if classe == "class5":
+            lista_id_projetos = class5
+        if classe == "class6":
+            lista_id_projetos = class6
+        if classe == "class7":
+            lista_id_projetos = class7
+
+        return lista_id_projetos
+
+    def CalculaMediaCPI(self, lista_id_projetos, id_projeto_atual):
+        # Pega os dados do banco para calcular o CPI histórico médio de cada fase
+        # Reseta os valores inicias do projeto não inserido no banco
+        cpi_medio = [0, 0, 0, 0]
+        contador_fases = [0, 0, 0, 0]
+
+        i = 0
+
+        # print ("*********************** INTERACAO ******************************* \n\n\n")
+        # Percorrer todos os projetos
+
+        for id_projeto in lista_id_projetos:
+            # Percorrer projetos com o id menor do que o projeto atual
+            if (int(id_projeto) != id_projeto_atual):
+                for fase in self.todas_fases :
+                    print fase.projetos_id_projeto
+                    print id_projeto
+                    if fase.projetos_id_projeto == long(id_projeto):
+                        print "ok"
+                        # Soma os elementos de cada fase
+                        if fase.nome != 0 :
+                            if fase.nome == "elaboracao":
+                                # Soma os valores da fase ao cpiFasesSum.
+                                cpi_medio[0] = cpi_medio[0] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[0] = contador_fases[0] + 1
+                            elif fase.nome == "implementacao":
+                                # Soma os valores da fase ao cpiFasesSum.
+                                cpi_medio[1] = cpi_medio[1] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[1] = contador_fases[1] + 1
+                            elif (fase.nome == "testes"):
+                                # Soma os valores da fase ao cpiFasesSum.
+                                cpi_medio[2] = cpi_medio[2] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[2] = contador_fases[2] + 1
+                            elif (fase.nome == "correcao"):
+                                # Soma os valores da fase ao cpi_fases_sum.
+                                print ("CPI FASES SUM : " + str(cpi_medio[3]) + " \n FASES CPI HIST : " + str(Fase.todas_fases[i].cpi_hist))
+                                print Fase.todas_fases[i].projetos_id_projeto
+                                cpi_medio[3] = cpi_medio[3] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[3] = contador_fases[3] + 1
+                i += 1
+        # Separar Médias
+        if (id_projeto != 1):
+            if (contador_fases[0] != 0 or contador_fases[1] != 0 or contador_fases[2] != 0 or contador_fases[
+                3] != 0):
+                cpi_medio = [cpi_medio[0] / contador_fases[0],
+                             cpi_medio[1] / contador_fases[1],
+                             cpi_medio[2] / contador_fases[2],
+                             cpi_medio[3] / contador_fases[3],
+                             ]
+        print cpi_medio
+        return cpi_medio

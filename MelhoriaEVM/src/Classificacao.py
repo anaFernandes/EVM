@@ -250,10 +250,7 @@ class Classificacao(object):
             # Percorrer projetos com o id menor do que o projeto atual
             if (int(id_projeto) != id_projeto_atual):
                 for fase in self.todas_fases :
-                    print fase.projetos_id_projeto
-                    print id_projeto
                     if fase.projetos_id_projeto == long(id_projeto):
-                        print "ok"
                         # Soma os elementos de cada fase
                         if fase.nome != 0 :
                             if fase.nome == "elaboracao":
@@ -269,9 +266,9 @@ class Classificacao(object):
                                 cpi_medio[2] = cpi_medio[2] + Fase.todas_fases[i].cpi_hist
                                 contador_fases[2] = contador_fases[2] + 1
                             elif (fase.nome == "correcao"):
-                                # Soma os valores da fase ao cpi_fases_sum.
-                                print ("CPI FASES SUM : " + str(cpi_medio[3]) + " \n FASES CPI HIST : " + str(Fase.todas_fases[i].cpi_hist))
-                                print Fase.todas_fases[i].projetos_id_projeto
+                                # # Soma os valores da fase ao cpi_fases_sum.
+                                # print ("CPI FASES SUM : " + str(cpi_medio[3]) + " \n FASES CPI HIST : " + str(Fase.todas_fases[i].cpi_hist))
+                                # print Fase.todas_fases[i].projetos_id_projeto
                                 cpi_medio[3] = cpi_medio[3] + Fase.todas_fases[i].cpi_hist
                                 contador_fases[3] = contador_fases[3] + 1
                 i += 1
@@ -284,5 +281,5 @@ class Classificacao(object):
                              cpi_medio[2] / contador_fases[2],
                              cpi_medio[3] / contador_fases[3],
                              ]
-        print cpi_medio
+
         return cpi_medio

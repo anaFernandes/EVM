@@ -210,6 +210,7 @@ def CalculaEVM():
             fases_selecionadas = Classification.Seleciona_Fases(lista_id_projetos_selecionados, id_projeto)
             implementacao, teste, elaboracao, correcao = Classification.SeparaFases(fases_selecionadas, lista_id_projetos_selecionados)
             dados_projeto = Classification.JuntaFases(fases_selecionadas, lista_id_projetos_selecionados)
+            resultado_classes = Classification.RandomTree(dados_projeto)
 
             # fases_cluster= np.array(zip(lista_duracao, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase,
             #                             lista_real_acum_fase, lista_est_acum_fase, lista_est_acum_projeto, lista_real_acum_projeto,

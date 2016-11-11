@@ -108,58 +108,82 @@ class Classificacao(object):
     # Juntas as fases em um unico projeto, para a previsão do cpi será necessario a utilização do perfil da equipe, esforco estimado
     # número de atividades e as datas final e inicial do projeto
     def JuntaFases(self, fases_selecionadas, lista_id_projetos_selecionados):
-        # lista_duracao, lista_cpi_projeto, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase
-        # lista_est_acum_projeto, lista_est_acum_fase, lista_perfil_equipe_fase, lista_num_atividades
+
+        """lista_duracao, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase, lista_est_acum_fase,
+        lista_est_acum_projeto, lista_perfil_equipe_fase, lista_num_atividades, lista_cpi_projeto"""
 
         lista_projetos =[]
 
         for id_projeto in lista_id_projetos_selecionados:
             copy = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
-                     '0','0', '0', '0', '0']
+                    '0', '0', '0', '0', '0', '0']
             primeiro = 0
             for fases in fases_selecionadas:
                 fase = np.array(fases).tolist()
-                if (id_projeto == fase[4]):
-                    if (primeiro == 0):
+                if id_projeto == int(fase[3]):
+                    if primeiro == 0:
                         copy[0] = id_projeto
-                        copy[1] = fase[8]
-
-                    if ('implementacao' == fase[1]):
+                        copy[1] = fase[7]
+                    if 'implementacao' == fase[1]:
                         copy[2] = fase[2]
                         copy[3] = fase[1]
-                        copy[4] = fase[3]
+                        copy[4] = fase[4]
                         copy[5] = fase[5]
                         copy[6] = fase[6]
-                        copy[7] = fase[7]
+                        copy[7] = fase[8]
                         primeiro = 1
-
-                    if ('correcao' == fase[1]):
+                    if 'correcao' == fase[1]:
                         copy[8] = fase[2]
                         copy[9] = fase[1]
-                        copy[10] = fase[3]
+                        copy[10] = fase[4]
                         copy[11] = fase[5]
                         copy[12] = fase[6]
-                        copy[13] = fase[7]
+                        copy[13] = fase[8]
                         primeiro = 1
-
-                    if('testes' == fase[1]):
+                    if 'testes' == fase[1]:
                         copy[14] = fase[2]
                         copy[15] = fase[1]
-                        copy[16] = fase[3]
+                        copy[16] = fase[4]
                         copy[17] = fase[5]
                         copy[18] = fase[6]
-                        copy[19] = fase[7]
+                        copy[19] = fase[8]
                         primeiro = 1
-
-                    if ('elaboracao' == fase[1]):
+                    if 'elaboracao' == fase[1]:
                         copy[20] = fase[2]
                         copy[21] = fase[1]
-                        copy[22] = fase[3]
+                        copy[22] = fase[4]
                         copy[23] = fase[5]
                         copy[24] = fase[6]
-                        copy[25] = fase[7]
+                        copy[25] = fase[8]
                         primeiro = 1
-
             lista_projetos.append(copy)
             test = np.array(lista_projetos)
+            print test
         return test
+
+    def RandomTree(self, lista_projetos):
+        #lista_duracao, lista_cpi_projeto, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase
+        # lista_est_acum_projeto, lista_est_acum_fase, lista_perfil_equipe_fase, lista_num_atividades
+        class1, class2, class3, class4, class5, class6, class7 = [], [], [], [], [], [], []
+        for projeto in lista_projetos:
+            if lista_projetos[5] >= 107.65 : #esforco_estimplementacao_projeto
+                if lista_projetos[1] >= 12.5 : #num_atividades
+                    projetos = np.array(projeto).tolist()
+                    class7.append(projetos)
+                else:
+                    projetos = np.array(projeto).tolist()
+                    class5.append(projetos)
+            else:
+                if lista_projetos[24] >= 8.85 : #esforco_est_elaboração_fase
+                    projetos = np.array(projeto).tolist()
+                    class3.append(projetos)
+                elif lista_projetos[11] >= 109.85 : #esforco_est_correcao_projeto
+                    projetos = np.array(projeto).tolist()
+                    class4.append(projetos)
+                else:
+                    projetos = np.array(projeto).tolist()
+                    class2.append(projetos)
+
+                print class2
+
+        return class1, class2, class3, class4, class5, class6, class7

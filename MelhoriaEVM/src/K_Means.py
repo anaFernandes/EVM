@@ -119,8 +119,8 @@ class K_Means(object):
             projeto_anterior = id_projeto[3]
 
         for id_projeto in lista_id_projeto:
-            copy = [ '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
-                     '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
+            copy = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
+                    '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
             primeiro = 0
             for fases in fases_cluster:
                 fase = np.array(fases).tolist()
@@ -160,7 +160,6 @@ class K_Means(object):
                         copy[23] = fase[7]
                         copy[24] = fase[8]
                         primeiro = 1
-
                     if ('elaboracao' == fase[1]):
                         copy[25] = fase[0]
                         copy[26] = fase[1]

@@ -107,6 +107,14 @@ def CalculaEVM():
         eac_trad = calculoInfo.CalculaEAC(cpi_trad_p, pv_acum_p)
         id_projeto, bac, cpi_projeto = calculoInfo.CalculaBAC(pv_acum_p, lista_id_projeto, cpi_trad_p)
 
+        if(id_projeto == 20):
+            print "ac_acum_projeto" + str(ac_acum_p)
+            print "ultima" + str(ac_acum_p[len(ac_acum_p) - 1])
+            print pv_acum_p[len(pv_acum_p) - 1]
+            print pv_acum_p
+            print cpi_trad_p
+            print "______________________________________"
+
         "Chamada para o calculo do perfil de cada responsavel"
         responsavel = Responsavel(projetosFromDatabase)
         lista_perfil_responsavel = responsavel.Calcula_Perfil_Responsavel(lista_nome_responsavel)
@@ -198,6 +206,8 @@ def CalculaEVM():
                 prec_cpi_acum_hist = calculoInfo.CalculaPrecisaoAcum(prec_cpi_hist, lista_id_fase)
                 erro_cpi_acum_hist = calculoInfo.CalculaExatidaoAcum(erro_cpi_hist)
                 eac_hist = calculoInfo.CalculaEAC(cpi_hist_est, pv_acum_p)
+                if(id_projeto == 20):
+                    print cpi_hist_est
 
                 i=0
                 for idAtividade in lista_id_atividades:
@@ -217,23 +227,21 @@ def CalculaEVM():
             cpi_medio_classificado = Classification.CalculaMediaCPI(lista_id_projetos_CPI, id_projeto)
 
 
-            cpi_hist_acum_class = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio_classificado, ev_acum_f, ac_acum_p, ac_acum_f,
-                                                    ev_acum_p)
-            cpi_hist_est_class = calculoInfo.CalculaCPIEst(cpi_medio_classificado, pv_acum_f, cpi_trad_f, ac_acum_p, pv_acum_p,
-                                                     lista_id_fase)
-            prec_cpi_hist_class, erro_cpi_hist_class = calculoInfo.CalculaExatidaoPrecisao(cpi_hist_est_class, ac_acum_p, pv_acum_p,
-                                                                               lista_id_fase)
+            cpi_hist_acum_class = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio_classificado, ev_acum_f, ac_acum_p, ac_acum_f, ev_acum_p)
+            cpi_hist_est_class = calculoInfo.CalculaCPIEst(cpi_medio_classificado, pv_acum_f, cpi_trad_f, ac_acum_p, pv_acum_p, lista_id_fase)
+            prec_cpi_hist_class, erro_cpi_hist_class = calculoInfo.CalculaExatidaoPrecisao(cpi_hist_est_class, ac_acum_p, pv_acum_p, lista_id_fase)
             prec_cpi_acum_hist_class = calculoInfo.CalculaPrecisaoAcum(prec_cpi_hist_class, lista_id_fase)
             erro_cpi_acum_hist_class = calculoInfo.CalculaExatidaoAcum(erro_cpi_hist_class)
             eac_hist_class = calculoInfo.CalculaEAC(cpi_hist_est_class, pv_acum_p)
-
+            if(id_projeto == 20):
+                print erro_cpi_hist_class
             i = 0
             for idAtividade in lista_id_atividades:
                 Medidas.UpdateMedidasClassificacao(cpi_hist_acum_class[i], eac_hist_class[i], idAtividade)
                 i += 1
 
 
-            # i = 0
+                    # i = 0
             # for idAtividade in lista_id_atividades:
             #     Medidas.UpdateMedidas(cpi_hist_acum_class[i], prec_cpi_hist_class[i], erro_cpi_hist_class[i], prec_cpi_acum_hist_class[i],
             #                           erro_cpi_acum_hist_class[i], eac_hist_class[i], idAtividade)

@@ -19,7 +19,8 @@ class Medidas(object):
                  cpi_acum_projeto_outras_tec, eac_tec_trad, eac_dados_hist, eac_outras_tec, 
                  exatidao_tec_trad, exatidao_tec_dados_hist, exatidao_acum_tec_trad, exatidao_acum_tec_dados_hist,
                  precisao_tec_trad, precisao_tec_dados_hist,precisao_acum_tec_trad, precisao_acum_tec_dados_hist,
-                 projetos_id_projeto,fases_id_fase,atividades_id_atividade, perfil_responsavel) :
+                 projetos_id_projeto,fases_id_fase,atividades_id_atividade, perfil_responsavel, prec_cpi_hist_class,
+                 erro_cpi_hist_class, prec_cpi_acum_hist_class, erro_cpi_acum_hist_class) :
 
         jaExite = False
         for medida in Medidas.todasMedidas:
@@ -60,6 +61,10 @@ class Medidas(object):
             self.atividades_id_atividade = atividades_id_atividade
             self.fases_id_fase = fases_id_fase
             self.perfil_responsavel = perfil_responsavel
+            self.prec_cpi_hist_class = prec_cpi_hist_class
+            self.erro_cpi_hist_class = erro_cpi_hist_class
+            self.prec_cpi_acum_hist_class = prec_cpi_acum_hist_class
+            self.erro_cpi_acum_hist_class = erro_cpi_acum_hist_class
             Medidas.todasMedidas.append(self)
             if (id == -1):
                 Medidas.fileToDataBase(self)
@@ -68,13 +73,16 @@ class Medidas(object):
         queryInsert = ("INSERT INTO medidas (esforco_est_acum_fase, esforco_real_acum_fase, pv_acum_fase, ev_acum_fase, cpi_acum_fase, "
                        "ac_acum_fase, esforco_est_acum_projeto, esforco_real_acum_projeto, ev_acum_projeto, pv_acum_projeto, ac_acum_projeto,"
                        "cpi_acum_projeto_tec_trad, eac_tec_trad, exatidao_tec_trad, exatidao_acum_tec_trad, precisao_tec_trad,"
-                       "precisao_acum_tec_trad, projetos_id_projeto, fases_id_fase, atividades_id_atividade, perfil_responsavel) VALUES  "
+                       "precisao_acum_tec_trad, projetos_id_projeto, fases_id_fase, atividades_id_atividade, perfil_responsavel, "
+                       "prec_cpi_hist_class, erro_cpi_hist_class, prec_cpi_acum_hist_class, erro_cpi_acum_hist_class) VALUES  "
                        "('"+str(self.esforco_est_acum_fase)+"','"+str(self.esforco_real_acum_fase)+"','"+str(self.pv_acum_fase)+"','"+str(self.ev_acum_fase)+
                        "','"+str(self.cpi_acum_fase)+"','"+str(self.ac_acum_fase)+"','"+str(self.esforco_est_acum_projeto)+"','"+str(self.esforco_real_acum_projeto)+
                        "','"+str(self.ev_acum_projeto)+"','"+str(self.pv_acum_projeto)+"','"+str(self.ac_acum_projeto)+
                         "','"+str(self.cpi_acum_projeto_tec_trad)+"','" +str(self.eac_tec_trad)+"','"+str(self.exatidao_tec_trad)+
                        "','"+str(self.exatidao_acum_tec_trad)+"','"+str(self.precisao_tec_trad)+"','"+str(self.precisao_acum_tec_trad)+
-                       "','"+str(self.projetos_id_projeto)+"','"+str(self.fases_id_fase)+"','"+str(self.atividades_id_atividade)+ "','"+str(self.perfil_responsavel)+ "')")
+                       "','"+str(self.projetos_id_projeto)+"','"+str(self.fases_id_fase)+"','"+str(self.atividades_id_atividade)+ "','"+str(self.perfil_responsavel)+
+                       "','"+str(self.erro_cpi_hist_class)+ "','"+str(self.prec_cpi_acum_hist_class)+ "','"+str(self.prec_cpi_acum_hist_class)+
+                       "','"+str(self.erro_cpi_acum_hist_class)+"')")
         out = Database.insert(queryInsert)
         Database.con.commit()
         #Alterar id elemento inserido no banco
@@ -88,7 +96,8 @@ class Medidas(object):
                      self.cpi_acum_projeto_tec_trad, self.cpi_acum_projeto_tec_dados_hist, self.cpi_acum_projeto_outras_tec, self.eac_tec_trad,
                       self.eac_dados_hist, self.eac_outras_tec, self.exatidao_tec_trad, self.exatidao_tec_dados_hist, self.exatidao_acum_tec_trad,
                       self.exatidao_acum_tec_dados_hist, self.precisao_tec_trad, self.precisao_tec_dados_hist, self.precisao_acum_tec_trad,
-                      self.precisao_acum_tec_dados_hist,self.projetos_id_projeto, self.fases_id_fase, self.atividades_id_atividade, self.perfil_responsavel)
+                      self.precisao_acum_tec_dados_hist,self.projetos_id_projeto, self.fases_id_fase, self.atividades_id_atividade, self.perfil_responsavel,
+                      self.prec_cpi_hist_class, self.erro_cpi_hist_class, self.prec_cpi_acum_hist_class, self.erro_cpi_acum_hist_class)
 
     @staticmethod
     def MedidasFromDBToApliccation():
@@ -101,7 +110,8 @@ class Medidas(object):
                     rowInMedidas[6], rowInMedidas[7], rowInMedidas[8], rowInMedidas[9], rowInMedidas[10], rowInMedidas[11],
                     rowInMedidas[12], rowInMedidas[13], rowInMedidas[14], rowInMedidas[15], rowInMedidas[16], rowInMedidas[17],
                     rowInMedidas[18], rowInMedidas[19], rowInMedidas[20], rowInMedidas[21], rowInMedidas[22], rowInMedidas[23],
-                    rowInMedidas[24], rowInMedidas[25], rowInMedidas[26], rowInMedidas[27], rowInMedidas[28], rowInMedidas[29])
+                    rowInMedidas[24], rowInMedidas[25], rowInMedidas[26], rowInMedidas[27], rowInMedidas[28], rowInMedidas[29],
+                    rowInMedidas[29], rowInMedidas[30], rowInMedidas[31], rowInMedidas[32])
 
     def listIterator(todasMedidas):
         for medidas in todasMedidas:
@@ -116,20 +126,20 @@ class Medidas(object):
                       "'WHERE atividades_id_atividade='" + str(idAtividade) + "'"
         out = Database.update(queryUpdate)
 
-    @staticmethod
-    def UpdateMedidasClassificacao(cpi_hist_acum_class, eac_hist_class, idAtividade):
-        queryUpdate = "UPDATE medidas SET cpi_acum_projeto_outras_tec='" + str(cpi_hist_acum_class) + \
-                       "',eac_outras_tec='" + str(eac_hist_class) + \
-                      "'WHERE atividades_id_atividade='" + str(idAtividade) + "'"
-        out = Database.update(queryUpdate)
-
     # @staticmethod
-    # def UpdateMedidas(cpi_hist_acum_class, prec_cpi_hist_class, erro_cpi_hist_class, prec_cpi_acum_hist_class,
-    #                                   erro_cpi_acum_hist_class, eac_hist_class, idAtividade):
+    # def UpdateMedidasClassificacao(cpi_hist_acum_class, eac_hist_class, idAtividade):
     #     queryUpdate = "UPDATE medidas SET cpi_acum_projeto_outras_tec='" + str(cpi_hist_acum_class) + \
-    #                   "',precisao_tec_dados_hist='" + str(prec_cpi_hist_class) + "',exatidao_tec_dados_hist='" + str(
-    #         erro_cpi_hist_class) + \
-    #                   "',precisao_acum_tec_dados_hist='" + str(prec_cpi_acum_hist_class) + "',exatidao_acum_tec_dados_hist='" \
-    #                   + str(erro_cpi_acum_hist_class) + "',eac_outas_tec='" + str(eac_hist_class) + \
+    #                    "',eac_outras_tec='" + str(eac_hist_class) + \
     #                   "'WHERE atividades_id_atividade='" + str(idAtividade) + "'"
     #     out = Database.update(queryUpdate)
+
+    @staticmethod
+    def UpdateMedidas(cpi_hist_acum_class, prec_cpi_hist_class, erro_cpi_hist_class, prec_cpi_acum_hist_class,
+                                      erro_cpi_acum_hist_class, eac_hist_class, idAtividade):
+        queryUpdate = "UPDATE medidas SET cpi_acum_projeto_outras_tec='" + str(cpi_hist_acum_class) + \
+                      "',precisao_tec_dados_hist='" + str(prec_cpi_hist_class) + "',exatidao_tec_dados_hist='" + str(
+            erro_cpi_hist_class) + \
+                      "',precisao_acum_tec_dados_hist='" + str(prec_cpi_acum_hist_class) + "',exatidao_acum_tec_dados_hist='" \
+                      + str(erro_cpi_acum_hist_class) + "',eac_outas_tec='" + str(eac_hist_class) + \
+                      "'WHERE atividades_id_atividade='" + str(idAtividade) + "'"
+        out = Database.update(queryUpdate)

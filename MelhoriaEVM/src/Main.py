@@ -149,11 +149,12 @@ def CalculaEVM():
             if(type(idAtividade) is tuple) :
                 Medidas(-1, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i], cpi_trad_f[i], ac_acum_f[i], est_acum_p[i], real_acum_p[i], ev_acum_p[i],
                         pv_acum_p[i], ac_acum_p[i], cpi_trad_p[i], -1, -1, eac_trad[i], -1, -1, erro_cpi_trad[i], -1, erro_cpi_acum_trad[i],
-                        -1, prec_cpi_trad[i], -1, prec_cpi_acum_trad[i], -1, lista_id_projeto[i], lista_id_fase[i], idAtividade[0], lista_perfil_responsavel[i])
+                        -1, prec_cpi_trad[i], -1, prec_cpi_acum_trad[i], -1, lista_id_projeto[i], lista_id_fase[i], idAtividade[0], lista_perfil_responsavel[i]
+                        -1, -1, -1, -1)
             if(type(idAtividade) is long) :
                 Medidas(-1, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i], cpi_trad_f[i], ac_acum_f[i], est_acum_p[i], real_acum_p[i],ev_acum_p[i],
                         pv_acum_p[i], ac_acum_p[i], cpi_trad_p[i], -1, -1, eac_trad[i], -1, -1, erro_cpi_trad[i], -1,erro_cpi_acum_trad[i],
-                        -1, prec_cpi_trad[i], -1, prec_cpi_acum_trad[i], -1, lista_id_projeto[i], lista_id_fase[i], idAtividade, lista_perfil_responsavel[i])
+                        -1, prec_cpi_trad[i], -1, prec_cpi_acum_trad[i], -1, lista_id_projeto[i], lista_id_fase[i], idAtividade, lista_perfil_responsavel[i], -1, -1, -1, -1)
             i+=1
 
         #Pega os dados do banco para calcular o CPI histórico médio de cada fase
@@ -237,7 +238,8 @@ def CalculaEVM():
                 print erro_cpi_hist_class
             i = 0
             for idAtividade in lista_id_atividades:
-                Medidas.UpdateMedidasClassificacao(cpi_hist_acum_class[i], eac_hist_class[i], idAtividade)
+                Medidas.UpdateMedidasClassificacao(cpi_hist_acum_class[i], prec_cpi_hist_class[i], erro_cpi_hist_class[i],
+                                                   prec_cpi_acum_hist_class[i], erro_cpi_acum_hist_class[i], eac_hist_class[i], idAtividade)
                 i += 1
 
 

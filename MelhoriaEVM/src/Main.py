@@ -222,9 +222,12 @@ def CalculaEVM():
             implementacao, teste, elaboracao, correcao = Classification.SeparaFases(fases_selecionadas, lista_id_projetos_selecionados)
             lista_id_projeto = Classification.JuntaFases(fases_selecionadas, lista_id_projetos_selecionados)
             class1, class2, class3, class4, class5, class6, class7 = Classification.DefineClass(lista_id_projeto)
-            resultado_classe = Classification.RandomTree(lista_id_projeto)
-            lista_id_projetos_CPI = Classification.comparaClasse(resultado_classe, class1, class2, class3, class4, class5, class6, class7)
+            if(id_projeto == 14):
+                resultado_classe = Classification.RandomTree(lista_id_projeto)
+            else:
+                resultado_classe = Classification.randomTree13(lista_id_projeto)
 
+            lista_id_projetos_CPI = Classification.comparaClasse(resultado_classe, class1, class2, class3, class4, class5, class6, class7)
             cpi_medio_classificado = Classification.CalculaMediaCPI(lista_id_projetos_CPI, id_projeto)
 
 

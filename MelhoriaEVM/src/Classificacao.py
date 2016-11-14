@@ -216,6 +216,33 @@ class Classificacao(object):
 
         return classe
 
+    def randomTree13(self, lista_projetos):
+
+        # esforco_est_acum_elaboracao < 8.85
+        # | esforco_est_testes < 33.65: Class2(2 / 0)
+        # | esforco_est_testes >= 33.65: Class4(2 / 0)
+        # esforco_est_acum_elaboracao >= 8.85
+        # | esforco_est_elaboracao < 12.25: Class3(6 / 0)
+        # | esforco_est_elaboracao >= 12.25
+        # | | num_atividades < 12.5: Class5(1 / 0)
+        # | | num_atividades >= 12.5: Class7(1 / 0)
+
+        projeto = lista_projetos[len(lista_projetos) - 1]
+
+        if(projeto[23] < 8.85):
+            if(projeto[16] < 33.65):
+                classe = "class2"
+            else:
+                classe = "class4"
+        elif (projeto[22] < 12.25):
+            classe = "class3"
+        elif(projeto[1] < 12.5):
+            classe = "class5"
+        else:
+            classe = "class7"
+
+        return classe
+
     def comparaClasse(self, classe, class1, class2, class3, class4, class5, class6, class7):
 
         if classe == "class1":

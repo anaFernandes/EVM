@@ -243,6 +243,35 @@ class Classificacao(object):
 
         return classe
 
+    def randomTree14(self, lista_projetos):
+
+        # esforco_est_acum_implementacao < 107.65
+        # | esforco_est_elaboracao < 8.85
+        # | | esforco_est_acum_correcao < 109.95: Class2(2 / 0)
+        # | | esforco_est_acum_correcao >= 109.95: Class4(2 / 0)
+        # | esforco_est_elaboracao >= 8.85: Class3(6 / 0)
+        # esforco_est_acum_implementacao >= 107.65
+        # | num_atividades < 12.5: Class5(1 / 0)
+        # | num_atividades >= 12.5: Class7(2 / 0)
+
+        projeto = lista_projetos[len(lista_projetos) - 1]
+
+        if (projeto[5] < 107.65):
+            if (projeto[22] < 8.85):
+                if (projeto[11] < 109.95):
+                    classe = 'class2'
+                else:
+                    classe = "class4"
+            else:
+                 classe = "class3"
+        else:
+            if (projeto[1] < 12.5):
+                classe = "class5"
+            else:
+                classe = "class7"
+
+        return classe
+
     def comparaClasse(self, classe, class1, class2, class3, class4, class5, class6, class7):
 
         if classe == "class1":

@@ -224,8 +224,10 @@ def CalculaEVM():
             class1, class2, class3, class4, class5, class6, class7 = Classification.DefineClass(lista_id_projeto)
             if(id_projeto == 14):
                 resultado_classe = Classification.RandomTree(lista_id_projeto)
-            else:
+            if(id_projeto == 15):
                 resultado_classe = Classification.randomTree13(lista_id_projeto)
+            else:
+                resultado_classe = Classification.randomTree14(lista_id_projeto)
 
             lista_id_projetos_CPI = Classification.comparaClasse(resultado_classe, class1, class2, class3, class4, class5, class6, class7)
             cpi_medio_classificado = Classification.CalculaMediaCPI(lista_id_projetos_CPI, id_projeto)

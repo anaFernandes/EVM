@@ -134,12 +134,12 @@ class Medidas(object):
     #     out = Database.update(queryUpdate)
 
     @staticmethod
-    def UpdateMedidas(cpi_hist_acum_class, prec_cpi_hist_class, erro_cpi_hist_class, prec_cpi_acum_hist_class,
+    def UpdateMedidasClassificacao(cpi_hist_acum_class, prec_cpi_hist_class, erro_cpi_hist_class, prec_cpi_acum_hist_class,
                                       erro_cpi_acum_hist_class, eac_hist_class, idAtividade):
         queryUpdate = "UPDATE medidas SET cpi_acum_projeto_outras_tec='" + str(cpi_hist_acum_class) + \
-                      "',precisao_tec_dados_hist='" + str(prec_cpi_hist_class) + "',exatidao_tec_dados_hist='" + str(
+                      "',precisao_outras_tec='" + str(prec_cpi_hist_class) + "',exatidao_outras_tec='" + str(
             erro_cpi_hist_class) + \
-                      "',precisao_acum_tec_dados_hist='" + str(prec_cpi_acum_hist_class) + "',exatidao_acum_tec_dados_hist='" \
-                      + str(erro_cpi_acum_hist_class) + "',eac_outas_tec='" + str(eac_hist_class) + \
+                      "',precisao_acum_outras_tec='" + str(prec_cpi_acum_hist_class) + "',exatidao_acum_outras_tec='" \
+                      + str(erro_cpi_acum_hist_class) + "',eac_outras_tec='" + str(eac_hist_class) + \
                       "'WHERE atividades_id_atividade='" + str(idAtividade) + "'"
         out = Database.update(queryUpdate)

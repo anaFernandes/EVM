@@ -186,91 +186,273 @@ class Classificacao(object):
 
         return class1, class2, class3, class4, class5, class6, class7
 
-    def RandomTree(self, lista_projetos):
-        #lista_duracao, lista_cpi_projeto, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase
-        # lista_est_acum_projeto, lista_est_acum_fase, lista_perfil_equipe_fase, lista_num_atividades
+    def randomTree13(self, lista_projetos):
 
         projeto = lista_projetos[len(lista_projetos) -1]
 
-        # esforco_est_elaboracao < 8.85
-        # | esforco_est_acum_elaboracao < 7.55: Class2(2 / 0)
-        # | esforco_est_acum_elaboracao >= 7.55: Class4(2 / 0)
-        # esforco_est_elaboracao >= 8.85
-        # | esforco_est_elaboracao < 12.25: Class3(5 / 0)
-        # | esforco_est_elaboracao >= 12.25
-        # | | esforco_est_testes < 39.7: Class7(1 / 0)
-        # | | esforco_est_testes >= 39.7: Class5(1 / 0)
+        # num_atividades < 7.5
+        # | esforco_est_elaboracao < 7.05
+        # | | num_atividades < 5.5: Class2(1 / 0)
+        # | | num_atividades >= 5.5: Class5(1 / 0)
+        # | esforco_est_elaboracao >= 7.05
+        # | | num_atividades < 5.5: Class3(1 / 0)
+        # | | num_atividades >= 5.5
+        # | | | num_atividades < 6.5: Class4(1 / 0)
+        # | | | num_atividades >= 6.5: Class5(1 / 0)
+        # num_atividades >= 7.5
+        # | esforco_est_testes < 35.66
+        # | | esforco_est_elaboracao < 8.4: Class2(1 / 0)
+        # | | esforco_est_elaboracao >= 8.4: Class3(6 / 0)
+        # | esforco_est_testes >= 35.66: Class7(1 / 0)
+        #
 
-        if float(projeto[23]) < 8.85 :
-            if float(projeto[24]) < 7.55 :
+        print projeto[1]
+        print projeto[22]
+        print projeto[16]
+        print projeto[15]
+        if (projeto[1] < 7.5):
+            if (projeto[22] < 7.05):
+                if (projeto[1] < 5.5):
+                    classe = "class2"
+                else :
+                    classe = "class5"
+            elif (projeto[1] < 5.5):
+                classe = "class3"
+            elif (projeto[1] < 6.5):
+                classe = "class4"
+            else:
+                classe = "class5"
+        elif (projeto[16] < 35.66):
+            if (projeto[22] < 8.4):
                 classe = "class2"
             else:
-                classe = "class4"
-        else:
-            if float(projeto[24]) < 12.25 :
                 classe = "class3"
-            elif float(projeto[18]) >= 39.7 :
-                classe = "class7"
-            else :
-                classe = "class5"
+        else:
+            classe= "class7"
 
+        print classe
         return classe
 
-    def randomTree13(self, lista_projetos):
-
-        # esforco_est_acum_elaboracao < 8.85
-        # | esforco_est_testes < 33.65: Class2(2 / 0)
-        # | esforco_est_testes >= 33.65: Class4(2 / 0)
-        # esforco_est_acum_elaboracao >= 8.85
-        # | esforco_est_elaboracao < 12.25: Class3(6 / 0)
-        # | esforco_est_elaboracao >= 12.25
-        # | | num_atividades < 12.5: Class5(1 / 0)
-        # | | num_atividades >= 12.5: Class7(1 / 0)
+    def randomTree17(self, lista_projetos):
 
         projeto = lista_projetos[len(lista_projetos) - 1]
 
-        if(projeto[23] < 8.85):
-            if(projeto[16] < 33.65):
+        # esforco_est_testes < 35.66
+        # | esforco_est_correcao < 5.25
+        # | | num_atividades < 8
+        # | | | esforco_est_acum_implementacao < 40.35
+        # | | | | num_atividades < 6: Class5(1.81 / 0.81)
+        # | | | | num_atividades >= 6: Class5(1 / 0)
+        # | | | esforco_est_acum_implementacao >= 40.35: Class6(1 / 0)
+        # | | num_atividades >= 8: Class8(1 / 0)
+        # | esforco_est_correcao >= 5.25
+        # | | esforco_est_elaboracao < 8.3: Class2(2 / 0)
+        # | | esforco_est_elaboracao >= 8.3: Class3(7 / 0)
+        # esforco_est_testes >= 35.66
+        # | esforco_est_implementacao < 82.4: Class4(1.19 / 0.19)
+        # | esforco_est_implementacao >= 82.4
+        # | | esforco_est_elaboracao < 14: Class5(1 / 0)
+        # | | esforco_est_elaboracao >= 14: Class7(1 / 0)
+
+        if (projeto[16] < 35.66):
+            if (projeto[12] < 5.25):
+                if (projeto[1] < 8):
+                    if (projeto[5] < 40.35):
+                        if (projeto[1] < 6):
+                            classe = "class5"
+                        else:
+                            classe = "class5"
+                    else:
+                        classe = "class6"
+                else:
+                    classe = "class8"
+            elif (projeto[22] < 8.3):
                 classe = "class2"
             else:
-                classe = "class4"
-        elif (projeto[22] < 12.25):
-            classe = "class3"
-        elif(projeto[1] < 12.5):
+                classe = "class3"
+        elif (projeto[4] < 82.4):
+            classe = "class4"
+        elif (projeto[22] < 14):
             classe = "class5"
         else:
             classe = "class7"
 
         return classe
 
-    def randomTree14(self, lista_projetos):
-
-        # esforco_est_acum_implementacao < 107.65
-        # | esforco_est_elaboracao < 8.85
-        # | | esforco_est_acum_correcao < 109.95: Class2(2 / 0)
-        # | | esforco_est_acum_correcao >= 109.95: Class4(2 / 0)
-        # | esforco_est_elaboracao >= 8.85: Class3(6 / 0)
-        # esforco_est_acum_implementacao >= 107.65
-        # | num_atividades < 12.5: Class5(1 / 0)
-        # | num_atividades >= 12.5: Class7(2 / 0)
+    def randomTree18(self, lista_projetos):
 
         projeto = lista_projetos[len(lista_projetos) - 1]
 
-        if (projeto[5] < 107.65):
+        # esforco_est_testes < 35.66
+        # | esforco_est_correcao < 5.25
+        # | | num_atividades < 8
+        # | | | esforco_est_acum_implementacao < 40.35
+        # | | | | num_atividades < 6: Class5(1.82 / 0.82)
+        # | | | | num_atividades >= 6: Class5(1 / 0)
+        # | | | esforco_est_acum_implementacao >= 40.35: Class6(1 / 0)
+        # | | num_atividades >= 8: Class8(1 / 0)
+        # | esforco_est_correcao >= 5.25
+        # | | esforco_est_elaboracao < 8.3
+        # | | | esforco_est_testes < 20.55: Class3(1 / 0)
+        # | | | esforco_est_testes >= 20.55: Class2(2 / 0)
+        # | | esforco_est_elaboracao >= 8.3: Class3(7 / 0)
+        # esforco_est_testes >= 35.66
+        # | esforco_est_elaboracao < 10.85: Class4(1.18 / 0.18)
+        # | esforco_est_elaboracao >= 10.85
+        # | | num_atividades < 12.5: Class5(1 / 0)
+        # | | num_atividades >= 12.5: Class7(1 / 0)
+
+        if (projeto[16] < 35.66):
+            if (projeto[12] < 5.25):
+                if (projeto[1] < 8):
+                    if (projeto[5] < 40.35):
+                        if (projeto[1] < 6):
+                            classe = "class5" """1.82/0.82"""
+                        else:
+                            classe = "class5"
+                    else:
+                        classe = "class6"
+                else:
+                    classe = "class8"
+            elif (projeto[22] < 8.3):
+                if (projeto[16] < 20.55):
+                    classe = "class3"
+                else:
+                    classe = "class2"
+            else:
+                classe = "class3"
+        elif (projeto[22] < 10.85):
+            classe = "Class4"
+        elif (projeto[1] < 12.5):
+            classe = "class5"
+        else:
+            classe = "class7"
+
+        return classe
+
+    def randomTree20(self, lista_projetos):
+
+        projeto = lista_projetos[len(lista_projetos) - 1]
+
+        # esforco_est_testes < 35.66
+        # | esforco_est_implementacao < 41.95
+        # | | num_atividades < 8
+        # | | | esforco_est_implementacao < 35.85
+        # | | | | num_atividades < 4.5: Class4(0.82 / 0)
+        # | | | | num_atividades >= 4.5
+        # | | | | | num_atividades < 6: Class5(1.82 / 0.82)
+        # | | | | | num_atividades >= 6: Class5(1 / 0)
+        # | | | esforco_est_implementacao >= 35.85: Class6(1 / 0)
+        # | | num_atividades >= 8
+        # | | | esforco_est_elaboracao < 7.8: Class8(1 / 0)
+        # | | | esforco_est_elaboracao >= 7.8: Class3(1.92 / 0)
+        # | esforco_est_implementacao >= 41.95
+        # | | esforco_est_elaboracao < 8.3
+        # | | | esforco_est_testes < 20.55: Class3(1.27 / 0.27)
+        # | | | esforco_est_testes >= 20.55: Class2(2.55 / 0)
+        # | | esforco_est_elaboracao >= 8.3: Class3(5.08 / 0)
+        # esforco_est_testes >= 35.66
+        # | esforco_est_elaboracao < 10.85: Class4(1.53 / 0.35)
+        # | esforco_est_elaboracao >= 10.85
+        # | | num_atividades < 12.5: Class5(1 / 0)
+        # | | num_atividades >= 12.5: Class7(1 / 0)
+
+        if (projeto[16] < 35.66):
+            if (projeto[4] < 41.95):
+                if (projeto[1] < 8):
+                    if (projeto[4] < 35.85):
+                        if (projeto[1] < 4.5):
+                            classe = "class4" """(0.82 / 0)"""
+                        elif (projeto[1] < 6):
+                            classe = "class5" """(1.82 / 0.82)"""
+                        else:
+                            classe = "class5" (1 / 0)
+                    else:
+                        classe = "class6"
+                elif (projeto[22] < 7.8):
+                    classe = "class8"
+                elif (projeto[4] >= 41.95):
+                    if (projeto[22] < 8.3):
+                        if (projeto[16] < 20.55):
+                            classe = "class3" """(1.27 / 0.27)"""
+                        else:
+                            classe = "class2" """(2.55 / 0)"""
+                    else:
+                        classe = "class3" """(5.08 / 0)"""
+        elif (projeto[22] < 10.85):
+            classe = "class4" """(1.53 / 0.35)"""
+        elif (projeto[1] < 12.5):
+            classe = "class5"
+        else:
+            classe = "class7"
+
+        return classe
+
+    def randomTree21(self, lista_projetos):
+        projeto = lista_projetos[len(lista_projetos) - 1]
+
+        # esforco_est_testes < 15.45
+        # | num_atividades < 8
+        # | | esforco_est_correcao < 4.65
+        # | | | esforco_est_acum_implementacao < 20.05: Class5(1.28 / 0.28)
+        # | | | esforco_est_acum_implementacao >= 20.05: Class5(1.19 / 0.19)
+        # | | esforco_est_correcao >= 4.65: Class6(1.08 / 0.08)
+        # | num_atividades >= 8
+        # | | num_atividades < 10: Class8(1 / 0)
+        # | | num_atividades >= 10: Class3(1.28 / 0.28)
+        # esforco_est_testes >= 15.45
+        # | esforco_est_acum_correcao < 154.8
+        # | | esforco_est_elaboracao < 8.85
+        # | | | esforco_est_elaboracao < 7.25
+        # | | | | esforco_est_elaboracao < 2.1: Class4(0.62 / 0)
+        # | | | | esforco_est_elaboracao >= 2.1
+        # | | | | | esforco_est_implementacao < 58.5
+        # | | | | | | esforco_est_acum_elaboracao < 6.9: Class3(1.72 / 0)
+        # | | | | | | esforco_est_acum_elaboracao >= 6.9: Class2(1 / 0)
+        # | | | | | esforco_est_implementacao >= 58.5: Class2(1.62 / 0)
+        # | | | esforco_est_elaboracao >= 7.25: Class4(2 / -0)
+        # | | esforco_est_elaboracao >= 8.85: Class3(6 / 0)
+        # | esforco_est_acum_correcao >= 154.8
+        # | | num_atividades < 9: Class5(1.11 / 0.11)
+        # | | num_atividades >= 9: Class7(1.11 / 0.11)
+
+
+        if (projeto[16] < 15.45):
+            if (projeto[1] < 8):
+                if (projeto[10] < 4.65):
+                    if (projeto[5] < 20.05):
+                        classe = "class5"
+                    else:
+                        classe = "class5"
+                else:
+                    classe = "class6"
+            elif (projeto[1] < 10):
+                classe = "class8"
+            else:
+                classe = "class3"
+        elif (projeto[11] < 154.8):
             if (projeto[22] < 8.85):
-                if (projeto[11] < 109.95):
-                    classe = 'class2'
+                if (projeto[22] < 7.25):
+                    if (projeto[22] < 2.1):
+                        classe = "class4"
+                    elif (projeto[4] < 58.5):
+                        if (projeto[23] < 6.9):
+                             classe = "class3"
+                        else:
+                            classe = "class2"
+                    else:
+                        classe = "class2"
                 else:
                     classe = "class4"
             else:
-                 classe = "class3"
+                classe = "class3"
+        elif (projeto[1] < 9):
+            classe = "class5"
         else:
-            if (projeto[1] < 12.5):
-                classe = "class5"
-            else:
-                classe = "class7"
+            classe = "class7"
 
         return classe
+
 
     def comparaClasse(self, classe, class1, class2, class3, class4, class5, class6, class7):
 
@@ -339,3 +521,96 @@ class Classificacao(object):
                              ]
 
         return cpi_medio
+
+
+    def randomTree14(self, lista_projetos):
+
+        # esforco_est_acum_elaboracao < 8.85
+        # | esforco_est_testes < 33.65: Class2(2 / 0)
+        # | esforco_est_testes >= 33.65: Class4(2 / 0)
+        # esforco_est_acum_elaboracao >= 8.85
+        # | esforco_est_elaboracao < 12.25: Class3(6 / 0)
+        # | esforco_est_elaboracao >= 12.25
+        # | | num_atividades < 12.5: Class5(1 / 0)
+        # | | num_atividades >= 12.5: Class7(1 / 0)
+
+        projeto = lista_projetos[len(lista_projetos) - 1]
+
+        if(projeto[23] < 8.85):
+            if(projeto[16] < 33.65):
+                classe = "class2"
+            else:
+                classe = "class4"
+        elif (projeto[22] < 12.25):
+            classe = "class3"
+        elif(projeto[1] < 12.5):
+            classe = "class5"
+        else:
+            classe = "class7"
+
+        return classe
+
+    def randomTree16(self, lista_projetos):
+
+        # esforco_est_acum_implementacao < 107.65
+        # | esforco_est_elaboracao < 8.85
+        # | | esforco_est_acum_correcao < 109.95: Class2(2 / 0)
+        # | | esforco_est_acum_correcao >= 109.95: Class4(2 / 0)
+        # | esforco_est_elaboracao >= 8.85: Class3(6 / 0)
+        # esforco_est_acum_implementacao >= 107.65
+        # | num_atividades < 12.5: Class5(1 / 0)
+        # | num_atividades >= 12.5: Class7(2 / 0)
+
+        projeto = lista_projetos[len(lista_projetos) - 1]
+
+        if (projeto[5] < 107.65):
+            if (projeto[22] < 8.85):
+                if (projeto[11] < 109.95):
+                    classe = 'class2'
+                else:
+                    classe = "class4"
+            else:
+                 classe = "class3"
+        else:
+            if (projeto[1] < 12.5):
+                classe = "class5"
+            else:
+                classe = "class7"
+
+        return classe
+
+
+def randomTree19(self, lista_projetos):
+    projeto = lista_projetos[len(lista_projetos) - 1]
+
+    # esforco_est_testes < 35.66
+    # | esforco_est_testes < 11.35: Class8(1 / 0)
+    # | esforco_est_testes >= 11.35
+    # | | esforco_est_correcao < 7.4
+    # | | | esforco_est_elaboracao < 8.3: Class2(2 / 0)
+    # | | | esforco_est_elaboracao >= 8.3: Class3(1 / 0)
+    # | | esforco_est_correcao >= 7.4: Class3(7 / 0)
+    # esforco_est_testes >= 35.66
+    # | num_atividades < 6.5: Class4(2 / 0)
+    # | num_atividades >= 6.5
+    # | | esforco_est_elaboracao < 14: Class5(1 / 0)
+    # | | esforco_est_elaboracao >= 14: Class7(1 / 0)
+
+    if (projeto[17] < 35.66):
+        if (projeto[17] < 11.35):
+            classe = "class8"
+        elif (projeto[11] < 7.4):
+            if (projeto[23] < 8.3):
+                classe = "class2"
+            else:
+                classe = "class3"
+        else:
+            classe = "class3"
+    elif (projeto[1] < 6.5):
+        classe = "class4"
+    elif (projeto[23] < 14):
+        classe = "class5"
+    else:
+        classe = "class7"
+
+    return classe

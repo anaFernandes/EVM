@@ -107,14 +107,6 @@ def CalculaEVM():
         eac_trad = calculoInfo.CalculaEAC(cpi_trad_p, pv_acum_p)
         id_projeto, bac, cpi_projeto = calculoInfo.CalculaBAC(pv_acum_p, lista_id_projeto, cpi_trad_p)
 
-        if(id_projeto == 20):
-            print "ac_acum_projeto" + str(ac_acum_p)
-            print "ultima" + str(ac_acum_p[len(ac_acum_p) - 1])
-            print pv_acum_p[len(pv_acum_p) - 1]
-            print pv_acum_p
-            print cpi_trad_p
-            print "______________________________________"
-
         "Chamada para o calculo do perfil de cada responsavel"
         responsavel = Responsavel(projetosFromDatabase)
         lista_perfil_responsavel = responsavel.Calcula_Perfil_Responsavel(lista_nome_responsavel)
@@ -153,8 +145,8 @@ def CalculaEVM():
             if(type(idAtividade) is long) :
                 Medidas(-1, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i], cpi_trad_f[i], ac_acum_f[i], est_acum_p[i],
                         real_acum_p[i], ev_acum_p[i], pv_acum_p[i], ac_acum_p[i], cpi_trad_p[i], -1, -1, eac_trad[i], -1, -1, erro_cpi_trad[i], -1,
-                        erro_cpi_acum_trad[i], -1, prec_cpi_trad[i], -1, prec_cpi_acum_trad[i], -1, lista_id_projeto[i], lista_id_fase[i],
-                        idAtividade, lista_perfil_responsavel[i], -1, -1, -1, -1)
+                        -1, erro_cpi_acum_trad[i], -1, -1, prec_cpi_trad[i], -1, -1, prec_cpi_acum_trad[i], -1, -1, lista_id_projeto[i], lista_id_fase[i],
+                        idAtividade, lista_perfil_responsavel[i])
             i+=1
 
         #Pega os dados do banco para calcular o CPI histórico médio de cada fase
@@ -220,6 +212,7 @@ def CalculaEVM():
             implementacao, teste, elaboracao, correcao = Classification.SeparaFases(fases_selecionadas, lista_id_projetos_selecionados)
             lista_id_projeto = Classification.JuntaFases(fases_selecionadas, lista_id_projetos_selecionados)
             class1, class2, class3, class4, class5, class6, class7 = Classification.DefineClass(lista_id_projeto)
+            print id_projeto
             if(id_projeto == 14):
                 resultado_classe = Classification.randomTree13(lista_id_projeto)
             elif(id_projeto == 15):
@@ -236,14 +229,15 @@ def CalculaEVM():
                 resultado_classe = Classification.randomTree18(lista_id_projeto)
             elif (id_projeto == 21):
                 resultado_classe = Classification.randomTree20(lista_id_projeto)
-            elif (id_projeto < 22):
+            elif (id_projeto == 22):
                 resultado_classe = Classification.randomTree21(lista_id_projeto)
             elif (id_projeto < 23):
                 resultado_classe = Classification.randomTree21(lista_id_projeto)
 
+            print resultado_classe
+
             lista_id_projetos_CPI = Classification.comparaClasse(resultado_classe, class1, class2, class3, class4, class5, class6, class7)
             cpi_medio_classificado = Classification.CalculaMediaCPI(lista_id_projetos_CPI, id_projeto)
-
 
             cpi_hist_acum_class = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio_classificado, ev_acum_f, ac_acum_p, ac_acum_f, ev_acum_p)
             cpi_hist_est_class = calculoInfo.CalculaCPIEst(cpi_medio_classificado, pv_acum_f, cpi_trad_f, ac_acum_p, pv_acum_p, lista_id_fase)
@@ -259,7 +253,7 @@ def CalculaEVM():
                 i += 1
 
 
-                    # i = 0
+            # i = 0
 
             # for idAtividade in lista_id_atividades:
             #     Medidas.UpdateMedidas(cpi_hist_acum_class[i], prec_cpi_hist_class[i], erro_cpi_hist_class[i], prec_cpi_acum_hist_class[i],

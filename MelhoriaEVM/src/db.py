@@ -191,7 +191,7 @@ with open('gva.csv') as csvfile:
                 faseAnterior = nomeFase[i]
                 j=+1
         i += 1
-    print nomeFaseF
+
     i=0
     for m in indiceCPIHist:
         if (indiceFase[i] < m):

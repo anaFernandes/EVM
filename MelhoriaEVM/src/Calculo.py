@@ -191,29 +191,34 @@ class Calculo(object):
     def CalculaPrecisaoAcum(self, precCPI, listaIdFase):
         precCPIAcum = list()
         i = 1
+        contador =0
         precAcum = 0
         for n in precCPI:
             if(listaIdFase[i-1] == listaIdFase[i-2] ):
                 if (precAcum + n == 0):
                     precAcum = 0
                 else:
-                    precAcum = (precAcum + n) / i
+                    contador += 1
+                    precAcum = (precAcum + n) / contador
             else:
                 precAcum=0
             precCPIAcum.append(precAcum)
             i += 1
+            print
         return precCPIAcum
 
     "Exatidao Acum"
     def CalculaExatidaoAcum(self, erro):
         erroCPIAcum = list()
         i = 1
+        contador = 0
         extidaoAcum = 0
         for n in erro:
             if (extidaoAcum + n == 0):
                 extidaoAcum = 0
             else:
-                extidaoAcum = (extidaoAcum + n) / i
+                contador += 1
+                extidaoAcum = (extidaoAcum + n) / contador
             erroCPIAcum.append(extidaoAcum)
             i += 1
         return erroCPIAcum

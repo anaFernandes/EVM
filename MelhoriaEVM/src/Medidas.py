@@ -17,10 +17,10 @@ class Medidas(object):
                  cpi_acum_fase, ac_acum_fase, esforco_est_acum_projeto, esforco_real_acum_projeto, ev_acum_projeto,
                  pv_acum_projeto, ac_acum_projeto, cpi_acum_projeto_tec_trad, cpi_acum_projeto_tec_dados_hist,
                  cpi_acum_projeto_outras_tec, eac_tec_trad, eac_dados_hist, eac_outras_tec, 
-                 exatidao_tec_trad, exatidao_tec_dados_hist, exatidao_acum_tec_trad, exatidao_acum_tec_dados_hist,
-                 precisao_tec_trad, precisao_tec_dados_hist,precisao_acum_tec_trad, precisao_acum_tec_dados_hist,
-                 projetos_id_projeto,fases_id_fase,atividades_id_atividade, perfil_responsavel, prec_cpi_hist_class,
-                 erro_cpi_hist_class, prec_cpi_acum_hist_class, erro_cpi_acum_hist_class) :
+                 exatidao_tec_trad, exatidao_tec_dados_hist, exatidao_outras_tec, exatidao_acum_tec_trad, exatidao_acum_tec_dados_hist,
+                 exatidao_acum_outras_tec, precisao_tec_trad, precisao_tec_dados_hist, precisao_outras_tec, precisao_acum_tec_trad,
+                 precisao_acum_tec_dados_hist, precisao_acum_outras_tec, projetos_id_projeto, fases_id_fase, atividades_id_atividade,
+                 perfil_responsavel) :
 
         jaExite = False
         for medida in Medidas.todasMedidas:
@@ -51,20 +51,20 @@ class Medidas(object):
             self.eac_outras_tec = eac_outras_tec
             self.exatidao_tec_trad = exatidao_tec_trad
             self.exatidao_tec_dados_hist = exatidao_tec_dados_hist
+            self.exatidao_outras_tec = exatidao_outras_tec
             self.exatidao_acum_tec_trad = exatidao_acum_tec_trad
             self.exatidao_acum_tec_dados_hist = exatidao_acum_tec_dados_hist
+            self.exatidao_acum_outras_tec = exatidao_acum_outras_tec
             self.precisao_tec_trad = precisao_tec_trad
             self.precisao_tec_dados_hist = precisao_tec_dados_hist
+            self.precisao_outras_tec = precisao_outras_tec
             self.precisao_acum_tec_trad = precisao_acum_tec_trad
             self.precisao_acum_tec_dados_hist = precisao_acum_tec_dados_hist
+            self.precisao_acum_outras_tec = precisao_acum_outras_tec
             self.projetos_id_projeto = projetos_id_projeto
-            self.atividades_id_atividade = atividades_id_atividade
             self.fases_id_fase = fases_id_fase
+            self.atividades_id_atividade = atividades_id_atividade
             self.perfil_responsavel = perfil_responsavel
-            self.prec_cpi_hist_class = prec_cpi_hist_class
-            self.erro_cpi_hist_class = erro_cpi_hist_class
-            self.prec_cpi_acum_hist_class = prec_cpi_acum_hist_class
-            self.erro_cpi_acum_hist_class = erro_cpi_acum_hist_class
             Medidas.todasMedidas.append(self)
             if (id == -1):
                 Medidas.fileToDataBase(self)
@@ -74,15 +74,15 @@ class Medidas(object):
                        "ac_acum_fase, esforco_est_acum_projeto, esforco_real_acum_projeto, ev_acum_projeto, pv_acum_projeto, ac_acum_projeto,"
                        "cpi_acum_projeto_tec_trad, eac_tec_trad, exatidao_tec_trad, exatidao_acum_tec_trad, precisao_tec_trad,"
                        "precisao_acum_tec_trad, projetos_id_projeto, fases_id_fase, atividades_id_atividade, perfil_responsavel, "
-                       "prec_cpi_hist_class, erro_cpi_hist_class, prec_cpi_acum_hist_class, erro_cpi_acum_hist_class) VALUES  "
+                       "precisao_outras_tec, exatidao_outras_tec, precisao_acum_outras_tec, exatidao_acum_outras_tec) VALUES  "
                        "('"+str(self.esforco_est_acum_fase)+"','"+str(self.esforco_real_acum_fase)+"','"+str(self.pv_acum_fase)+"','"+str(self.ev_acum_fase)+
                        "','"+str(self.cpi_acum_fase)+"','"+str(self.ac_acum_fase)+"','"+str(self.esforco_est_acum_projeto)+"','"+str(self.esforco_real_acum_projeto)+
                        "','"+str(self.ev_acum_projeto)+"','"+str(self.pv_acum_projeto)+"','"+str(self.ac_acum_projeto)+
-                        "','"+str(self.cpi_acum_projeto_tec_trad)+"','" +str(self.eac_tec_trad)+"','"+str(self.exatidao_tec_trad)+
+                       "','"+str(self.cpi_acum_projeto_tec_trad)+"','" +str(self.eac_tec_trad)+"','"+str(self.exatidao_tec_trad)+
                        "','"+str(self.exatidao_acum_tec_trad)+"','"+str(self.precisao_tec_trad)+"','"+str(self.precisao_acum_tec_trad)+
                        "','"+str(self.projetos_id_projeto)+"','"+str(self.fases_id_fase)+"','"+str(self.atividades_id_atividade)+ "','"+str(self.perfil_responsavel)+
-                       "','"+str(self.erro_cpi_hist_class)+ "','"+str(self.prec_cpi_acum_hist_class)+ "','"+str(self.prec_cpi_acum_hist_class)+
-                       "','"+str(self.erro_cpi_acum_hist_class)+"')")
+                       "','"+str(self.exatidao_outras_tec)+ "','"+str(self.precisao_outras_tec)+ "','"+str(self.precisao_acum_outras_tec)+
+                       "','"+str(self.exatidao_acum_outras_tec)+"')")
         out = Database.insert(queryInsert)
         Database.con.commit()
         #Alterar id elemento inserido no banco
@@ -94,10 +94,9 @@ class Medidas(object):
         Medidas(out[0], self.esforco_est_acum_fase, self.esforco_real_acum_fase, self.pv_acum_fase, self.ev_acum_fase, self.cpi_acum_fase, self.ac_acum_fase,
                      self.esforco_est_acum_projeto, self.esforco_real_acum_projeto, self.ev_acum_projeto, self.pv_acum_projeto, self.ac_acum_projeto,
                      self.cpi_acum_projeto_tec_trad, self.cpi_acum_projeto_tec_dados_hist, self.cpi_acum_projeto_outras_tec, self.eac_tec_trad,
-                      self.eac_dados_hist, self.eac_outras_tec, self.exatidao_tec_trad, self.exatidao_tec_dados_hist, self.exatidao_acum_tec_trad,
-                      self.exatidao_acum_tec_dados_hist, self.precisao_tec_trad, self.precisao_tec_dados_hist, self.precisao_acum_tec_trad,
-                      self.precisao_acum_tec_dados_hist,self.projetos_id_projeto, self.fases_id_fase, self.atividades_id_atividade, self.perfil_responsavel,
-                      self.prec_cpi_hist_class, self.erro_cpi_hist_class, self.prec_cpi_acum_hist_class, self.erro_cpi_acum_hist_class)
+                      self.eac_dados_hist, self.eac_outras_tec, self.exatidao_tec_trad,self.exatidao_outras_tec, self.exatidao_tec_dados_hist, self.exatidao_acum_tec_trad,
+                      self.exatidao_acum_tec_dados_hist, self.exatidao_acum_outras_tec, self.precisao_tec_trad, self.precisao_tec_dados_hist, self.precisao_acum_outras_tec, self.precisao_acum_tec_trad,
+                      self.precisao_acum_tec_dados_hist, self.precisao_acum_outras_tec, self.projetos_id_projeto, self.fases_id_fase, self.atividades_id_atividade, self.perfil_responsavel,)
 
     @staticmethod
     def MedidasFromDBToApliccation():
@@ -111,7 +110,7 @@ class Medidas(object):
                     rowInMedidas[12], rowInMedidas[13], rowInMedidas[14], rowInMedidas[15], rowInMedidas[16], rowInMedidas[17],
                     rowInMedidas[18], rowInMedidas[19], rowInMedidas[20], rowInMedidas[21], rowInMedidas[22], rowInMedidas[23],
                     rowInMedidas[24], rowInMedidas[25], rowInMedidas[26], rowInMedidas[27], rowInMedidas[28], rowInMedidas[29],
-                    rowInMedidas[29], rowInMedidas[30], rowInMedidas[31], rowInMedidas[32])
+                    rowInMedidas[30], rowInMedidas[31], rowInMedidas[32], rowInMedidas[33])
 
     def listIterator(todasMedidas):
         for medidas in todasMedidas:

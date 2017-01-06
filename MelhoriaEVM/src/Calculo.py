@@ -204,7 +204,7 @@ class Calculo(object):
                 precAcum=0
             precCPIAcum.append(precAcum)
             i += 1
-            print
+
         return precCPIAcum
 
     "Exatidao Acum"

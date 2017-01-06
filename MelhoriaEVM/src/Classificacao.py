@@ -206,10 +206,6 @@ class Classificacao(object):
         # | esforco_est_testes >= 35.66: Class7(1 / 0)
         #
 
-        print projeto[1]
-        print projeto[22]
-        print projeto[16]
-        print projeto[15]
         if (projeto[1] < 7.5):
             if (projeto[22] < 7.05):
                 if (projeto[1] < 5.5):
@@ -230,7 +226,6 @@ class Classificacao(object):
         else:
             classe= "class7"
 
-        print classe
         return classe
 
     def randomTree17(self, lista_projetos):

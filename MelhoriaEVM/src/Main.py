@@ -1,10 +1,11 @@
 # coding=UTF-8
-
+from Calculo_Porcentagem import Calculo_Porcentagem
 from ValidaData import ValidaData
 from Projeto import Projeto
 from Fase import Fase
 from Atividade import Atividade
 from Medidas import Medidas
+from Medidas_Porcentagem import Medidas_Porcentagem
 from LeiaCSV import LeiaCSV
 from Calculo import Calculo
 from Database import Database
@@ -22,6 +23,7 @@ def PegarDadosDoBanco():
     Fase.FasesFromDBToApliccation()
     Projeto.ProjetosFromDBToApliccation()
     Medidas.MedidasFromDBToApliccation()
+    Medidas_Porcentagem.MedidasPorcentagemFromDBToApliccation()
 
 " Insere no Banco a partir do Arquivo "
 
@@ -129,19 +131,20 @@ def CalculaEVM():
                     fase.perfil_equipe = lista_perfil_equipe_fases[i]
             i+=1
 
-        Projeto.UpdateProjeto(id_projeto, bac, cpi_projeto)
+
         for projeto in Projeto.todos_projetos:
             if(projeto.id == id_projeto):
-                projeto.bac = bac
+                projeto.bac = Projeto.UpdateProjeto(id_projeto, bac, cpi_projeto)
                 projeto.cpi_projeto = cpi_projeto
 
-        "Insere em atividades"
+        "Insere em medidas"
         i=0
         for idAtividade in lista_id_atividades:
             if(type(idAtividade) is tuple) :
-                Medidas(-1, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i], cpi_trad_f[i], ac_acum_f[i], est_acum_p[i], real_acum_p[i], ev_acum_p[i],
-                        pv_acum_p[i], ac_acum_p[i], cpi_trad_p[i], -1, -1, eac_trad[i], -1, -1, erro_cpi_trad[i], -1, erro_cpi_acum_trad[i],
-                        -1, prec_cpi_trad[i], -1, prec_cpi_acum_trad[i], -1, lista_id_projeto[i], lista_id_fase[i], idAtividade, lista_perfil_responsavel[i], -1, -1, -1, -1)
+                Medidas(-1, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i], cpi_trad_f[i], ac_acum_f[i], est_acum_p[i],
+                        real_acum_p[i], ev_acum_p[i], pv_acum_p[i], ac_acum_p[i], cpi_trad_p[i], -1, -1, eac_trad[i], -1, -1, erro_cpi_trad[i], -1,
+                        -1, erro_cpi_acum_trad[i], -1, -1, prec_cpi_trad[i], -1, -1, prec_cpi_acum_trad[i], -1, -1, lista_id_projeto[i], lista_id_fase[i],
+                        idAtividade, lista_perfil_responsavel[i])
             if(type(idAtividade) is long) :
                 Medidas(-1, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i], cpi_trad_f[i], ac_acum_f[i], est_acum_p[i],
                         real_acum_p[i], ev_acum_p[i], pv_acum_p[i], ac_acum_p[i], cpi_trad_p[i], -1, -1, eac_trad[i], -1, -1, erro_cpi_trad[i], -1,
@@ -212,7 +215,7 @@ def CalculaEVM():
             implementacao, teste, elaboracao, correcao = Classification.SeparaFases(fases_selecionadas, lista_id_projetos_selecionados)
             lista_id_projeto = Classification.JuntaFases(fases_selecionadas, lista_id_projetos_selecionados)
             class1, class2, class3, class4, class5, class6, class7 = Classification.DefineClass(lista_id_projeto)
-            print id_projeto
+
             if(id_projeto == 14):
                 resultado_classe = Classification.randomTree13(lista_id_projeto)
             elif(id_projeto == 15):
@@ -234,8 +237,6 @@ def CalculaEVM():
             elif (id_projeto < 23):
                 resultado_classe = Classification.randomTree21(lista_id_projeto)
 
-            print resultado_classe
-
             lista_id_projetos_CPI = Classification.comparaClasse(resultado_classe, class1, class2, class3, class4, class5, class6, class7)
             cpi_medio_classificado = Classification.CalculaMediaCPI(lista_id_projetos_CPI, id_projeto)
 
@@ -252,8 +253,25 @@ def CalculaEVM():
                                                    prec_cpi_acum_hist_class[i], erro_cpi_acum_hist_class[i], eac_hist_class[i], idAtividade)
                 i += 1
 
+            Calculo_info_porcentagem = Calculo_Porcentagem(projetosFromDatabase)
 
-            # i = 0
+            executado_precisao_trad_25, executado_precisao_trad_50, executado_precisao_trad_75, executado_precisao_trad_100 = Calculo_info_porcentagem.Calcula_Medidas_Porcentagem(prec_cpi_trad, pv_acum_p)
+            executado_exatidao_trad_25, executado_exatidao_trad_50, executado_exatidao_trad_75, executado_exatidao_trad_100 = Calculo_info_porcentagem.Calcula_Medidas_Porcentagem(erro_cpi_trad, pv_acum_p)
+            executado_precisao_hist_25, executado_precisao_hist_50, executado_precisao_hist_75, executado_precisao_hist_100 = Calculo_info_porcentagem.Calcula_Medidas_Porcentagem(prec_cpi_hist, pv_acum_p)
+            executado_exatidao_hist_25, executado_exatidao_hist_50, executado_exatidao_hist_75, executado_exatidao_hist_100 = Calculo_info_porcentagem.Calcula_Medidas_Porcentagem(erro_cpi_hist, pv_acum_p)
+            executado_precisao_class_25, executado_precisao_class_50, executado_precisao_class_75, executado_precisao_class_100 = Calculo_info_porcentagem.Calcula_Medidas_Porcentagem(prec_cpi_hist_class, pv_acum_p)
+            executado_exatidao_class_25, executado_exatidao_class_50, executado_exatidao_class_75, executado_exatidao_class_100 = Calculo_info_porcentagem.Calcula_Medidas_Porcentagem(erro_cpi_hist_class, pv_acum_p)
+
+            Medidas_Porcentagem(executado_precisao_trad_25, executado_precisao_trad_50, executado_precisao_trad_75, executado_precisao_trad_100,
+                 executado_exatidao_trad_25, executado_exatidao_trad_50, executado_exatidao_trad_75, executado_exatidao_trad_100,
+                 executado_precisao_hist_25, executado_precisao_hist_50, executado_precisao_hist_75, executado_precisao_hist_100,
+                 executado_exatidao_hist_25, executado_exatidao_hist_50, executado_exatidao_hist_75, executado_exatidao_hist_100,
+                 executado_precisao_class_25, executado_precisao_class_50, executado_precisao_class_75, executado_precisao_class_100,
+                 executado_exatidao_class_25, executado_exatidao_class_50, executado_exatidao_class_75, executado_exatidao_class_100,
+                 id_projeto)
+
+
+                # i = 0
 
             # for idAtividade in lista_id_atividades:
             #     Medidas.UpdateMedidas(cpi_hist_acum_class[i], prec_cpi_hist_class[i], erro_cpi_hist_class[i], prec_cpi_acum_hist_class[i],

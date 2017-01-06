@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Projeto import Projeto
 from Database import Database
 

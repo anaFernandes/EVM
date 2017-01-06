@@ -62,11 +62,11 @@ class Medidas_Porcentagem():
                         "executado_precisao_class_25, executado_precisao_class_50, executado_precisao_class_75, executado_precisao_class_100,"
                         "executado_exatidao_class_25, executado_exatidao_class_50, executado_exatidao_class_75, executado_exatidao_class_100, projetos_id_projeto) VALUES "
                        "('"+str(self.executado_precisao_trad_25)+"','"+str(self.executado_precisao_trad_50)+"','"+str(self.executado_precisao_trad_75)+"','"+str(self.executado_precisao_trad_100)+
-                       "('"+str(self.executado_exatidao_trad_25)+"','"+str(self.executado_exatidao_trad_50)+ "','"+str(self.executado_exatidao_trad_75)+"','"+str(self.executado_exatidao_trad_100)+
-                       "('"+str(self.executado_precisao_hist_25)+"','"+str(self.executado_precisao_hist_50)+"','"+str(self.executado_precisao_hist_75)+"','"+str(self.executado_precisao_hist_100)+
-                       "('"+str(self.executado_exatidao_hist_25)+"','"+str(self.executado_exatidao_hist_50)+"','"+str(self.executado_exatidao_hist_75)+"','"+str(self.executado_exatidao_hist_100)+
-                       "('"+str(self.executado_precisao_class_25)+"','"+str(self.executado_precisao_class_50)+"','"+str(self.executado_precisao_class_75)+"','"+str(self.executado_precisao_class_100) +
-                       "('"+str(self.executado_exatidao_class_25)+"','"+str(self.executado_exatidao_class_50)+"','"+str(self.executado_exatidao_class_75)+"','"+str(self.executado_exatidao_class_100)+
+                       "','"+str(self.executado_exatidao_trad_25)+"','"+str(self.executado_exatidao_trad_50)+ "','"+str(self.executado_exatidao_trad_75)+"','"+str(self.executado_exatidao_trad_100)+
+                       "','"+str(self.executado_precisao_hist_25)+"','"+str(self.executado_precisao_hist_50)+"','"+str(self.executado_precisao_hist_75)+"','"+str(self.executado_precisao_hist_100)+
+                       "','"+str(self.executado_exatidao_hist_25)+"','"+str(self.executado_exatidao_hist_50)+"','"+str(self.executado_exatidao_hist_75)+"','"+str(self.executado_exatidao_hist_100)+
+                       "','"+str(self.executado_precisao_class_25)+"','"+str(self.executado_precisao_class_50)+"','"+str(self.executado_precisao_class_75)+"','"+str(self.executado_precisao_class_100) +
+                       "','"+str(self.executado_exatidao_class_25)+"','"+str(self.executado_exatidao_class_50)+"','"+str(self.executado_exatidao_class_75)+"','"+str(self.executado_exatidao_class_100)+
                        "','"+str(self.projetos_id_projeto)+"')")
         out = Database.insert(queryInsert)
         Database.con.commit()
@@ -77,8 +77,12 @@ class Medidas_Porcentagem():
     def ChangeElementIdAfterInsert(self):
         querySelectSingleElement = "SELECT id_medidas_porcentagem FROM medidas_porcentagem WHERE projetos_id_projeto='" + str(self.projetos_id_projeto) + "'"
         out = Database.get(querySelectSingleElement)
-        Medidas_Porcentagem(out[0], self.executadoPrecisaoHist25, self.executadoPrecisaoHist50, self.executadoPrecisaoHist75,
-                            self.executadoPrecisaoHist100, self.projetos_id_projeto)
+        Medidas_Porcentagem(out[0], self.executado_precisao_trad_25, self.executado_precisao_trad_50, self.executado_precisao_trad_75, self.executado_precisao_trad_100,
+                 self.executado_exatidao_trad_25, self.executado_exatidao_trad_50, self.executado_exatidao_trad_75, self.executado_exatidao_trad_100,
+                 self.executado_precisao_hist_25, self.executado_precisao_hist_50, self.executado_precisao_hist_75, self.executado_precisao_hist_100,
+                 self.executado_exatidao_hist_25, self.executado_exatidao_hist_50, self.executado_exatidao_hist_75, self.executado_exatidao_hist_100,
+                 self.executado_precisao_class_25, self.executado_precisao_class_50, self.executado_precisao_class_75, self.executado_precisao_class_100,
+                 self.executado_exatidao_class_25, self.executado_exatidao_class_50, self.executado_exatidao_class_75, self.executado_exatidao_class_100, self.projetos_id_projeto)
 
 
     #Reinicializando valor da lista todas_fases, para ela ser utilizada no cálculo do CPI Histórico médio
@@ -88,7 +92,14 @@ class Medidas_Porcentagem():
         out = Database.get(querySelect)
         for rowInMedidasPorcentagen in out:
             Medidas_Porcentagem(rowInMedidasPorcentagen[0], rowInMedidasPorcentagen[1], rowInMedidasPorcentagen[2],
-                                rowInMedidasPorcentagen[3], rowInMedidasPorcentagen[4], rowInMedidasPorcentagen[5])
+                                rowInMedidasPorcentagen[3], rowInMedidasPorcentagen[4], rowInMedidasPorcentagen[5],
+                                rowInMedidasPorcentagen[6], rowInMedidasPorcentagen[7], rowInMedidasPorcentagen[8],
+                                rowInMedidasPorcentagen[9], rowInMedidasPorcentagen[10], rowInMedidasPorcentagen[11],
+                                rowInMedidasPorcentagen[12], rowInMedidasPorcentagen[13], rowInMedidasPorcentagen[14],
+                                rowInMedidasPorcentagen[15], rowInMedidasPorcentagen[16], rowInMedidasPorcentagen[17],
+                                rowInMedidasPorcentagen[18], rowInMedidasPorcentagen[19], rowInMedidasPorcentagen[20],
+                                rowInMedidasPorcentagen[21], rowInMedidasPorcentagen[22], rowInMedidasPorcentagen[23],
+            )
 
 
     def listIterator (todas_medidas_porcentagem) :

@@ -21,15 +21,15 @@ class Calculo_Porcentagem(object):
         for pv_acum_p in lista_pv_acum_p:
             if pv_acum_p == executado_total * 1:
                 executado100 = erro[contador]
-            elif pv_acum_p <= executado_total * 0.75:
+            elif pv_acum_p >= executado_total * 0.75:
                 if (true75 == 0):
                     executado75 = erro[contador]
                     true75 = 1
-            elif pv_acum_p <= executado_total * 0.5:
+            elif pv_acum_p >= executado_total * 0.5:
                 if (true50 == 0):
                     executado50 = erro[contador]
                     true50 = 1
-            elif pv_acum_p <= executado_total * 0.25:
+            elif pv_acum_p >= executado_total * 0.25:
                 if (true25 == 0):
                     executado25 = erro[contador]
                     true25 = 1

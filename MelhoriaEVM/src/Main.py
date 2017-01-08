@@ -262,7 +262,7 @@ def CalculaEVM():
             executado_precisao_class_25, executado_precisao_class_50, executado_precisao_class_75, executado_precisao_class_100 = Calculo_info_porcentagem.Calcula_Medidas_Porcentagem(prec_cpi_hist_class, pv_acum_p)
             executado_exatidao_class_25, executado_exatidao_class_50, executado_exatidao_class_75, executado_exatidao_class_100 = Calculo_info_porcentagem.Calcula_Medidas_Porcentagem(erro_cpi_hist_class, pv_acum_p)
 
-            Medidas_Porcentagem(executado_precisao_trad_25, executado_precisao_trad_50, executado_precisao_trad_75, executado_precisao_trad_100,
+            Medidas_Porcentagem(-1, executado_precisao_trad_25, executado_precisao_trad_50, executado_precisao_trad_75, executado_precisao_trad_100,
                  executado_exatidao_trad_25, executado_exatidao_trad_50, executado_exatidao_trad_75, executado_exatidao_trad_100,
                  executado_precisao_hist_25, executado_precisao_hist_50, executado_precisao_hist_75, executado_precisao_hist_100,
                  executado_exatidao_hist_25, executado_exatidao_hist_50, executado_exatidao_hist_75, executado_exatidao_hist_100,

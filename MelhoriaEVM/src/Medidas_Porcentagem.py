@@ -16,7 +16,7 @@ class Medidas_Porcentagem():
         jaExite = False
         #Compara o nome da fase e o nome do projeto
         #Caso já exista retorna a variável True
-        for medidas_porcentagem in Medidas_Porcentagem.todos_medidas_porcentagem:
+        for medidas_porcentagem in Medidas_Porcentagem.todas_medidas_porcentagem:
             if(medidas_porcentagem.projetos_id_projeto == projetos_id_projeto):
                 if(medidas_porcentagem.id == -1) :
                     medidas_porcentagem.id = id
@@ -50,13 +50,13 @@ class Medidas_Porcentagem():
             self.executado_exatidao_class_75 = executado_exatidao_class_75
             self.executado_exatidao_class_100 = executado_exatidao_class_100
             self.projetos_id_projeto = projetos_id_projeto
-            Medidas_Porcentagem.todas_medidas_porcentagem(self)
+            Medidas_Porcentagem.todas_medidas_porcentagem.append(self)
             if(id == -1) :
                 Medidas_Porcentagem.fileToDatabase(self)
 
     #Insere o arquivo na
     def fileToDatabase(self):
-        queryInsert = ("INSERT INTO medidas_pecentagem (executado_precisao_trad_25, executado_precisao_trad_50, executado_precisao_trad_75, executado_precisao_trad_100,"
+        queryInsert = ("INSERT INTO medidas_porcentagem (executado_precisao_trad_25, executado_precisao_trad_50, executado_precisao_trad_75, executado_precisao_trad_100,"
                        "executado_exatidao_trad_25, executado_exatidao_trad_50, executado_exatidao_trad_75, executado_exatidao_trad_100,"
                        "executado_precisao_hist_25, executado_precisao_hist_50, executado_precisao_hist_75, executado_precisao_hist_100,"
                         "executado_exatidao_hist_25, executado_exatidao_hist_50, executado_exatidao_hist_75, executado_exatidao_hist_100,"
@@ -100,9 +100,10 @@ class Medidas_Porcentagem():
                                 rowInMedidasPorcentagen[15], rowInMedidasPorcentagen[16], rowInMedidasPorcentagen[17],
                                 rowInMedidasPorcentagen[18], rowInMedidasPorcentagen[19], rowInMedidasPorcentagen[20],
                                 rowInMedidasPorcentagen[21], rowInMedidasPorcentagen[22], rowInMedidasPorcentagen[23],
+                                rowInMedidasPorcentagen[24], rowInMedidasPorcentagen[25]
             )
 
 
     def listIterator (todas_medidas_porcentagem) :
-        for medidas_porcentagem in todas_medidas_porcentagem :
-            return medidas_porcentagem
+        for medida_porcentagem in todas_medidas_porcentagem :
+            return medida_porcentagem

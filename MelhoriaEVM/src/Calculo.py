@@ -193,18 +193,22 @@ class Calculo(object):
         i = 1
         contador =0
         precAcum = 0
+        precAcumTotal = 0
         for n in precCPI:
             if(listaIdFase[i-1] == listaIdFase[i-2] ):
-                if (precAcum + n == 0):
+                if (precAcumTotal + n == 0):
                     precAcum = 0
                 else:
                     contador += 1
-                    precAcum = (precAcum + n) / contador
+                    precAcumTotal = precAcumTotal + n
+                    precAcum = precAcumTotal/contador
             else:
                 precAcum=0
             precCPIAcum.append(precAcum)
             i += 1
-
+        # print precAcum
+        # print contador
+        # print precAcumTotal
         return precCPIAcum
 
     "Exatidao Acum"
@@ -213,12 +217,14 @@ class Calculo(object):
         i = 1
         contador = 0
         extidaoAcum = 0
+        exatidaoAcumTotal = 0
         for n in erro:
             if (extidaoAcum + n == 0):
                 extidaoAcum = 0
             else:
                 contador += 1
-                extidaoAcum = (extidaoAcum + n) / contador
+                exatidaoAcumTotal = (exatidaoAcumTotal + n)
+                extidaoAcum = exatidaoAcumTotal/contador
             erroCPIAcum.append(extidaoAcum)
             i += 1
         return erroCPIAcum

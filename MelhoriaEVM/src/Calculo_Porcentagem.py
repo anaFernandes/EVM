@@ -8,11 +8,7 @@ class Calculo_Porcentagem(object):
     def Calcula_Medidas_Porcentagem(self, erro, lista_pv_acum_p):
 
         executado_total = lista_pv_acum_p[len(lista_pv_acum_p) - 1]
-        print executado_total
-        print lista_pv_acum_p
-        print erro
-        print len(lista_pv_acum_p)
-        print len(erro)
+
         contador = 0
         true25 = 0
         true50 = 0
@@ -35,9 +31,4 @@ class Calculo_Porcentagem(object):
                     true25 = 1
             contador+=1
 
-        print executado25
-        print executado50
-        print executado75
-        print executado100
-        print "-------_----------"
         return executado100, executado75, executado50, executado25

@@ -270,7 +270,6 @@ def CalculaEVM():
                  executado_exatidao_class_25, executado_exatidao_class_50, executado_exatidao_class_75, executado_exatidao_class_100,
                  id_projeto)
 
-            print id_projeto
 
                 # i = 0
 

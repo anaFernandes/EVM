@@ -1,0 +1,801 @@
+est,real,responsavel,nomeProjeto,dataInicio,dataFim,nomeFase,numeroRequisito,trimestre
+0.9,0.9,Sheila Magalhaes,OI SARS RA11 IT1,21/05/2009,09/06/2009,elaboracao,RF01,2
+1,1,Sheila Magalhaes,OI SARS RA11 IT1,21/05/2009,09/06/2009,elaboracao,RF02,2
+1.3,1,Sheila Magalhaes,OI SARS RA11 IT1,21/05/2009,09/06/2009,elaboracao,RF03,2
+2,0.6,Sheila Magalhaes,OI SARS RA11 IT1,21/05/2009,09/06/2009,elaboracao,RF04,2
+0.6,0.3,Sheila Magalhaes,OI SARS RA11 IT1,21/05/2009,09/06/2009,elaboracao,RF06,2
+2.3,0.3,Sheila Magalhaes,OI SARS RA11 IT1,21/05/2009,09/06/2009,elaboracao,RF07,2
+4,1.5,Fernando Simeone,OI SARS RA11 IT1,21/05/2009,09/06/2009,implementacao,RF01,2
+6,4,Fernando Simeone,OI SARS RA11 IT1,21/05/2009,09/06/2009,implementacao,RF02,2
+10,9.2,Fernando Simeone,OI SARS RA11 IT1,21/05/2009,09/06/2009,implementacao,RF03,2
+16,8,Breno Batista Machado,OI SARS RA11 IT1,21/05/2009,09/06/2009,implementacao,RF04,2
+4.8,3.6,Anderson Carvalho,OI SARS RA11 IT1,21/05/2009,09/06/2009,implementacao,RF06,2
+17.7,6.8,Michelle Cristina Alves de Andrade,OI SARS RA11 IT1,21/05/2009,09/06/2009,implementacao,RF07,2
+0.7,0.7,Edvane Evangelista,OI SARS RA11 IT1,21/05/2009,09/06/2009,testes,RF01,2
+0.6,0.6,Edvane Evangelista,OI SARS RA11 IT1,21/05/2009,09/06/2009,testes,RF02,2
+3,1,Edvane Evangelista,OI SARS RA11 IT1,21/05/2009,09/06/2009,testes,RF03,2
+24.5,0.6,Edvane Evangelista,OI SARS RA11 IT1,21/05/2009,09/06/2009,testes,RF04,2
+0.2,0.2,Edvane Evangelista,OI SARS RA11 IT1,21/05/2009,09/06/2009,testes,RF06,2
+15.6,15.6,Edvane Evangelista,OI SARS RA11 IT1,21/05/2009,09/06/2009,testes,RF07,2
+1.5,1.5,Fernando Simeone,OI SARS RA11 IT1,21/05/2009,09/06/2009,correcao,RF01,2
+3,3,Fernando Simeone,OI SARS RA11 IT1,21/05/2009,09/06/2009,correcao,RF02,2
+1.3,0,Fernando Simeone,OI SARS RA11 IT1,21/05/2009,09/06/2009,correcao,RF03,2
+2,0.5,Breno Batista Machado,OI SARS RA11 IT1,21/05/2009,09/06/2009,correcao,RF04,2
+0.6,0,Anderson Carvalho,OI SARS RA11 IT1,21/05/2009,09/06/2009,correcao,RF06,2
+2.3,0,Michelle Cristina Alves de Andrade,OI SARS RA11 IT1,21/05/2009,09/06/2009,correcao,RF07,2
+1.8,0.2,Sheila Magalhaes,OI SARS RA11 IT2,15/06/2009,30/06/2009,elaboracao,RF05,2
+1.1,0.5,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,elaboracao,RF08,2
+0.6,0.6,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,elaboracao,RF09,2
+1.5,0.7,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,elaboracao,RF10,2
+1,1,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,elaboracao,RF11,2
+1.1,0.5,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,elaboracao,RF12,2
+0.4,0.4,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,elaboracao,RF13,2
+1.4,0.2,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,elaboracao,RF14,2
+1,0.4,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,elaboracao,RF15,2
+13.8,3.5,Michelle Cristina Alves de Andrade,OI SARS RA11 IT2,15/06/2009,30/06/2009,implementacao,RF05,2
+8.8,7.6,Anderson Carvalho,OI SARS RA11 IT2,15/06/2009,30/06/2009,implementacao,RF08,2
+3.2,2.7,Anderson Carvalho,OI SARS RA11 IT2,15/06/2009,30/06/2009,implementacao,RF09,2
+11.9,2,Michelle Cristina Alves de Andrade,OI SARS RA11 IT2,15/06/2009,30/06/2009,implementacao,RF10,2
+13.8,13.8,Anderson Carvalho,OI SARS RA11 IT2,15/06/2009,30/06/2009,implementacao,RF11,2
+10.8,10.8,Fernando Simeone,OI SARS RA11 IT2,15/06/2009,30/06/2009,implementacao,RF12,2
+3.2,1.5,Fernando Simeone,OI SARS RA11 IT2,15/06/2009,30/06/2009,implementacao,RF13,2
+12,3,Michelle Cristina Alves de Andrade,OI SARS RA11 IT2,15/06/2009,30/06/2009,implementacao,RF14,2
+8,6.2,Fernando Simeone,OI SARS RA11 IT2,15/06/2009,30/06/2009,implementacao,RF15,2
+0,0,-,OI SARS RA11 IT2,15/06/2009,30/06/2009,testes,RF05,2
+3.3,1,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,testes,RF08,2
+1,1,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,testes,RF09,2
+4.5,2.6,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,testes,RF10,2
+3,1,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,testes,RF11,2
+3.3,0.8,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,testes,RF12,2
+1.2,0.7,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,testes,RF13,2
+4.5,1.9,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,testes,RF14,2
+3,1.8,Edvane Evangelista,OI SARS RA11 IT2,15/06/2009,30/06/2009,testes,RF15,2
+0,0,-,OI SARS RA11 IT2,15/06/2009,30/06/2009,correcao,RF05,2
+1.1,0,Anderson Carvalho,OI SARS RA11 IT2,15/06/2009,30/06/2009,correcao,RF08,2
+0.4,0,Anderson Carvalho,OI SARS RA11 IT2,15/06/2009,30/06/2009,correcao,RF09,2
+1.5,0,Michelle Cristina Alves de Andrade,OI SARS RA11 IT2,15/06/2009,30/06/2009,correcao,RF10,2
+1,0,Anderson Carvalho,OI SARS RA11 IT2,15/06/2009,30/06/2009,correcao,RF11,2
+1.1,0.3,Fernando Simeone,OI SARS RA11 IT2,15/06/2009,30/06/2009,correcao,RF12,2
+0.4,0,Fernando Simeone,OI SARS RA11 IT2,15/06/2009,30/06/2009,correcao,RF13,2
+1.5,0,Michelle Cristina Alves de Andrade,OI SARS RA11 IT2,15/06/2009,30/06/2009,correcao,RF14,2
+1,0.5,Michelle Cristina Alves de Andrade,OI SARS RA11 IT2,15/06/2009,30/06/2009,correcao,RF15,2
+3.1,2.2,Glasiana Aparecida Nunes,MI DI,29/06/2009,10/07/2009,elaboracao,RF01,3
+1,1,Glasiana Aparecida Nunes,MI DI,29/06/2009,10/07/2009,elaboracao,RF03,3
+0.8,0.8,Glasiana Aparecida Nunes,MI DI,29/06/2009,10/07/2009,elaboracao,RF04,3
+2.7,2.1,Glasiana Aparecida Nunes,MI DI,29/06/2009,10/07/2009,elaboracao,RF05,3
+2,2,Glasiana Aparecida Nunes,MI DI,29/06/2009,10/07/2009,elaboracao,RF06,3
+11.9,9.3,Michelle Cristina Alves de Andrade,MI DI,29/06/2009,10/07/2009,implementacao,RF01,3
+1.6,0.5,Michelle Cristina Alves de Andrade,MI DI,29/06/2009,10/07/2009,implementacao,RF03,3
+6.4,1.5,Michelle Cristina Alves de Andrade,MI DI,29/06/2009,10/07/2009,implementacao,RF04,3
+14,14,Emiliane Silva Soares,MI DI,29/06/2009,10/07/2009,implementacao,RF05,3
+12,12,Emiliane Silva Soares,MI DI,29/06/2009,10/07/2009,implementacao,RF06,3
+4.5,0.5,Glasiana Aparecida Nunes,MI DI,29/06/2009,10/07/2009,testes,RF01,3
+0.6,0.5,Glasiana Aparecida Nunes,MI DI,29/06/2009,10/07/2009,testes,RF03,3
+2.4,0.5,Glasiana Aparecida Nunes,MI DI,29/06/2009,10/07/2009,testes,RF04,3
+4.5,1.9,Glasiana Aparecida Nunes,MI DI,29/06/2009,10/07/2009,testes,RF05,3
+4.5,0.4,Glasiana Aparecida Nunes,MI DI,29/06/2009,10/07/2009,testes,RF06,3
+1.5,0.5,Michelle Cristina Alves de Andrade,MI DI,29/06/2009,10/07/2009,correcao,RF01,3
+0.2,0,Michelle Cristina Alves de Andrade,MI DI,29/06/2009,10/07/2009,correcao,RF03,3
+0.8,0.2,Michelle Cristina Alves de Andrade,MI DI,29/06/2009,10/07/2009,correcao,RF04,3
+1.5,1.5,Emiliane Silva Soares,MI DI,29/06/2009,10/07/2009,correcao,RF05,3
+1.5,0,Emiliane Silva Soares,MI DI,29/06/2009,10/07/2009,correcao,RF06,3
+0.6,0.2,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,elaboracao,RF06,3
+0.1,0.1,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,elaboracao,RF07,3
+0.5,0.2,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,elaboracao,RF08,3
+1.1,0.4,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,elaboracao,RF09,3
+0.8,0.2,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,elaboracao,RF10,3
+0.8,0.1,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,elaboracao,RF11,3
+0.4,0.1,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,elaboracao,RF12,3
+4.7,3.2,Fernando Pereira Alves de Araujo,OI JEC RA14 IT1,29/07/2009,10/08/2009,implementacao,RF06,3
+1.4,1.4,Dimas Samid Leme,OI JEC RA14 IT1,29/07/2009,10/08/2009,implementacao,RF07,3
+3.6,2.6,Dimas Samid Leme,OI JEC RA14 IT1,29/07/2009,10/08/2009,implementacao,RF08,3
+8.8,2.9,Michelle Cristina Alves de Andrade,OI JEC RA14 IT1,29/07/2009,10/08/2009,implementacao,RF09,3
+6,1.3,Michelle Cristina Alves de Andrade,OI JEC RA14 IT1,29/07/2009,10/08/2009,implementacao,RF10,3
+6,1.1,Michelle Cristina Alves de Andrade,OI JEC RA14 IT1,29/07/2009,10/08/2009,implementacao,RF11,3
+3.2,2,Michelle Cristina Alves de Andrade,OI JEC RA14 IT1,29/07/2009,10/08/2009,implementacao,RF12,3
+1.8,0.2,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,testes,RF06,3
+0.7,0.5,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,testes,RF07,3
+1.4,0.3,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,testes,RF08,3
+3.4,1.8,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,testes,RF09,3
+2.3,0.5,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,testes,RF10,3
+2.2,0.2,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,testes,RF11,3
+1.2,0.7,Edvane Evangelista,OI JEC RA14 IT1,29/07/2009,10/08/2009,testes,RF12,3
+0.6,0,Fernando Pereira Alves de Araujo,OI JEC RA14 IT1,29/07/2009,10/08/2009,correcao,RF06,3
+0.1,0,Dimas Samid Leme,OI JEC RA14 IT1,29/07/2009,10/08/2009,correcao,RF07,3
+0.5,0,Dimas Samid Leme,OI JEC RA14 IT1,29/07/2009,10/08/2009,correcao,RF08,3
+1.1,0,Michelle Cristina Alves de Andrade,OI JEC RA14 IT1,29/07/2009,10/08/2009,correcao,RF09,3
+0.8,0,Michelle Cristina Alves de Andrade,OI JEC RA14 IT1,29/07/2009,10/08/2009,correcao,RF10,3
+0.8,0,Michelle Cristina Alves de Andrade,OI JEC RA14 IT1,29/07/2009,10/08/2009,correcao,RF11,3
+0.4,0,Michelle Cristina Alves de Andrade,OI JEC RA14 IT1,29/07/2009,10/08/2009,correcao,RF12,3
+0.5,0,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,elaboracao,RF14,3
+1,0.6,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,elaboracao,RF05,3
+0.8,0.4,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,elaboracao,RF04,3
+1,0.6,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,elaboracao,RF03,3
+0.8,0.2,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,elaboracao,RF02,3
+0.6,0.3,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,elaboracao,RF01,3
+4,1.8,Dimas Samid Leme,OI JEC RA14 IT2,11/08/2009,20/08/2009,implementacao,RF14,3
+8,0.7,Fernando Pereira Alves de Araujo,OI JEC RA14 IT2,11/08/2009,20/08/2009,implementacao,RF05,3
+6,1.2,Fernando Pereira Alves de Araujo,OI JEC RA14 IT2,11/08/2009,20/08/2009,implementacao,RF04,3
+8,1,Fernando Pereira Alves de Araujo,OI JEC RA14 IT2,11/08/2009,20/08/2009,implementacao,RF03,3
+7.2,1,Fernando Pereira Alves de Araujo,OI JEC RA14 IT2,11/08/2009,20/08/2009,implementacao,RF02,3
+4.8,3,Fernando Pereira Alves de Araujo,OI JEC RA14 IT2,11/08/2009,20/08/2009,implementacao,RF01,3
+2.1,2.1,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,testes,RF14,3
+3.2,1.1,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,testes,RF05,3
+2.3,0.6,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,testes,RF04,3
+3,0.8,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,testes,RF03,3
+1.9,0.6,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,testes,RF02,3
+1.9,0.8,Edvane Evangelista,OI JEC RA14 IT2,11/08/2009,20/08/2009,testes,RF01,3
+0.5,0,Dimas Samid Leme,OI JEC RA14 IT2,11/08/2009,20/08/2009,correcao,RF14,3
+1,0.2,Fernando Pereira Alves de Araujo,OI JEC RA14 IT2,11/08/2009,20/08/2009,correcao,RF05,3
+1,1,Fernando Pereira Alves de Araujo,OI JEC RA14 IT2,11/08/2009,20/08/2009,correcao,RF04,3
+1,0.5,Fernando Pereira Alves de Araujo,OI JEC RA14 IT2,11/08/2009,20/08/2009,correcao,RF03,3
+0.9,0.5,Fernando Pereira Alves de Araujo,OI JEC RA14 IT2,11/08/2009,20/08/2009,correcao,RF02,3
+0.6,0.5,Fernando Pereira Alves de Araujo,OI JEC RA14 IT2,11/08/2009,20/08/2009,correcao,RF01,3
+0.5,0.3,Sheila Magalhaes,MI DI RA2,12/08/2009,20/08/2009,elaboracao,RF01,3
+0,0,-,MI DI RA2,12/08/2009,20/08/2009,elaboracao,RF02,3
+1.4,1.4,Sheila Magalhaes,MI DI RA2,12/08/2009,20/08/2009,elaboracao,RF03,3
+1,1,Michelle Cristina Alves de Andrade,MI DI RA2,12/08/2009,20/08/2009,elaboracao,RF04,3
+1.4,0,Sheila Magalhaes,MI DI RA2,12/08/2009,20/08/2009,elaboracao,RF05,3
+4,1.8,Michelle Cristina Alves de Andrade,MI DI RA2,12/08/2009,20/08/2009,implementacao,RF01,3
+0.3,0.3,Michelle Cristina Alves de Andrade,MI DI RA2,12/08/2009,20/08/2009,implementacao,RF02,3
+4.8,4,Emiliane Silva Soares,MI DI RA2,12/08/2009,20/08/2009,implementacao,RF03,3
+7.9,3,Michelle Cristina Alves de Andrade,MI DI RA2,12/08/2009,20/08/2009,implementacao,RF04,3
+7.3,7.3,Andre Ribeiro Barros,MI DI RA2,12/08/2009,20/08/2009,implementacao,RF05,3
+1.5,0.5,Andre Ribeiro Barros,MI DI RA2,12/08/2009,20/08/2009,correcao,RF01,3
+1.5,0.5,Andre Ribeiro Barros,MI DI RA2,12/08/2009,20/08/2009,correcao,RF02,3
+1.8,0.6,Andre Ribeiro Barros,MI DI RA2,12/08/2009,20/08/2009,correcao,RF03,3
+2.1,0.7,Andre Ribeiro Barros,MI DI RA2,12/08/2009,20/08/2009,correcao,RF04,3
+1.4,0.3,Andre Ribeiro Barros,MI DI RA2,12/08/2009,20/08/2009,correcao,RF05,3
+9.7,9.7,Andre Ribeiro Barros,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,implementacao,RF01,3
+2.4,2.4,Andre Ribeiro Barros,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,implementacao,RF02,3
+8,2.6,Andre Ribeiro Barros,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,implementacao,RF03,3
+6.5,1,Andre Ribeiro Barros,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,implementacao,RF04,3
+4.5,0.7,Andre Ribeiro Barros,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,implementacao,RF05,3
+7,0,Andre Ribeiro Barros,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,testes,RF01,3
+4,0.8,Glasiana Aparecida Nunes,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,testes,RF02,3
+2.9,0.8,Glasiana Aparecida Nunes,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,testes,RF03,3
+2,0.8,Glasiana Aparecida Nunes,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,testes,RF04,3
+0.9,0.8,Glasiana Aparecida Nunes,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,testes,RF05,3
+2.5,0.1,Andre Ribeiro Barros,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,correcao,RF01,3
+1,0,Andre Ribeiro Barros,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,correcao,RF02,3
+1.7,1.7,Andre Ribeiro Barros,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,correcao,RF03,3
+0.5,0,Andre Ribeiro Barros,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,correcao,RF04,3
+0.5,0,Andre Ribeiro Barros,SISCOLT CLIENTE RA03,19/08/2009,04/09/2009,correcao,RF05,3
+0.8,0.8,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,elaboracao,RF01,3
+0.4,0.4,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,elaboracao,RF02,3
+0.5,0.2,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,elaboracao,RF03,3
+1,0.1,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,elaboracao,RF04,3
+1,0.2,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,elaboracao,RF05,3
+0.8,0.2,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,elaboracao,RF06,3
+1.1,1.1,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,elaboracao,RF07,3
+0.2,0.1,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,elaboracao,RNF01,3
+0,0,-,OI JEC RA12,20/08/2009,28/08/2009,elaboracao,RNF02,3
+4.7,1.3,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,implementacao,RF01,3
+4.8,0.4,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,implementacao,RF02,3
+4,0.7,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,implementacao,RF03,3
+2.4,0.6,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,implementacao,RF04,3
+2.4,1.2,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,implementacao,RF05,3
+6,0.7,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,implementacao,RF06,3
+4.8,0.8,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,implementacao,RF07,3
+1.6,0,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,implementacao,RNF01,3
+0.2,0.2,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,implementacao,RNF02,3
+0.7,0.7,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,testes,RF01,3
+0.2,0.2,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,testes,RF02,3
+0.3,0.3,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,testes,RF03,3
+0.9,0.2,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,testes,RF04,3
+0.9,0.2,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,testes,RF05,3
+2.2,0.2,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,testes,RF06,3
+0.4,0.4,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,testes,RF07,3
+0.6,0,Edvane Evangelista,OI JEC RA12,20/08/2009,28/08/2009,testes,RNF01,3
+0,0,-,OI JEC RA12,20/08/2009,28/08/2009,testes,RNF02,3
+0.6,0,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,correcao,RF01,3
+0.6,0,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,correcao,RF02,3
+0.5,0,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,correcao,RF03,3
+0.3,0,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,correcao,RF04,3
+0.3,0,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,correcao,RF05,3
+0.8,0,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,correcao,RF06,3
+0.6,0,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,correcao,RF07,3
+0.2,0,Michelle Cristina Alves de Andrade,OI JEC RA12,20/08/2009,28/08/2009,correcao,RNF01,3
+0,0,-,OI JEC RA12,20/08/2009,28/08/2009,correcao,RNF02,3
+2,0.3,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,elaboracao,RF01,3
+0.4,0.2,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,elaboracao,RF02,3
+2.5,0.1,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,elaboracao,RF03,3
+0.4,0.2,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,elaboracao,RF04,3
+1,1,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,elaboracao,RF05,3
+0.5,0,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,elaboracao,RF06,3
+16,14.5,Fernando Pereira Alves de Araujo,OI JEC RA16,01/09/2009,18/09/2009,implementacao,RF01,3
+2.8,0.6,Michelle Cristina Alves de Andrade,OI JEC RA16,01/09/2009,18/09/2009,implementacao,RF02,3
+20,20,Michelle Cristina Alves de Andrade,OI JEC RA16,01/09/2009,18/09/2009,implementacao,RF03,3
+3.2,2,Fernando Pereira Alves de Araujo,OI JEC RA16,01/09/2009,18/09/2009,implementacao,RF04,3
+7.2,2.4,Michelle Cristina Alves de Andrade,OI JEC RA16,01/09/2009,18/09/2009,implementacao,RF05,3
+4,0.5,Michelle Cristina Alves de Andrade,OI JEC RA16,01/09/2009,18/09/2009,implementacao,RF06,3
+6.1,2.3,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,testes,RF01,3
+1.1,0.6,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,testes,RF02,3
+7.4,0.8,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,testes,RF03,3
+1.2,0.3,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,testes,RF04,3
+2.7,1.6,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,testes,RF05,3
+1.5,0.9,Edvane Evangelista,OI JEC RA16,01/09/2009,18/09/2009,testes,RF06,3
+3,3,Fernando Pereira Alves de Araujo,OI JEC RA16,01/09/2009,18/09/2009,correcao,RF01,3
+0.4,0,Michelle Cristina Alves de Andrade,OI JEC RA16,01/09/2009,18/09/2009,correcao,RF02,3
+2.5,0,Michelle Cristina Alves de Andrade,OI JEC RA16,01/09/2009,18/09/2009,correcao,RF03,3
+0.4,0,Fernando Pereira Alves de Araujo,OI JEC RA16,01/09/2009,18/09/2009,correcao,RF04,3
+0.9,0,Michelle Cristina Alves de Andrade,OI JEC RA16,01/09/2009,18/09/2009,correcao,RF05,3
+0.5,0,Michelle Cristina Alves de Andrade,OI JEC RA16,01/09/2009,18/09/2009,correcao,RF06,3
+1.4,0.5,Sheila Magalhaes,OI SANF RA16.7,14/09/2009,30/09/2009,elaboracao,RF02,3
+0,0,-,OI SANF RA16.7,14/09/2009,30/09/2009,elaboracao,RF03,3
+1.6,0.5,Sheila Magalhaes,OI SANF RA16.7,14/09/2009,30/09/2009,elaboracao,RF04,3
+1.4,0.5,Sheila Magalhaes,OI SANF RA16.7,14/09/2009,30/09/2009,elaboracao,RF05,3
+11.2,4,Emiliane Silva Soares,OI SANF RA16.7,14/09/2009,30/09/2009,implementacao,RF02,3
+8.8,5,Emiliane Silva Soares,OI SANF RA16.7,14/09/2009,30/09/2009,implementacao,RF03,3
+12.8,6.5,Emiliane Silva Soares,OI SANF RA16.7,14/09/2009,30/09/2009,implementacao,RF04,3
+11.2,4,Emiliane Silva Soares,OI SANF RA16.7,14/09/2009,30/09/2009,implementacao,RF05,3
+2.6,0.8,Sheila Magalhaes,OI SANF RA30,19/10/2009,16/11/2009,elaboracao,RF02,4
+2.8,0.2,Sheila Magalhaes,OI SANF RA30,19/10/2009,16/11/2009,elaboracao,RF03,4
+1.6,0.4,Sheila Magalhaes,OI SANF RA30,19/10/2009,16/11/2009,elaboracao,RF04,4
+2.8,0.5,Sheila Magalhaes,OI SANF RA30,19/10/2009,16/11/2009,elaboracao,RF05,4
+2.4,0.2,Sheila Magalhaes,OI SANF RA30,19/10/2009,16/11/2009,elaboracao,RF06,4
+1.1,0.5,Sheila Magalhaes,OI SANF RA30,19/10/2009,16/11/2009,elaboracao,RF07,4
+2.9,1,Sheila Magalhaes,OI SANF RA30,19/10/2009,16/11/2009,elaboracao,RF08,4
+1.4,1.4,Sheila Magalhaes,OI SANF RA30,19/10/2009,16/11/2009,elaboracao,RF09,4
+2,0.6,Sheila Magalhaes,OI SANF RA30,19/10/2009,16/11/2009,elaboracao,RF10,4
+1,0.1,Sheila Magalhaes,OI SANF RA30,19/10/2009,16/11/2009,elaboracao,RF11,4
+0,0,-,OI SANF RA30,19/10/2009,16/11/2009,elaboracao,RF12,4
+23.6,23.6,Fernando Pereira Alves de Araujo,OI SANF RA30,19/10/2009,16/11/2009,implementacao,RF02,4
+0,0,-,OI SANF RA30,19/10/2009,16/11/2009,implementacao,RF03,4
+12.8,12.8,Breno Batista Machado,OI SANF RA30,19/10/2009,16/11/2009,implementacao,RF04,4
+22.4,22.4,Breno Batista Machado,OI SANF RA30,19/10/2009,16/11/2009,implementacao,RF05,4
+19.2,17,Fernando Pereira Alves de Araujo,OI SANF RA30,19/10/2009,16/11/2009,implementacao,RF06,4
+8.8,6.2,Fernando Pereira Alves de Araujo,OI SANF RA30,19/10/2009,16/11/2009,implementacao,RF07,4
+23.3,11.8,Fernando Pereira Alves de Araujo,OI SANF RA30,19/10/2009,16/11/2009,implementacao,RF08,4
+8,1,Fernando Pereira Alves de Araujo,OI SANF RA30,19/10/2009,16/11/2009,implementacao,RF09,4
+16,16,Breno Batista Machado,OI SANF RA30,19/10/2009,16/11/2009,implementacao,RF10,4
+0,0,-,OI SANF RA30,19/10/2009,16/11/2009,implementacao,RF11,4
+0,0,-,OI SANF RA30,19/10/2009,16/11/2009,implementacao,RF12,4
+1.4,1.4,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,elaboracao,RF01,4
+1.2,1.2,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,elaboracao,RF02,4
+0.5,0.4,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,elaboracao,RF03,4
+0.6,0.5,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,elaboracao,RF04,4
+0.6,0.3,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,elaboracao,RF05,4
+0.5,0.3,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,elaboracao,RF06,4
+0.4,0.3,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,elaboracao,RF07,4
+1.8,0.8,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,elaboracao,RF09,4
+0.5,0.1,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,elaboracao,RF10,4
+1.8,1.8,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,implementacao,RF01,4
+2.5,2.5,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,implementacao,RF02,4
+4,0.5,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,implementacao,RF03,4
+4.8,4,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,implementacao,RF04,4
+4.8,1.7,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,implementacao,RF05,4
+4,0.5,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,implementacao,RF06,4
+3.2,0.5,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,implementacao,RF07,4
+14,4.5,Michelle Cristina Alves de Andrade,OI JEC RA15,01/12/2009,31/12/2009,implementacao,RF09,4
+4,1,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,implementacao,RF10,4
+1.8,1.7,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,testes,RF01,4
+2.4,2,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,testes,RF02,4
+1.5,1.5,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,testes,RF03,4
+1.8,1.5,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,testes,RF04,4
+1.8,1.5,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,testes,RF05,4
+1.5,1,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,testes,RF06,4
+1.2,0.8,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,testes,RF07,4
+5.3,0,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,testes,RF09,4
+1.5,0.5,Glasiana Aparecida Nunes,OI JEC RA15,01/12/2009,31/12/2009,testes,RF10,4
+0.6,0,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,correcao,RF01,4
+0.8,0,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,correcao,RF02,4
+0.5,0,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,correcao,RF03,4
+0.6,0,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,correcao,RF04,4
+0.6,0,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,correcao,RF05,4
+0.5,0,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,correcao,RF06,4
+0.4,0,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,correcao,RF07,4
+1.8,0,Michelle Cristina Alves de Andrade,OI JEC RA15,01/12/2009,31/12/2009,correcao,RF09,4
+0.5,0,Rodrigo Carvalho Lima,OI JEC RA15,01/12/2009,31/12/2009,correcao,RF10,4
+1,0.3,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF06,1
+1.8,0.3,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF07,1
+1.4,0.8,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF08,1
+0.9,0.2,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF09,1
+0.6,0.1,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF10,1
+1,0.1,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF11,1
+0.8,0.5,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF12,1
+1.3,0.6,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF13,1
+1.3,0.2,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF14,1
+0.6,0.3,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF15,1
+1,0.6,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF16,1
+1,0.2,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF17,1
+0.9,0.3,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF18,1
+1.8,0.4,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF19,1
+2.3,0.8,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF23,1
+2.3,0.7,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF27,1
+1,0.4,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,elaboracao,RF29,1
+8,7.5,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF06,1
+13.9,10.2,Anderson Carvalho,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF07,1
+14.8,14.8,Anderson Carvalho,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF08,1
+7.2,2.9,Fernando Pereira Alves de Araujo,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF09,1
+4.8,1.7,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF10,1
+8,3.8,Fernando Pereira Alves de Araujo,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF11,1
+17.4,17.4,Anderson Carvalho,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF12,1
+10,6.1,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF13,1
+10,2,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF14,1
+4.7,2,Michelle Cristina Alves de Andrade,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF15,1
+8,3.2,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF16,1
+8,0.8,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF17,1
+6.8,4.9,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF18,1
+14,4.6,Rodrigo Carvalho Lima,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF19,1
+20.4,20.4,Fernando Pereira Alves de Araujo,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF23,1
+17.6,12.1,Anderson Carvalho,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF27,1
+8,2,Rodrigo Carvalho Lima,OI SARS RA12,04/01/2010,20/01/2010,implementacao,RF29,1
+2.9,2.3,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF06,1
+2.6,2.6,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF07,1
+4.5,2.5,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF08,1
+2.7,1.3,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF09,1
+1.8,1.3,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF10,1
+3,1.2,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF11,1
+4.5,4.5,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF12,1
+3.8,1.3,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF13,1
+0.7,0.7,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF14,1
+1.8,0.6,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF15,1
+3,0.8,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF16,1
+0.8,0.8,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF17,1
+2.6,1.1,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF18,1
+5.1,3,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF19,1
+6.8,2.3,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF23,1
+6.6,1.9,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF27,1
+3,1.6,Edvane Evangelista,OI SARS RA12,04/01/2010,20/01/2010,testes,RF29,1
+3.5,3.5,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF06,1
+1.8,0,Anderson Carvalho,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF07,1
+1.5,0,Anderson Carvalho,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF08,1
+0.9,0.4,Fernando Pereira Alves de Araujo,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF09,1
+0.6,0,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF10,1
+1,0,Fernando Pereira Alves de Araujo,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF11,1
+0.8,0,Anderson Carvalho,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF12,1
+1.3,0.3,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF13,1
+1.3,0,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF14,1
+0.6,0,Michelle Cristina Alves de Andrade,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF15,1
+1,0,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF16,1
+1,0,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF17,1
+0.9,0,Fernando Simeone,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF18,1
+8.9,0,Rodrigo Carvalho Lima,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF19,1
+2.3,2.2,Fernando Pereira Alves de Araujo,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF23,1
+2.3,2.2,Anderson Carvalho,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF27,1
+1,0,Rodrigo Carvalho Lima,OI SARS RA12,04/01/2010,20/01/2010,correcao,RF29,1
+0.9,0.9,Glasiana Aparecida Nunes,OI JEC RA18,19/01/2010,03/02/2010,elaboracao,RF01,1
+0.7,0.6,Glasiana Aparecida Nunes,OI JEC RA18,19/01/2010,03/02/2010,elaboracao,RF02,1
+0.8,0.3,Glasiana Aparecida Nunes,OI JEC RA18,19/01/2010,03/02/2010,elaboracao,RF03,1
+0.3,0.2,Glasiana Aparecida Nunes,OI JEC RA18,19/01/2010,03/02/2010,elaboracao,RF04,1
+2,1,Rodrigo Carvalho Lima,OI JEC RA18,19/01/2010,03/02/2010,implementacao,RF01,1
+6.2,6.2,Rodrigo Carvalho Lima,OI JEC RA18,19/01/2010,03/02/2010,implementacao,RF02,1
+6,0.6,Rodrigo Carvalho Lima,OI JEC RA18,19/01/2010,03/02/2010,implementacao,RF03,1
+2,0.2,Rodrigo Carvalho Lima,OI JEC RA18,19/01/2010,03/02/2010,implementacao,RF04,1
+2.7,2.7,Glasiana Aparecida Nunes,OI JEC RA18,19/01/2010,03/02/2010,testes,RF01,1
+2,1.6,Glasiana Aparecida Nunes,OI JEC RA18,19/01/2010,03/02/2010,testes,RF02,1
+3.5,3.5,Glasiana Aparecida Nunes,OI JEC RA18,19/01/2010,03/02/2010,testes,RF03,1
+2.2,0.2,Glasiana Aparecida Nunes,OI JEC RA18,19/01/2010,03/02/2010,testes,RF04,1
+0.1,0,Rodrigo Carvalho Lima,OI JEC RA18,19/01/2010,03/02/2010,correcao,RF01,1
+0.7,0,Rodrigo Carvalho Lima,OI JEC RA18,19/01/2010,03/02/2010,correcao,RF02,1
+0.8,0,Rodrigo Carvalho Lima,OI JEC RA18,19/01/2010,03/02/2010,correcao,RF03,1
+0.3,0,Rodrigo Carvalho Lima,OI JEC RA18,19/01/2010,03/02/2010,correcao,RF04,1
+1.3,0.8,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF07,1
+0.3,0.3,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF17,1
+0.6,0.4,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF18,1
+0.8,0.4,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF08,1
+0.6,0.3,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF09,1
+1,0.8,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF10,1
+1.4,0.5,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF11,1
+0.6,0.3,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF12,1
+0.5,0.4,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF13,1
+0.9,0.3,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF14,1
+1.6,0.5,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF15,1
+1.3,0.4,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,elaboracao,RF16,1
+1.6,0.8,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF07,1
+2,0.4,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF17,1
+3.5,2.2,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF18,1
+3.4,2.1,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF08,1
+4,3.4,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF09,1
+9.4,9.5,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF10,1
+5.9,5.9,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF11,1
+2.2,1.4,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF12,1
+2.6,1.6,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF13,1
+4,1.6,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF14,1
+6.6,2.3,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF15,1
+3,3,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF16,1
+2.5,2.3,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF07,1
+2.9,0.9,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF17,1
+0.8,0.2,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF18,1
+1.9,1.4,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF08,1
+0,0,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF09,1
+0,0,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF10,1
+3.5,3.6,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF11,1
+2,0.6,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF12,1
+1,0.3,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF13,1
+2.5,1.8,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF14,1
+4,1.4,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF15,1
+3,2.3,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,implementacao,RF16,1
+1.8,0.7,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF07,1
+2.1,1.3,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF17,1
+2,0.7,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF18,1
+2.4,1.8,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF08,1
+1.8,1,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF09,1
+3.9,3.9,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF10,1
+4,2,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF11,1
+1.8,0.4,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF12,1
+1.5,0.1,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF13,1
+2.8,1.8,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF14,1
+2,1.5,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF15,1
+3.3,3,Sheila Magalhaes,MI SISGAF RA03,11/03/2009,01/04/2009,testes,RF16,1
+1,0.2,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF07,1
+1.2,0.2,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF17,1
+0.8,0.2,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF18,1
+1.4,0.3,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF08,1
+1.3,1.3,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF09,1
+1.5,0,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF10,1
+2.8,1.3,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF11,1
+1,0.1,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF12,1
+1,0.6,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF13,1
+1.5,0.3,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF14,1
+1.2,1,Michelle Cristina Alves de Andrade,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF15,1
+3,0.5,Emiliane Silva Soares,MI SISGAF RA03,11/03/2009,01/04/2009,correcao,RF16,1
+0.8,0.5,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF06,1
+0.8,0.7,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF08,1
+0.8,0.8,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF13,1
+1.1,1.1,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF09,1
+0.8,0.4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF14,1
+0.8,0.2,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF15,1
+0.8,0.2,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF16,1
+0.8,0.2,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF17,1
+0.8,0.2,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF18,1
+0.8,0.2,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF19,1
+0.8,0.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF20,1
+0.8,0.2,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF21,1
+0.8,0.1,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF22,1
+0.8,0.2,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF23,1
+0.8,0.1,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF24,1
+0.8,0.1,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF25,1
+1.3,0.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF46,1
+0,0,-,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,elaboracao,RF10,1
+1,1,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF06,1
+5.4,1,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF08,1
+13.5,1.4,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF13,1
+7.2,3.2,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF09,1
+14,14,Breno Batista Machado,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF14,1
+4.5,0.2,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF15,1
+5.4,1.3,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF16,1
+5.4,0.2,Breno Batista Machado,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF17,1
+5.4,1,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF18,1
+6.3,0.7,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF19,1
+7.2,0.6,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF20,1
+5.4,0.3,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF21,1
+7.2,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF22,1
+5.4,0.2,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF23,1
+5.4,0.2,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF24,1
+5.4,0.1,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF25,1
+10,0.2,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF46,1
+0,0,-,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,implementacao,RF10,1
+1,0.9,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF06,1
+2,1,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF08,1
+5,1.6,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF13,1
+3,1.7,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF09,1
+1.3,1.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF14,1
+0.5,0.5,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF15,1
+2,0.4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF16,1
+2,0.4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF17,1
+2,0.4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF18,1
+2,0.4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF19,1
+3,0.4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF20,1
+2,0.4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF21,1
+3,0.4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF22,1
+2,0.4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF23,1
+2,0.4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF24,1
+2,0.4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF25,1
+4,0.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF46,1
+0,0,-,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,testes,RF10,1
+0.4,0.2,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF06,1
+1,1,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF08,1
+1.5,0.7,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF13,1
+0.8,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF09,1
+2,2,Breno Batista Machado,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF14,1
+0.5,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF15,1
+0.6,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF16,1
+0.6,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF17,1
+0.6,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF18,1
+0.7,0.2,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF19,1
+0.8,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF20,1
+0.6,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF21,1
+0.8,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF22,1
+0.6,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF23,1
+0.6,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF24,1
+0.6,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF25,1
+1,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF46,1
+1.5,1,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT2,16/03/2009,06/04/2009,correcao,RF10,1
+0.7,0.3,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,elaboracao,RF06,2
+0.9,0.7,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,elaboracao,RF08,2
+0.7,0.3,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,elaboracao,RF17,2
+2.5,1,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,elaboracao,RF18,2
+0.7,0.2,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,elaboracao,RF19,2
+2.3,1.4,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,elaboracao,RF20,2
+0.6,0.6,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,elaboracao,RF22,2
+0.5,0.3,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,elaboracao,RF23,2
+0.5,0.3,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,elaboracao,RF24,2
+0.4,0.2,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,elaboracao,RF25,2
+0.5,0.3,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,elaboracao,RF26,2
+5.6,2,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF06,2
+8,8,Rodrigo Carvalho Lima,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF08,2
+6,6,Rodrigo Carvalho Lima,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF17,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF18,2
+6,4.6,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF19,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF20,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF22,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF23,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF24,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF25,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF26,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF06,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF08,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF17,2
+8.4,2,Rodrigo Carvalho Lima,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF18,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF19,2
+7.6,5.3,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF20,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF22,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF23,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF24,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF25,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF26,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF06,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF08,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF17,2
+8.4,6,Rodrigo Carvalho Lima,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF18,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF19,2
+10.8,10.8,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF20,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF22,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF23,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF24,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF25,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF26,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF06,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF08,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF17,2
+4.8,2,Rodrigo Carvalho Lima,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF18,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF19,2
+4.3,1,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF20,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF22,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF23,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF24,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF25,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF26,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF06,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF08,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF17,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF18,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF19,2
+0,0,-,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF20,2
+4.3,2,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF22,2
+4.3,2,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF23,2
+12,12,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF24,2
+4.3,4.1,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF25,2
+6.4,6.4,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,implementacao,RF26,2
+2.1,0.8,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,testes,RF06,2
+2.9,1,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,testes,RF08,2
+2.2,1.2,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,testes,RF17,2
+7.9,3,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,testes,RF18,2
+2.2,0.6,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,testes,RF19,2
+7.2,1.8,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,testes,RF20,2
+1.6,0.6,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,testes,RF22,2
+1.63,0.7,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,testes,RF23,2
+1.6,0.8,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,testes,RF24,2
+1.6,0.8,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,testes,RF25,2
+1.6,0.7,Anderson Carvalho,MI CONEXAO IT2,23/03/2009,16/04/2009,testes,RF26,2
+0.6,0.6,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,correcao,RF06,2
+0.9,0,Rodrigo Carvalho Lima,MI CONEXAO IT2,23/03/2009,16/04/2009,correcao,RF08,2
+0.7,0,Rodrigo Carvalho Lima,MI CONEXAO IT2,23/03/2009,16/04/2009,correcao,RF17,2
+2.4,0,Rodrigo Carvalho Lima,MI CONEXAO IT2,23/03/2009,16/04/2009,correcao,RF18,2
+0.7,0.5,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,correcao,RF19,2
+2.2,1.9,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,correcao,RF20,2
+0.5,0.5,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,correcao,RF22,2
+0.5,0.5,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,correcao,RF23,2
+2,2,Rodrigo Carvalho Lima,MI CONEXAO IT2,23/03/2009,16/04/2009,correcao,RF24,2
+1.5,1.5,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,correcao,RF25,2
+1,1,Fernando Pereira Alves de Araujo,MI CONEXAO IT2,23/03/2009,16/04/2009,correcao,RF26,2
+0.7,0.7,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,elaboracao,RF04,2
+0.4,0.4,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,elaboracao,RF05,2
+0.2,0.2,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,elaboracao,RF06,2
+1.5,0.8,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,elaboracao,RF07,2
+1,1,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,elaboracao,RF08,2
+0.8,0.3,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,elaboracao,RF09,2
+1.5,0.3,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,elaboracao,RF10,2
+0.5,0.1,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,elaboracao,RF11,2
+0.4,0.2,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,elaboracao,RF12,2
+1.8,1.8,Michelle Cristina Alves de Andrade,OI SARS RA10 IT1,26/03/2009,17/04/2009,implementacao,RF04,2
+0.6,0.6,Michelle Cristina Alves de Andrade,OI SARS RA10 IT1,26/03/2009,17/04/2009,implementacao,RF05,2
+4.6,4.6,Anderson Carvalho,OI SARS RA10 IT1,26/03/2009,17/04/2009,implementacao,RF06,2
+12.1,10,Fernando Simeone,OI SARS RA10 IT1,26/03/2009,17/04/2009,implementacao,RF07,2
+2.1,2.1,Anderson Carvalho,OI SARS RA10 IT1,26/03/2009,17/04/2009,implementacao,RF08,2
+7.2,7.2,Anderson Carvalho,OI SARS RA10 IT1,26/03/2009,17/04/2009,implementacao,RF09,2
+12.1,10,Fernando Simeone,OI SARS RA10 IT1,26/03/2009,17/04/2009,implementacao,RF10,2
+4,3.5,Anderson Carvalho,OI SARS RA10 IT1,26/03/2009,17/04/2009,implementacao,RF11,2
+3.2,2,Fernando Simeone,OI SARS RA10 IT1,26/03/2009,17/04/2009,implementacao,RF12,2
+3.6,3.6,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,testes,RF04,2
+3.3,1,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,testes,RF05,2
+0.6,0.6,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,testes,RF06,2
+4.5,0.7,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,testes,RF07,2
+1.2,0.8,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,testes,RF08,2
+2.2,1,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,testes,RF09,2
+4.5,2.5,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,testes,RF10,2
+1.6,1,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,testes,RF11,2
+1.2,1.1,Sheila Magalhaes,OI SARS RA10 IT1,26/03/2009,17/04/2009,testes,RF12,2
+1,0,Michelle Cristina Alves de Andrade,OI SARS RA10 IT1,26/03/2009,17/04/2009,correcao,RF04,2
+1,0,Michelle Cristina Alves de Andrade,OI SARS RA10 IT1,26/03/2009,17/04/2009,correcao,RF05,2
+0.2,0,Anderson Carvalho,OI SARS RA10 IT1,26/03/2009,17/04/2009,correcao,RF06,2
+1.45,1,Fernando Simeone,OI SARS RA10 IT1,26/03/2009,17/04/2009,correcao,RF07,2
+0.4,0,Anderson Carvalho,OI SARS RA10 IT1,26/03/2009,17/04/2009,correcao,RF08,2
+0.7,0,Anderson Carvalho,OI SARS RA10 IT1,26/03/2009,17/04/2009,correcao,RF09,2
+1.4,0,Fernando Simeone,OI SARS RA10 IT1,26/03/2009,17/04/2009,correcao,RF10,2
+0.5,0,Anderson Carvalho,OI SARS RA10 IT1,26/03/2009,17/04/2009,correcao,RF11,2
+0.4,0,Fernando Simeone,OI SARS RA10 IT1,26/03/2009,17/04/2009,correcao,RF12,2
+2.8,0.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,elaboracao,RF41,2
+2.8,0.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,elaboracao,RF42,2
+2.2,0.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,elaboracao,RF43,2
+1.5,0.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,elaboracao,RF44,2
+1.7,0.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,elaboracao,RF45,2
+1.3,0.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,elaboracao,RF46,2
+1.3,0.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,elaboracao,RF47,2
+22,6.7,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,implementacao,RF41,2
+21.5,8.8,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,implementacao,RF42,2
+17.6,6.3,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,implementacao,RF43,2
+12,2.9,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,implementacao,RF44,2
+13.2,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,implementacao,RF45,2
+10,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,implementacao,RF46,2
+10,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,implementacao,RF47,2
+5.2,5.2,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,testes,RF41,2
+8.3,5.9,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,testes,RF42,2
+7.2,6.5,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,testes,RF43,2
+4.9,4.9,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,testes,RF44,2
+5,4,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,testes,RF45,2
+5,3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,testes,RF46,2
+5,5,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,testes,RF47,2
+2.9,0.4,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,correcao,RF41,2
+2.8,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,correcao,RF42,2
+2.2,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,correcao,RF43,2
+1.5,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,correcao,RF44,2
+1.7,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,correcao,RF45,2
+1.3,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,correcao,RF46,2
+1.3,0,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE IT3,07/04/2009,08/05/2009,correcao,RF47,2
+2,1.6,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF21,2
+0.6,0.6,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF27,2
+0.5,0.3,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF28,2
+0.8,0.4,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF29,2
+1,0.6,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF30,2
+0.8,0.6,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF32,2
+0.8,0.5,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF33,2
+0.8,0.7,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF34,2
+1,0.6,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF35,2
+0.9,0.6,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF36,2
+1,0.5,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF37,2
+0.9,0.7,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF38,2
+0.6,0.4,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF39,2
+1.5,1,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF40,2
+0.8,0.5,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF06,2
+0.6,0.2,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF07,2
+0.5,0,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,elaboracao,RF09,2
+6.4,2.5,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF21,2
+1.9,1.6,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF27,2
+1.8,1.8,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF28,2
+2.6,2.6,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF29,2
+3.2,2.7,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF30,2
+0.4,0.4,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF32,2
+2.6,2.6,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF33,2
+2.4,1.5,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF34,2
+3.2,2.8,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF35,2
+3.1,1.9,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF36,2
+2.9,2.8,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF37,2
+2.8,0.9,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF38,2
+1.8,0.9,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF39,2
+4.9,3.5,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF40,2
+2.4,0.5,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF06,2
+1.8,0.8,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF07,2
+1.5,0.6,Anderson Carvalho,MI CONEXaO IT3,16/04/2009,12/06/2009,testes,RF09,2
+2,0,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF21,2
+1.5,1.5,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF27,2
+0.5,0,Rodrigo Carvalho Lima,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF28,2
+0.8,0,Rodrigo Carvalho Lima,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF29,2
+1,0,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF30,2
+1,1,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF32,2
+0.8,0,Rodrigo Carvalho Lima,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF33,2
+3.8,3.8,Rodrigo Carvalho Lima,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF34,2
+1.3,1.3,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF35,2
+3.4,3.4,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF36,2
+1,0.2,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF37,2
+0.9,0.3,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF38,2
+0.9,0.9,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF39,2
+1.5,0,Rodrigo Carvalho Lima,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF40,2
+1.4,0,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF06,2
+0.6,0,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF07,2
+0.5,0,Fernando Pereira Alves de Araujo,MI CONEXaO IT3,16/04/2009,12/06/2009,correcao,RF09,2
+0.2,0.2,Glasiana Aparecida Nunes,OI SARS RA10 IT2,22/04/2009,12/05/2009,elaboracao,RF01,2
+1.8,0.6,Glasiana Aparecida Nunes,OI SARS RA10 IT2,22/04/2009,12/05/2009,elaboracao,RF02,2
+2.5,1.8,Glasiana Aparecida Nunes,OI SARS RA10 IT2,22/04/2009,12/05/2009,elaboracao,RF03,2
+1.5,1.5,Glasiana Aparecida Nunes,OI SARS RA10 IT2,22/04/2009,12/05/2009,elaboracao,RF13,2
+1.8,0.3,Michelle Cristina Alves de Andrade,OI SARS RA10 IT2,22/04/2009,12/05/2009,implementacao,RF01,2
+24.3,24.3,Fernando Simeone,OI SARS RA10 IT2,22/04/2009,12/05/2009,implementacao,RF02,2
+21.9,12.1,Michelle Cristina Alves de Andrade,OI SARS RA10 IT2,22/04/2009,12/05/2009,implementacao,RF03,2
+15.8,15.8,Fernando Simeone,OI SARS RA10 IT2,22/04/2009,12/05/2009,implementacao,RF13,2
+1.7,1.7,Glasiana Aparecida Nunes,OI SARS RA10 IT2,22/04/2009,12/05/2009,testes,RF01,2
+7.4,7.4,Glasiana Aparecida Nunes,OI SARS RA10 IT2,22/04/2009,12/05/2009,testes,RF02,2
+7.5,7.5,Glasiana Aparecida Nunes,OI SARS RA10 IT2,22/04/2009,12/05/2009,testes,RF03,2
+4.5,2.9,Glasiana Aparecida Nunes,OI SARS RA10 IT2,22/04/2009,12/05/2009,testes,RF13,2
+0.2,0,Michelle Cristina Alves de Andrade,OI SARS RA10 IT2,22/04/2009,12/05/2009,correcao,RF01,2
+1.6,0,Fernando Simeone,OI SARS RA10 IT2,22/04/2009,12/05/2009,correcao,RF02,2
+2.3,1.4,Michelle Cristina Alves de Andrade,OI SARS RA10 IT2,22/04/2009,12/05/2009,correcao,RF03,2
+3,3,Fernando Simeone,OI SARS RA10 IT2,22/04/2009,12/05/2009,correcao,RF13,2
+1.3,1.3,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,elaboracao,RF02,2
+1.7,0.5,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,elaboracao,RF03,2
+1.8,0.6,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,elaboracao,RF04,2
+1.4,0.8,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,elaboracao,RF05,2
+0.9,0.7,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,elaboracao,RF06,2
+1,0.2,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,elaboracao,RF07,2
+1.2,1,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,elaboracao,RF08,2
+1.4,0.3,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,elaboracao,RF09,2
+8.8,2.8,Emiliane Silva Soares,OI SANF RA27,29/04/2009,15/05/2009,implementacao,RF02,2
+13,2.1,Emiliane Silva Soares,OI SANF RA27,29/04/2009,15/05/2009,implementacao,RF03,2
+14.6,3.4,Emiliane Silva Soares,OI SANF RA27,29/04/2009,15/05/2009,implementacao,RF04,2
+10,10,Breno Batista Machado,OI SANF RA27,29/04/2009,15/05/2009,implementacao,RF05,2
+6,6,Breno Batista Machado,OI SANF RA27,29/04/2009,15/05/2009,implementacao,RF06,2
+8,8,Breno Batista Machado,OI SANF RA27,29/04/2009,15/05/2009,implementacao,RF07,2
+10,10,Breno Batista Machado,OI SANF RA27,29/04/2009,15/05/2009,implementacao,RF08,2
+11,8.2,Emiliane Silva Soares,OI SANF RA27,29/04/2009,15/05/2009,implementacao,RF09,2
+3.2,1.5,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,testes,RF02,2
+4.9,2.5,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,testes,RF03,2
+5.6,2,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,testes,RF04,2
+4,1.8,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,testes,RF05,2
+2.7,2.1,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,testes,RF06,2
+3.7,3.7,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,testes,RF07,2
+3.4,2.6,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,testes,RF08,2
+4.1,1.3,Sheila Magalhaes,OI SANF RA27,29/04/2009,15/05/2009,testes,RF09,2
+1.1,0.5,Emiliane Silva Soares,OI SANF RA27,29/04/2009,15/05/2009,correcao,RF02,2
+1.7,0,Emiliane Silva Soares,OI SANF RA27,29/04/2009,15/05/2009,correcao,RF03,2
+1.9,0,Emiliane Silva Soares,OI SANF RA27,29/04/2009,15/05/2009,correcao,RF04,2
+2.4,2.4,Breno Batista Machado,OI SANF RA27,29/04/2009,15/05/2009,correcao,RF05,2
+1,1,Breno Batista Machado,OI SANF RA27,29/04/2009,15/05/2009,correcao,RF06,2
+1,1,Breno Batista Machado,OI SANF RA27,29/04/2009,15/05/2009,correcao,RF07,2
+1.2,0.5,Breno Batista Machado,OI SANF RA27,29/04/2009,15/05/2009,correcao,RF08,2
+1.4,0,Emiliane Silva Soares,OI SANF RA27,29/04/2009,15/05/2009,correcao,RF09,2
+0.4,0.3,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF01,2
+0.4,0.4,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF02,2
+0.8,0.8,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF03,2
+0.4,0.4,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF04,2
+1.6,1.6,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF09,2
+1,1,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF10,2
+2,2,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF11,2
+0.8,0.8,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF12,2
+0.4,0.2,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF14,2
+5,2.1,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF08,2
+8,0.6,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF05,2
+8,0.9,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF06,2
+3.2,3.2,Douglas Barbosa Alexandre,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF07,2
+3.2,0.7,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF13,2
+2.4,0.5,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,implementacao,RF15,2
+0.8,0.8,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF01,2
+1,1,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF02,2
+2,2,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF03,2
+0.6,0.6,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF04,2
+0.5,0.5,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF09,2
+0.6,0.6,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF10,2
+0.6,0.6,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF11,2
+1.3,1.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF12,2
+2.2,2.2,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF14,2
+1,1,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF08,2
+3,3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF05,2
+3.3,3.3,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF06,2
+27.2,6.2,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF07,2
+24.5,24.5,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF13,2
+1,1,Glasiana Aparecida Nunes,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,testes,RF15,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF01,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF02,2
+0.1,0.1,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF03,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF04,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF09,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF10,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF11,2
+0.1,0.1,Andre Ribeiro Barros,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF12,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF14,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF08,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF05,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF06,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF07,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF13,2
+0,0,-,OI SISCOLT CLIENTE RA02,29/04/2009,29/05/2009,correcao,RF15,2

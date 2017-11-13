@@ -1,0 +1,157 @@
+Função CSV:  5.31620883942
+tempo 4 threads 0.0694220066071
+Função CalculaEVM:  88.3576340675
+
+Função DadosdoBando:  0.569556951523
+Função CSV:  0.0055239200592
+tempo 4 threads 0.0599410629272
+Função CalculaEVM:  93.4423089027
+
+Função DadosdoBando:  0.588079929352
+Função CSV:  0.00490689277649
+tempo 4 threads 0.0503690242767
+Função CalculaEVM:  92.2468488216
+
+Função DadosdoBando:  0.592846155167
+Função CSV:  0.00487899780273
+tempo 4 threads 0.0460999011993
+Função CalculaEVM:  103.713594913
+
+Função DadosdoBando:  0.674336910248
+Função CSV:  0.00455594062805
+tempo 4 threads 0.0586531162262
+Função CalculaEVM:  94.2560818195
+
+Função DadosdoBando:  0.764379024506
+Função CSV:  0.00763416290283
+tempo 4 threads 0.0554268360138
+Função CalculaEVM:  97.1889519691
+
+Função DadosdoBando:  0.79128909111
+Função CSV:  0.00438690185547
+tempo 4 threads 0.0667850971222
+Função CalculaEVM:  96.4732367992
+
+Função DadosdoBando:  0.79128909111
+Função CSV:  0.00438690185547
+tempo 4 threads 0.0667850971222
+Função CalculaEVM:  96.4732367992
+
+Função DadosdoBando:  0.652926921844
+Função CSV:  0.00518989562988
+tempo 4 threads 0.0550310611725
+Função CalculaEVM:  97.1736719608
+
+Função DadosdoBando:  0.579483985901
+Função CSV:  0.00531601905823
+tempo 4 threads 0.0491741428375
+Função CalculaEVM:  95.3749160767
+
+_____________________ 2_____________________________________
+Função DadosdoBando:  0.658837080002
+Função CSV:  0.00380992889404
+tempo 2 threads: 0.0183119773865
+Função CalculaEVM:  100.250148058
+
+Função DadosdoBando:  0.757789134979
+Função CSV:  0.0259139537811
+1 Thread: 0.0220761299133
+Função CalculaEVM:  97.304309845
+
+Função DadosdoBando:  0.721019983292
+Função CSV:  0.00483202934265
+1 Thread: 0.0205569267273
+Função CalculaEVM:  92.8492629528
+
+Função DadosdoBando:  0.569652080536
+Função CSV:  0.00439691543579
+1 Thread: 0.0182111263275
+Função CalculaEVM:  95.5876939297
+
+Função DadosdoBando:  0.583787918091
+Função CSV:  0.00778293609619
+1 Thread: 0.0262620449066
+Função CalculaEVM:  92.9461269379
+
+Função DadosdoBando:  0.622743844986
+Função CSV:  0.00484299659729
+1 Thread: 0.0167779922485
+Função CalculaEVM:  96.0429699421
+
+Função DadosdoBando:  0.590596199036
+Função CSV:  0.00519704818726
+1 Thread: 0.0181519985199
+Função CalculaEVM:  93.4083719254
+
+Função DadosdoBando:  0.588586807251
+Função CSV:  0.00448179244995
+1 Thread: 0.0182659626007
+Função CalculaEVM:  93.6862428188
+
+Função DadosdoBando:  0.587290048599
+Função CSV:  0.00751686096191
+1 Thread: 0.0178959369659
+Função CalculaEVM:  97.4667980671
+
+Função DadosdoBando:  0.565119028091
+Função CSV:  0.00460004806519
+1 Thread: 0.0167100429535
+Função CalculaEVM:  92.9614200592
+
+Função DadosdoBando:  0.583440065384
+Função CSV:  0.00406098365784
+1 Thread: 0.0149300098419
+Função CalculaEVM:  93.5873041153
+
+
+__________________________2 Threads______________________________
+Função DadosdoBando:  0.592372179031
+Função CSV:  0.00456809997559
+2 threads 0.0389308929443
+Função CalculaEVM:  174.005117893
+
+Função DadosdoBando:  0.692296028137
+Função CSV:  0.0499351024628
+2 threads 0.0381519603729
+Função CalculaEVM:  97.2932388783
+
+Função DadosdoBando:  0.682694911957
+Função CSV:  0.0044150352478
+2 threads 0.0324120330811
+Função CalculaEVM:  94.79164505
+
+Função DadosdoBando:  0.634851932526
+Função CSV:  0.00496602058411
+2 threads 0.0327760982513
+Função CalculaEVM:  95.0087170601
+
+Função DadosdoBando:  0.596517086029
+Função CSV:  0.00464701652527
+2 threads 0.0381331443787
+Função CalculaEVM:  95.46378088
+
+Função DadosdoBando:  0.769998073578
+Função CSV:  0.00493097305298
+2 threads 0.0402898693085
+Função CalculaEVM:  97.721216917
+
+Função DadosdoBando:  0.659121990204
+Função CSV:  0.00655484199524
+2 threads 0.036804895401
+Função CalculaEVM:  96.607088089
+
+Função DadosdoBando:  0.838805913925
+Função CSV:  0.00573587417603
+2 threads 0.0376848983765
+Função CalculaEVM:  93.8184440136
+
+Função DadosdoBando:  0.569438934326
+Função CSV:  0.0049741268158
+2 threads 0.0414900779724
+Função CalculaEVM:  91.4403820038
+
+Função DadosdoBando:  0.722440004349
+Função CSV:  0.00737595558167
+2 threads 0.0412351989746
+Função CalculaEVM:  97.1611688137
+

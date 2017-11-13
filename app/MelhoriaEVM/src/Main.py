@@ -48,11 +48,11 @@ def calculoEVM(arg_list):
             somaProjetoReal += arg_list[3][i]
             acumReal.append(float(somaProjetoReal))
             tip = 'projeto'
-        if i < 10 and arg_list[4][i] == 1:
-            print "fase est", somaFaseEstimado
-            print "projeto real", somaProjetoReal
-            print "fase real", somaFaseReal
-            print "projeto est", somaProjetoEstimado
+        # if i < 10 and arg_list[4][i] == 1:
+        #     print "fase est", somaFaseEstimado
+        #     print "projeto real", somaProjetoReal
+        #     print "fase real", somaFaseReal
+        #     print "projeto est", somaProjetoEstimado
 
     i=0
     pvAcum, evAcum, acAcum, cpiTrad = list(), list(), list(), list()
@@ -214,14 +214,14 @@ def CalculaEVM():
         projetos_id_projeto.append(atividade.projetos_id_projeto)
 
     """1 Thread"""
-    ini = time.time()
+    # ini = time.time()
     # p = Pool(processes=2)
     # arg_list = []
     # arg_list.append(['fase', esforco_est, fases_id_fase, esforco_real, projetos_id_projeto])
     # arg_list.append(['projeto', esforco_est, fases_id_fase, esforco_real, projetos_id_projeto])
     # result = p.map(calculoEVM, arg_list)
-
-    # tip, acumEstimado, acumReal, pvAcum, evAcum, acAcum, cpiTrad
+    #
+    # # tip, acumEstimado, acumReal, pvAcum, evAcum, acAcum, cpiTrad
     # est_acum_fase = result[0][1]
     # real_acum_fase = result[0][2]
     # pv_acum_fase = result[0][3]
@@ -234,86 +234,86 @@ def CalculaEVM():
     # ev_acum_projeto = result[1][4]
     # ac_acum_projeto = result[1][5]
     # cpi_trad_projeto = result[1][6]
-
-    # for est in est_acum_projeto:
-    #     print "projeto", est
-    #     print "fase", est_acum_fase[i]
-
-
-    fim = time.time()
-    print fim - ini
+    #
+    # # for est in est_acum_projeto:
+    # #     print "projeto", est
+    # #     print "fase", est_acum_fase[i]
+    #
+    #
+    # fim = time.time()
+    # print "1 Thread:", fim - ini
 
     # "2 Threads"
-    # ini = time.time()
-    # p = Pool()
-    # arg_list_fase = []
-    # arg_list_fase.append(['fase', esforco_est, fases_id_fase, esforco_real, projetos_id_projeto])
-    # result = p.map(calculoEVM, arg_list_fase)
-    # # tip, acumEstimado, acumReal, pvAcum, evAcum, acAcum, cpiTrad
-    # est_acum_fase = result[0][1]
-    # real_acum_fase = result[0][2]
-    # pv_acum_fase = result[0][3]
-    # ev_acum_fase = result[0][4]
-    # ac_acum_fase = result[0][5]
-    # cpi_trad_fase = result[0][6]
-    #
-    # p = Pool()
-    # arg_list_projeto = []
-    # arg_list_projeto.append(['projeto', esforco_est, fases_id_fase, esforco_real,projetos_id_projeto])
-    # result = p.map(calculoEVM, arg_list_projeto)
-    # # tip, acumEstimado, acumReal, pvAcum, evAcum, acAcum, cpiTrad
-    # est_acum_projeto = result[0][1]
-    # real_acum_projeto = result[0][2]
-    # pv_acum_projeto = result[0][3]
-    # ev_acum_projeto = result[0][4]
-    # ac_acum_projeto = result[0][5]
-    # cpi_trad_projeto = result[0][6]
-    # fim = time.time()
-    # print "2 threads", fim - ini
+    ini = time.time()
+    p = Pool()
+    arg_list_fase = []
+    arg_list_fase.append(['fase', esforco_est, fases_id_fase, esforco_real, projetos_id_projeto])
+    result = p.map(calculoEVM, arg_list_fase)
+    # tip, acumEstimado, acumReal, pvAcum, evAcum, acAcum, cpiTrad
+    est_acum_fase = result[0][1]
+    real_acum_fase = result[0][2]
+    pv_acum_fase = result[0][3]
+    ev_acum_fase = result[0][4]
+    ac_acum_fase = result[0][5]
+    cpi_trad_fase = result[0][6]
+
+    p = Pool()
+    arg_list_projeto = []
+    arg_list_projeto.append(['projeto', esforco_est, fases_id_fase, esforco_real,projetos_id_projeto])
+    result = p.map(calculoEVM, arg_list_projeto)
+    # tip, acumEstimado, acumReal, pvAcum, evAcum, acAcum, cpiTrad
+    est_acum_projeto = result[0][1]
+    real_acum_projeto = result[0][2]
+    pv_acum_projeto = result[0][3]
+    ev_acum_projeto = result[0][4]
+    ac_acum_projeto = result[0][5]
+    cpi_trad_projeto = result[0][6]
+    fim = time.time()
+    print "2 threads", fim - ini
 
     # "4 Threads"
-    ini = time.time()
-    p = Pool(processes=4)
-    arg_list_acum = []
-    arg_list_acum.append(['estimadoProjeto', esforco_est, fases_id_fase, projetos_id_projeto])
-    arg_list_acum.append(['realProjeto', esforco_real, fases_id_fase, projetos_id_projeto])
-    arg_list_acum.append(['estimadoFase', esforco_est, fases_id_fase, projetos_id_projeto])
-    arg_list_acum.append(['realFase', esforco_est, fases_id_fase, projetos_id_projeto])
-    result = p.map(CalculaAcum, arg_list_acum)
-
-    est_acum_projeto = result[0][1]
-    real_acum_projeto = result[1][1]
-    est_acum_fase = result[2][1]
-    real_acum_fase = result[3][1]
-
-    processoEVPVAV = Pool(processes=6)
-    arg_listEVPVAC = []
-    arg_listEVPVAC.append(['evAcumFase', est_acum_fase])
-    arg_listEVPVAC.append(['evAcumProjeto', est_acum_projeto])
-    arg_listEVPVAC.append(['acAcumFase', real_acum_fase])
-    arg_listEVPVAC.append(['acAcumProjeto', real_acum_projeto])
-    arg_listEVPVAC.append(['pvAcumFase', est_acum_fase])
-    arg_listEVPVAC.append(['pvAcumProjeto', est_acum_projeto])
-    resultEV_PV_AC = processoEVPVAV.map(MultiplicaAcumulado, arg_listEVPVAC)
-
-    ev_acum_fase = resultEV_PV_AC[0][1]
-    ev_acum_projeto = resultEV_PV_AC[1][1]
-    pv_acum_fase = resultEV_PV_AC[2][1]
-    pv_acum_projeto = resultEV_PV_AC[3][1]
-    ac_acum_fase = resultEV_PV_AC[4][1]
-    ac_acum_projeto = resultEV_PV_AC[5][1]
-
-    processoCalculaCPITrad = Pool(processes=2)
-    arg_listFase = []
-    arg_listFase.append(['CPIFase', ev_acum_fase, ac_acum_fase])
-    arg_listFase.append(['CPIProjeto', ev_acum_projeto, ac_acum_projeto])
-    resultCalculaCPITrad = processoCalculaCPITrad.map(CalculaCPITrad, arg_listFase)
-
-    cpi_trad_fase = resultCalculaCPITrad[0][1]
-    cpi_trad_projeto = resultCalculaCPITrad[1][1]
-    fim = time.time()
-    print "tempo 4 threads", fim - ini
-    # exit(1)
+    # ini = time.time()
+    # p = Pool(processes=4)
+    # arg_list_acum = []
+    # arg_list_acum.append(['estimadoProjeto', esforco_est, fases_id_fase, projetos_id_projeto])
+    # arg_list_acum.append(['realProjeto', esforco_real, fases_id_fase, projetos_id_projeto])
+    # arg_list_acum.append(['estimadoFase', esforco_est, fases_id_fase, projetos_id_projeto])
+    # arg_list_acum.append(['realFase', esforco_est, fases_id_fase, projetos_id_projeto])
+    # result = p.map(CalculaAcum, arg_list_acum)
+    #
+    # est_acum_projeto = result[0][1]
+    # real_acum_projeto = result[1][1]
+    # est_acum_fase = result[2][1]
+    # real_acum_fase = result[3][1]
+    #
+    # processoEVPVAV = Pool(processes=6)
+    # arg_listEVPVAC = []
+    # arg_listEVPVAC.append(['evAcumFase', est_acum_fase])
+    # arg_listEVPVAC.append(['evAcumProjeto', est_acum_projeto])
+    # arg_listEVPVAC.append(['acAcumFase', real_acum_fase])
+    # arg_listEVPVAC.append(['acAcumProjeto', real_acum_projeto])
+    # arg_listEVPVAC.append(['pvAcumFase', est_acum_fase])
+    # arg_listEVPVAC.append(['pvAcumProjeto', est_acum_projeto])
+    # resultEV_PV_AC = processoEVPVAV.map(MultiplicaAcumulado, arg_listEVPVAC)
+    #
+    # ev_acum_fase = resultEV_PV_AC[0][1]
+    # ev_acum_projeto = resultEV_PV_AC[1][1]
+    # pv_acum_fase = resultEV_PV_AC[2][1]
+    # pv_acum_projeto = resultEV_PV_AC[3][1]
+    # ac_acum_fase = resultEV_PV_AC[4][1]
+    # ac_acum_projeto = resultEV_PV_AC[5][1]
+    #
+    # processoCalculaCPITrad = Pool(processes=2)
+    # arg_listFase = []
+    # arg_listFase.append(['CPIFase', ev_acum_fase, ac_acum_fase])
+    # arg_listFase.append(['CPIProjeto', ev_acum_projeto, ac_acum_projeto])
+    # resultCalculaCPITrad = processoCalculaCPITrad.map(CalculaCPITrad, arg_listFase)
+    #
+    # cpi_trad_fase = resultCalculaCPITrad[0][1]
+    # cpi_trad_projeto = resultCalculaCPITrad[1][1]
+    # fim = time.time()
+    # print "tempo 4 threads", fim - ini
+    # # exit(1)
 
     #Agrupa as atividades dentro de cada projeto
     for atividade in Atividade.todasAtividades :

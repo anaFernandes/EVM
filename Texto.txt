@@ -1,0 +1,18 @@
+Resultados dos testes PC-Luiz
+
+
+Função CSV:  0.00836277008057
+0.067342042923
+Função CalculaEVM:  106.871119976
+
+projeto est 130456.056991
+2 threads 0.716181993484
+Função CalculaEVM:  119.901964188
+Função CSV:  0.135274887085
+2 threads 0.101222038269
+Função CalculaEVM:  108.163044214
+
+Função CSV:  0.139428853989
+tempo 4 threads 0.129587888718
+Função CalculaEVM:  108.745980024
+

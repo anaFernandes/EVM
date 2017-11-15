@@ -9,42 +9,8 @@ import math
 
 
 class Calculo(object):
-
     def __init__(self, projetosFromDatabase):
         self.projetosFromDatabase = projetosFromDatabase
-
-
-    def poolprocess(self, arg_list):
-        def calculaEstReal(arg_list):
-            i = 0
-            somaProjeto = 0
-            AcumProjeto = list()
-            AcumFase = list()
-            faseAnterior = arg_list[2]
-            estimado = ['EstimadoAcum']
-            if (arg_list[0] == estimado):
-                tip = 'estimado'
-            else:
-                tip = 'real'
-            for valor in arg_list[1]:
-                somaProjeto += valor
-                AcumProjeto.append(float(somaProjeto))
-                if (arg_list[2][i] != faseAnterior):
-                    estSumFase = 0
-                estSumFase += valor
-                AcumFase.append(float(estSumFase))
-                faseAnterior = arg_list[2][i]
-                i += 1
-
-            return [tip, AcumProjeto, AcumFase]
-
-        # p = Pool(processes=2)
-        # print arg_list
-        # result = p.map(calculaEstReal, arg_list)
-        # print "-------------------------"
-        # print(result)
-        # return result
-
 
     # Adiciona o valor acumulado em cada elemento de Medidas de acordo com a fase ou o projeto.
     # Para calcular acumulado de cada atividade do projeto, o valor anterior é somado ao atual,
@@ -52,9 +18,10 @@ class Calculo(object):
     # valor acumulado recebe zero e a soma começa novamente.
     def AcumuladoMedidas(self, valores, idFase):
         i = 0
-        somaProjeto =0
+        somaProjeto = 0
         AcumProjeto = list()
         AcumFase = list()
+        estSumFase = 0
         faseAnterior = idFase[0]
         for valor in valores:
             somaProjeto += valor

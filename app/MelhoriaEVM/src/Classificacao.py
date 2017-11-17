@@ -58,14 +58,14 @@ class Classificacao(object):
         return lista_id_projetos
 
     def Seleciona_Fases(self, lista_id_projetos_selecionados):
-
         lista_duracao, lista_cpi_projeto, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase,\
         lista_est_acum_projeto, lista_est_acum_fase, lista_perfil_equipe_fase, lista_num_atividades, \
         = [], [], [], [], [], [], [], [], []
-
         for fase in self.todas_fases:
             for id in lista_id_projetos_selecionados:
                 if (fase.projetos_id_projeto == id):
+                    # print fase.projetos_id_projeto
+                    # print id
                     for projeto in self.todos_projetos:
                         if (projeto.id == fase.projetos_id_projeto):
                             lista_duracao.append(projeto.duracao)
@@ -77,7 +77,6 @@ class Classificacao(object):
                     lista_est_acum_projeto.append(fase.esforco_estimado_projeto)
                     lista_perfil_equipe_fase.append(fase.perfil_equipe)
                     lista_num_atividades.append(fase.num_atividades)
-
         fases_lista = np.array(zip(lista_duracao, lista_nome_fase, lista_cpi_fase, lista_id_projeto_fase,
                                      lista_est_acum_fase, lista_est_acum_projeto, lista_perfil_equipe_fase,
                                      lista_num_atividades, lista_cpi_projeto))
@@ -197,7 +196,7 @@ class Classificacao(object):
                 projetos = np.array(projeto).tolist()
                 classTreinamento.append(6)
                 class6.append(projetos[0])
-            elif (float(projeto[23]) <= 4):
+            else:
                 classTreinamento.append(7)
                 projetos = np.array(projeto).tolist()
                 class7.append(projetos[0])

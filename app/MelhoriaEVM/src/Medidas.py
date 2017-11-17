@@ -110,6 +110,19 @@ class Medidas(object):
                 )
 
     @staticmethod
+    def UpdadeMedidasEVM(atividades_id_atividade, esforco_est_acum_fase, esforco_real_acum_fase, pv_acum_fase, ev_acum_fase, cpi_acum_fase, ac_acum_fase,
+                         esforco_est_acum_projeto, esforco_real_acum_projeto, ev_acum_projeto, pv_acum_projeto, ac_acum_projeto, cpi_acum_projeto_tec_trad, eac_tec_trad,
+                         exatidao_tec_trad, exatidao_acum_tec_trad, precisao_tec_trad, precisao_acum_tec_trad):
+        queryUpdate = "UPDATE medidas SET esforco_est_acum_fase='" + str(esforco_est_acum_fase) + "', esforco_real_acum_fase='" + str(esforco_real_acum_fase) + \
+                      "', pv_acum_fase='" + str(pv_acum_fase) + "', ev_acum_fase='" + str(ev_acum_fase) + "', cpi_acum_fase='" + str(cpi_acum_fase) + \
+                      "', ac_acum_fase='" + str(ac_acum_fase) + "', esforco_est_acum_projeto='" + str(esforco_est_acum_projeto) + "', esforco_real_acum_projeto='" + str(esforco_real_acum_projeto) + \
+                      "', ev_acum_projeto='" + str(ev_acum_projeto) + "', pv_acum_projeto='" + str(pv_acum_projeto) + "', ac_acum_projeto='" + str(ac_acum_projeto) + \
+                      "', cpi_acum_projeto_tec_trad='" + str(cpi_acum_projeto_tec_trad) + "', eac_tec_trad='" + str(eac_tec_trad) + "', exatidao_tec_trad='" + str(exatidao_tec_trad) + \
+                      "', exatidao_acum_tec_trad='" + str(exatidao_acum_tec_trad) + "', precisao_tec_trad='" + str(precisao_tec_trad) + \
+                      "', precisao_acum_tec_trad='" + str(precisao_acum_tec_trad) + "'WHERE atividades_id_atividade='" + str(atividades_id_atividade) + "'"
+        out = Database.update(queryUpdate)
+
+    @staticmethod
     def MedidasFromDBToApliccation():
         Medidas.todasMedidas = list()
         querySelect = ("SELECT * FROM medidas")
@@ -142,6 +155,7 @@ class Medidas(object):
     #                    "',eac_outras_tec='" + str(eac_hist_class) + \
     #                   "'WHERE atividades_id_atividade='" + str(idAtividade) + "'"
     #     out = Database.update(queryUpdate)
+
 
     @staticmethod
     def UpdateMedidasClassificacao(cpi_hist_acum_class, prec_cpi_hist_class, erro_cpi_hist_class, prec_cpi_acum_hist_class,

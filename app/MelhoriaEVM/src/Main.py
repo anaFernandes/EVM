@@ -185,18 +185,26 @@ def PegarDadosCSVParaBanco():
         for atividade in listaAtividadesSemFormatacao:
             Fase(-1, atividade[6], -1,-1, -1, -1, -1, -1, -1, Projeto.getIdByNome(atividade[3]))
 
-        # Lista atividade
+        # Lista atividades
         for atividade in listaAtividadesSemFormatacao:
             Atividade(-1, atividade[0], atividade[1], atividade[2], Fase.getIdByNome(atividade[6], atividade[3]),
                       Projeto.getIdByNome(atividade[3]), atividade[7])
 
-def CalculaEVMTreads(arglist):
-    i = 0
-    counterAtividades = 0
-    contaprojetosThead = 0
-    calculoInfo = Calculo(arglist[1])
+        # Lista medidas
+        for atividade in listaAtividadesSemFormatacao:
+            Medidas(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                    -1, -1, -1, Projeto.getIdByNome(atividade[3]), Fase.getIdByNome(atividade[6], atividade[3]),
+                    Atividade.getIdByNome(atividade[6], atividade[3], atividade[7]), -1, -1, -1, -1, -1, -1, -1)
 
-    for lista_projeto in arglist[1]:
+
+def CalculaEVMTreads(arglist):
+    counterAtividades = 0
+    counterProjetos = 0
+    lista_id_projetos_selecionados = []
+    calculoInfo = Calculo(arglist)
+
+    for lista_projeto in arglist:
+        counterProjetos = counterProjetos + 1
         lista_est, lista_real, lista_id_fase, lista_id_projeto, lista_id_atividades, lista_nome_responsavel = [], [], [], [], [], []
         # enquanto o contator de atividades for menor que a lista de projetos
         # ele adiciona cada coluna de atividades em uma lista
@@ -208,8 +216,9 @@ def CalculaEVMTreads(arglist):
             lista_id_atividades.append(lista_projeto[counterAtividades].id)
             lista_nome_responsavel.append(lista_projeto[counterAtividades].responsavel)
             counterAtividades += 1
-        contaprojetosThead +1
-        print contaprojetosThead
+        counterAtividades = 0
+        print lista_id_projeto[0]
+        # print lista_id_projeto
         """Chamada para os cálculos iniciais"""
         est_acum_p, est_acum_f = calculoInfo.AcumuladoMedidas(lista_est, lista_id_fase)
         real_acum_p, real_acum_f = calculoInfo.AcumuladoMedidas(lista_real, lista_id_fase)
@@ -221,7 +230,6 @@ def CalculaEVMTreads(arglist):
         ev_acum_p = calculoInfo.MultiplicaAcumulado(est_acum_p)
         cpi_trad_f = calculoInfo.CalculaCPITrad(ev_acum_f, ac_acum_f)
         cpi_trad_p = calculoInfo.CalculaCPITrad(ev_acum_p, ac_acum_p)
-
         id_fases, cpi_hist_f, num_atividades, esforco_est_fase, esforco_real_fase, esforco_real_projeto, esforco_est_projeto = \
             calculoInfo.CalculaCPIHistFase(cpi_trad_f, lista_id_fase, real_acum_f, est_acum_f, est_acum_p,
                                            real_acum_p)
@@ -238,6 +246,7 @@ def CalculaEVMTreads(arglist):
         # lista_perfil_equipe_fases = responsavel.Calcula_Perfil_Equipe(lista_perfil_responsavel, lista_id_fase)
         # lista_perfil_equipe_projeto = responsavel.Calcula_Perfil_Equipe(lista_perfil_responsavel, lista_id_projeto)
 
+        # print lista_id_projeto
         "Update em fase e projeto"
         i = 0
         for id_fase in id_fases:
@@ -260,72 +269,102 @@ def CalculaEVMTreads(arglist):
                 projeto.cpi_projeto = cpi_projeto
 
         "Insere em medidas"
-        i = 0
-
-        for idAtividade in lista_id_atividades:
-            # if(type(idAtividade) is tuple) :
-            Medidas(-1, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i], cpi_trad_f[i], ac_acum_f[i],
-                    est_acum_p[i],
-                    real_acum_p[i], ev_acum_p[i], pv_acum_p[i], ac_acum_p[i], cpi_trad_p[i], -1, -1, eac_trad[i],
-                    -1, -1, erro_cpi_trad[i], -1,
-                    -1, erro_cpi_acum_trad[i], -1, -1, prec_cpi_trad[i], -1, -1, prec_cpi_acum_trad[i], -1, -1,
-                    lista_id_projeto[i], lista_id_fase[i],
-                    idAtividade, 1, -1, -1, -1, -1, -1, -1)
-            if (type(idAtividade) is long):
-                Medidas(-1, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i], cpi_trad_f[i], ac_acum_f[i],
-                        est_acum_p[i],
-                        real_acum_p[i], ev_acum_p[i], pv_acum_p[i], ac_acum_p[i], cpi_trad_p[i], -1, -1,
-                        eac_trad[i], -1, -1, erro_cpi_trad[i], -1,
-                        -1, erro_cpi_acum_trad[i], -1, -1, prec_cpi_trad[i], -1, -1, prec_cpi_acum_trad[i], -1, -1,
-                        lista_id_projeto[i], lista_id_fase[i],
-                        idAtividade, 1, -1, -1, -1, -1, -1, -1)
-            i += 1
+        # for id_medida in id_medidas:
+        #     Medidas.UpdateMedidas(id_medida, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i], cpi_trad_f[i], ac_acum_f[i],
+        #             est_acum_p[i], real_acum_p[i], ev_acum_p[i], pv_acum_p[i], ac_acum_p[i], cpi_trad_p[i], eac_trad[i],
+        #             erro_cpi_trad[i], erro_cpi_acum_trad[i], prec_cpi_trad[i], prec_cpi_acum_trad[i], lista_id_projeto[i], lista_id_fase[i],
+        #             idAtividade)
+        i=0
+        for id_atividade in lista_id_atividades:
+            Medidas.UpdadeMedidasEVM(id_atividade, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i],
+                                     cpi_trad_f[i], ac_acum_f[i], est_acum_p[i], real_acum_p[i], ev_acum_p[i],
+                                     pv_acum_p[i],
+                                     ac_acum_p[i], cpi_trad_p[i], eac_trad[i], erro_cpi_trad[i], erro_cpi_acum_trad[i],
+                                     prec_cpi_trad[i], prec_cpi_acum_trad[i])
+            for medida in Medidas.todasMedidas:
+                if medida.atividades_id_atividade == id_atividade:
+                    medida.esforco_est_acum_fase = est_acum_f[i]
+                    medida.esforco_real_acum_fase = real_acum_f[i]
+                    medida.esforco_est_acum_projeto = est_acum_p[i]
+                    medida.esforco_real_acum_projeto = est_acum_p[i]
+                    medida.pv_acum_fase = pv_acum_f[i]
+                    medida.ac_acum_fase = ac_acum_f[i]
+                    medida.ev_acum_fase = ev_acum_f[i]
+                    medida.pv_acum_projeto = pv_acum_p[i]
+                    medida.ac_acum_projeto = ac_acum_p[i]
+                    medida.ev_acum_projeto = ev_acum_p[i]
+                    medida.cpi_trad_fase = cpi_trad_f[i]
+                    medida.cpi_trad_projeto = cpi_trad_p[i]
+                    medida.eac_trad = eac_trad[i]
+                    medida.erro_cpi_trad = erro_cpi_trad[i]
+                    medida.erro_cpi_acum_trad = erro_cpi_acum_trad[i]
+                    medida.prec_cpi_trad = prec_cpi_trad[i]
+                    medida.prec_cpi_acum_trad = prec_cpi_acum_trad[i]
+            i+=1
+        # for idAtividade in lista_id_atividades:
+        #     if(type(idAtividade) is tuple):
+        #         Medidas(-1, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i], cpi_trad_f[i], ac_acum_f[i],
+        #             est_acum_p[i], real_acum_p[i], ev_acum_p[i], pv_acum_p[i], ac_acum_p[i], cpi_trad_p[i], -1, -1, eac_trad[i],
+        #             -1, -1, erro_cpi_trad[i], -1,
+        #             -1, erro_cpi_acum_trad[i], -1, -1, prec_cpi_trad[i], -1, -1, prec_cpi_acum_trad[i], -1, -1,
+        #             lista_id_projeto[i], lista_id_fase[i],
+        #             idAtividade, 1, -1, -1, -1, -1, -1, -1)
+        #     if (type(idAtividade) is long):
+        #         Medidas(-1, est_acum_f[i], real_acum_f[i], pv_acum_f[i], ev_acum_f[i], cpi_trad_f[i], ac_acum_f[i],
+        #                 est_acum_p[i],
+        #                 real_acum_p[i], ev_acum_p[i], pv_acum_p[i], ac_acum_p[i], cpi_trad_p[i], -1, -1,
+        #                 eac_trad[i], -1, -1, erro_cpi_trad[i], -1,
+        #                 -1, erro_cpi_acum_trad[i], -1, -1, prec_cpi_trad[i], -1, -1, prec_cpi_acum_trad[i], -1, -1,
+        #                 lista_id_projeto[i], lista_id_fase[i],
+        #                     idAtividade, 1, -1, -1, -1, -1, -1, -1)
+        #     i += 1
 
         # Pega os dados do banco para calcular o CPI histórico médio de cada fase
         # Reseta os valores inicias do projeto não inserido no banco
         cpi_medio = [0, 0, 0, 0]
         contador_fases = [0, 0, 0, 0]
-
         i = 0
+
         # print ("*********************** INTERACAO ******************************* \n\n\n")
         # Percorrer todos os projetos
-        for projeto in Projeto.todos_projetos:
+        for projetoID in lista_id_projetos_selecionados:
+            for fase in Fase.todas_fases:
             # Percorrer projetos com o id menor do que o projeto atual
-            while (Fase.todas_fases[i].projetos_id_projeto < id_projeto):
-                # Soma os elementos de cada fase
-                if Fase.todas_fases[i].nome != 0:
-                    if (fase.todas_fases[i].cpi_hist != -1):
-                        # if(fase.todas_fases[i].cpi_hist < 5):
-                        if Fase.todas_fases[i].nome == "elaboracao":
-                            # Soma os valores da fase ao cpiFasesSum.
-                            cpi_medio[0] = cpi_medio[0] + Fase.todas_fases[i].cpi_hist
-                            contador_fases[0] = contador_fases[0] + 1
-                        elif Fase.todas_fases[i].nome == "implementacao":
-                            # Soma os valores da fase ao cpiFasesSum.
-                            cpi_medio[1] = cpi_medio[1] + Fase.todas_fases[i].cpi_hist
-                            contador_fases[1] = contador_fases[1] + 1
-                        elif Fase.todas_fases[i].nome == "teste":
-                            # Soma os valores da fase ao cpiFasesSum.
-                            cpi_medio[2] = cpi_medio[2] + Fase.todas_fases[i].cpi_hist
-                            contador_fases[2] = contador_fases[2] + 1
-                        elif Fase.todas_fases[i].nome == "correcao":
-                            # Soma os valores da fase ao cpi_fases_sum.
-                            # print ("CPI FASES SUM : " + str(cpi_medio[3]) + " \n FASES CPI HIST : " + str(Fase.todas_fases[i].cpi_hist))
-                            # print Fase.todas_fases[i].projetos_id_projeto
-                            cpi_medio[3] = cpi_medio[3] + Fase.todas_fases[i].cpi_hist
-                            contador_fases[3] = contador_fases[3] + 1
-                i += 1
+                if fase.projetos_id_projeto == projetoID:
+                    # Soma os elementos de cada fase
+                    if fase.nome != 0:
+                        if (fase.cpi_hist != -1):
+                            # if(fase.todas_fases[i].cpi_hist < 5):
+                            if fase.nome == "elaboracao":
+                                # Soma os valores da fase ao cpiFasesSum.
+                                cpi_medio[0] = cpi_medio[0] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[0] = contador_fases[0] + 1
+                            elif fase.nome == "implementacao":
+                                # Soma os valores da fase ao cpiFasesSum.
+                                cpi_medio[1] = cpi_medio[1] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[1] = contador_fases[1] + 1
+                            elif fase.nome == "teste":
+                                # Soma os valores da fase ao cpiFasesSum.
+                                cpi_medio[2] = cpi_medio[2] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[2] = contador_fases[2] + 1
+                            elif fase.nome == "correcao":
+                                # Soma os valores da fase ao cpi_fases_sum.
+                                # print ("CPI FASES SUM : " + str(cpi_medio[3]) + " \n FASES CPI HIST : " + str(Fase.todas_fases[i].cpi_hist))
+                                # print Fase.todas_fases[i].projetos_id_projeto
+                                cpi_medio[3] = cpi_medio[3] + Fase.todas_fases[i].cpi_hist
+                                contador_fases[3] = contador_fases[3] + 1
 
+        lista_id_projetos_selecionados.append(lista_id_projeto[0])
+        # print lista_id_projetos_selecionados
         # Separar Médias
-        if (id_projeto != 1 and id_projeto != 25 and id_projeto != 50 and id_projeto != 75):
+        if (id_projeto != 1):
             if (contador_fases[0] != 0 or contador_fases[1] != 0 or contador_fases[2] != 0 or contador_fases[
                 3] != 0):
                 cpi_medio = [cpi_medio[0] / contador_fases[0],
                              cpi_medio[1] / contador_fases[1],
                              cpi_medio[2] / contador_fases[2],
-                             cpi_medio[3] / contador_fases[3],
+                             cpi_medio[3] / contador_fases[3]
                              ]
-                # print "cpi_medio" + str(cpi_medio)
                 cpi_hist_acum = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio, ev_acum_f, ac_acum_p,
                                                        ac_acum_f, ev_acum_p)
                 cpi_hist_est = calculoInfo.CalculaCPIEst(cpi_medio, pv_acum_f, cpi_trad_f, ac_acum_p, pv_acum_p,
@@ -342,34 +381,34 @@ def CalculaEVMTreads(arglist):
                                           prec_cpi_acum_hist[i], erro_cpi_acum_hist[i], eac_hist[i], idAtividade)
                     i += 1
 
-        if (id_projeto > 15 and arglist[0] == 1):
+        # print counterProjetos
+        if (counterProjetos > 15):
             Classification = Classificacao(Fase.todas_fases, Projeto.todos_projetos)
-
-            # lista_id_projetos_selecionados = Classification.Separa_Pela_Data(id_projeto)
-
-            lista_id_projetos_selecionados = Classification.SeparaProjetos(id_projeto)
+            ## lista_id_projetos_selecionados = Classification.Separa_Pela_Data(id_projeto)
+            #
+            ## lista_id_projetos_selecionados = Classification.SeparaProjetos(id_projeto, projetosID)
             fases_selecionadas = Classification.Seleciona_Fases(lista_id_projetos_selecionados)
-
-            implementacao, teste, elaboracao, correcao = Classification.SeparaFases(fases_selecionadas,
-                                                                                    lista_id_projetos_selecionados)
-            lista_projetos_treinados, projeto_atual = Classification.JuntaFases(fases_selecionadas,
-                                                                                lista_id_projetos_selecionados,
-                                                                                id_projeto)
-            class1, class2, class3, class4, class5, class6, class7, class_treinada = Classification.DefineClass(
-                lista_projetos_treinados)
+            # implementacao, teste, elaboracao, correcao = Classification.SeparaFases(fases_selecionadas,lista_id_projetos_selecionados)
+            lista_projetos_treinados, projeto_atual = Classification.JuntaFases(fases_selecionadas, lista_id_projetos_selecionados, id_projeto)
+            # print lista_projetos_treinados
+            # print lista_projetos_treinados
+            # print projeto_atual
+            class1, class2, class3, class4, class5, class6, class7, class_treinada = Classification.DefineClass(lista_projetos_treinados)
+            print class_treinada
+            # print lista_projetos_treinados
+            # print projeto_atual
             # print class_treinada
-
             modelo = MultinomialNB()
 
             modelo.fit(lista_projetos_treinados, class_treinada)
             class_prevista = modelo.predict(projeto_atual)
-
-            clf = svm.SVR()
-            clf.fit(lista_projetos_treinados, class_treinada)
-            class_prevista_svm = clf.predict(projeto_atual)
-            # print class_prevista
-            # print class_prevista_svm
-
+        #
+        #     clf = svm.SVR()
+        #     clf.fit(lista_projetos_treinados, class_treinada)
+        #     class_prevista_svm = clf.predict(projeto_atual)
+        #     # print class_prevista
+        #     # print class_prevista_svm
+        #
             lista_id_projetos_CPI = Classification.comparaClasse(class_prevista, class1, class2, class3, class4,
                                                                  class5, class6, class7)
             cpi_medio_classificado = Classification.CalculaMediaCPI(lista_id_projetos_CPI, id_projeto)
@@ -383,101 +422,33 @@ def CalculaEVMTreads(arglist):
             prec_cpi_acum_hist_class = calculoInfo.CalculaPrecisaoAcum(prec_cpi_hist_class, lista_id_fase)
             erro_cpi_acum_hist_class = calculoInfo.CalculaExatidaoAcum(erro_cpi_hist_class)
             eac_hist_class = calculoInfo.CalculaEAC(cpi_hist_est_class, pv_acum_p)
+        #
+        #     lista_id_projetos_CPI_svm = Classification.comparaClasse(class_prevista_svm, class1, class2, class3,
+        #                                                              class4, class5, class6, class7)
+        #     cpi_medio_classificado_svm = Classification.CalculaMediaCPI(lista_id_projetos_CPI_svm, id_projeto)
+        #     cpi_hist_acum_class_svm = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio_classificado_svm,
+        #                                                      ev_acum_f, ac_acum_p, ac_acum_f, ev_acum_p)
+        #     cpi_hist_est_class_svm = calculoInfo.CalculaCPIEst(cpi_medio_classificado_svm, pv_acum_f, cpi_trad_f,
+        #                                                        ac_acum_p, pv_acum_p, lista_id_fase)
+        #     prec_cpi_hist_class_svm, erro_cpi_hist_class_svm = calculoInfo.CalculaExatidaoPrecisao(
+        #         cpi_hist_est_class_svm, ac_acum_p, pv_acum_p, lista_id_fase)
+        #     prec_cpi_acum_hist_class_svm = calculoInfo.CalculaPrecisaoAcum(prec_cpi_hist_class_svm, lista_id_fase)
+        #     erro_cpi_acum_hist_class_svm = calculoInfo.CalculaExatidaoAcum(erro_cpi_hist_class)
+        #     eac_hist_class_svm = calculoInfo.CalculaEAC(cpi_hist_est_class_svm, pv_acum_p)
+        #
+        #     i = 0
+        #     for idAtividade in lista_id_atividades:
+        #         Medidas.UpdateMedidasClassificacao(cpi_hist_acum_class[i], prec_cpi_hist_class[i],
+        #                                            erro_cpi_hist_class[i],
+        #                                            prec_cpi_acum_hist_class[i], erro_cpi_acum_hist_class[i],
+        #                                            eac_hist_class[i], idAtividade,
+        #                                            cpi_hist_acum_class_svm[i], prec_cpi_hist_class_svm[i],
+        #                                            erro_cpi_hist_class_svm[i],
+        #                                            prec_cpi_acum_hist_class_svm[i], erro_cpi_acum_hist_class_svm[i],
+        #                                            eac_hist_class_svm[i])
+        #         i += 1
 
-            lista_id_projetos_CPI_svm = Classification.comparaClasse(class_prevista_svm, class1, class2, class3,
-                                                                     class4, class5, class6, class7)
-            cpi_medio_classificado_svm = Classification.CalculaMediaCPI(lista_id_projetos_CPI_svm, id_projeto)
-            cpi_hist_acum_class_svm = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio_classificado_svm,
-                                                             ev_acum_f, ac_acum_p, ac_acum_f, ev_acum_p)
-            cpi_hist_est_class_svm = calculoInfo.CalculaCPIEst(cpi_medio_classificado_svm, pv_acum_f, cpi_trad_f,
-                                                               ac_acum_p, pv_acum_p, lista_id_fase)
-            prec_cpi_hist_class_svm, erro_cpi_hist_class_svm = calculoInfo.CalculaExatidaoPrecisao(
-                cpi_hist_est_class_svm, ac_acum_p, pv_acum_p, lista_id_fase)
-            prec_cpi_acum_hist_class_svm = calculoInfo.CalculaPrecisaoAcum(prec_cpi_hist_class_svm, lista_id_fase)
-            erro_cpi_acum_hist_class_svm = calculoInfo.CalculaExatidaoAcum(erro_cpi_hist_class)
-            eac_hist_class_svm = calculoInfo.CalculaEAC(cpi_hist_est_class_svm, pv_acum_p)
-
-            i = 0
-            for idAtividade in lista_id_atividades:
-                Medidas.UpdateMedidasClassificacao(cpi_hist_acum_class[i], prec_cpi_hist_class[i],
-                                                   erro_cpi_hist_class[i],
-                                                   prec_cpi_acum_hist_class[i], erro_cpi_acum_hist_class[i],
-                                                   eac_hist_class[i], idAtividade,
-                                                   cpi_hist_acum_class_svm[i], prec_cpi_hist_class_svm[i],
-                                                   erro_cpi_hist_class_svm[i],
-                                                   prec_cpi_acum_hist_class_svm[i], erro_cpi_acum_hist_class_svm[i],
-                                                   eac_hist_class_svm[i])
-                i += 1
-
-
-        if (id_projeto > 35 and arglist[0] == 2):
-            Classification = Classificacao(Fase.todas_fases, Projeto.todos_projetos)
-
-            # lista_id_projetos_selecionados = Classification.Separa_Pela_Data(id_projeto)
-
-            lista_id_projetos_selecionados = Classification.SeparaProjetos(id_projeto)
-            fases_selecionadas = Classification.Seleciona_Fases(lista_id_projetos_selecionados)
-
-            implementacao, teste, elaboracao, correcao = Classification.SeparaFases(fases_selecionadas,
-                                                                                    lista_id_projetos_selecionados)
-            lista_projetos_treinados, projeto_atual = Classification.JuntaFases(fases_selecionadas,
-                                                                                lista_id_projetos_selecionados,
-                                                                                id_projeto)
-            class1, class2, class3, class4, class5, class6, class7, class_treinada = Classification.DefineClass(
-                lista_projetos_treinados)
-            # print class_treinada
-
-            modelo = MultinomialNB()
-
-            modelo.fit(lista_projetos_treinados, class_treinada)
-            class_prevista = modelo.predict(projeto_atual)
-
-            clf = svm.SVR()
-            clf.fit(lista_projetos_treinados, class_treinada)
-            class_prevista_svm = clf.predict(projeto_atual)
-            # print class_prevista
-            # print class_prevista_svm
-
-            lista_id_projetos_CPI = Classification.comparaClasse(class_prevista, class1, class2, class3, class4,
-                                                                 class5, class6, class7)
-            cpi_medio_classificado = Classification.CalculaMediaCPI(lista_id_projetos_CPI, id_projeto)
-            cpi_hist_acum_class = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio_classificado,
-                                                         ev_acum_f, ac_acum_p, ac_acum_f, ev_acum_p)
-            cpi_hist_est_class = calculoInfo.CalculaCPIEst(cpi_medio_classificado, pv_acum_f, cpi_trad_f, ac_acum_p,
-                                                           pv_acum_p, lista_id_fase)
-            prec_cpi_hist_class, erro_cpi_hist_class = calculoInfo.CalculaExatidaoPrecisao(cpi_hist_est_class,
-                                                                                           ac_acum_p, pv_acum_p,
-                                                                                           lista_id_fase)
-            prec_cpi_acum_hist_class = calculoInfo.CalculaPrecisaoAcum(prec_cpi_hist_class, lista_id_fase)
-            erro_cpi_acum_hist_class = calculoInfo.CalculaExatidaoAcum(erro_cpi_hist_class)
-            eac_hist_class = calculoInfo.CalculaEAC(cpi_hist_est_class, pv_acum_p)
-
-            lista_id_projetos_CPI_svm = Classification.comparaClasse(class_prevista_svm, class1, class2, class3,
-                                                                     class4, class5, class6, class7)
-            cpi_medio_classificado_svm = Classification.CalculaMediaCPI(lista_id_projetos_CPI_svm, id_projeto)
-            cpi_hist_acum_class_svm = calculoInfo.CalculaCPI(pv_acum_f, lista_id_fase, cpi_medio_classificado_svm,
-                                                             ev_acum_f, ac_acum_p, ac_acum_f, ev_acum_p)
-            cpi_hist_est_class_svm = calculoInfo.CalculaCPIEst(cpi_medio_classificado_svm, pv_acum_f, cpi_trad_f,
-                                                               ac_acum_p, pv_acum_p, lista_id_fase)
-            prec_cpi_hist_class_svm, erro_cpi_hist_class_svm = calculoInfo.CalculaExatidaoPrecisao(
-                cpi_hist_est_class_svm, ac_acum_p, pv_acum_p, lista_id_fase)
-            prec_cpi_acum_hist_class_svm = calculoInfo.CalculaPrecisaoAcum(prec_cpi_hist_class_svm, lista_id_fase)
-            erro_cpi_acum_hist_class_svm = calculoInfo.CalculaExatidaoAcum(erro_cpi_hist_class)
-            eac_hist_class_svm = calculoInfo.CalculaEAC(cpi_hist_est_class_svm, pv_acum_p)
-
-            i = 0
-            for idAtividade in lista_id_atividades:
-                Medidas.UpdateMedidasClassificacao(cpi_hist_acum_class[i], prec_cpi_hist_class[i],
-                                                   erro_cpi_hist_class[i],
-                                                   prec_cpi_acum_hist_class[i], erro_cpi_acum_hist_class[i],
-                                                   eac_hist_class[i], idAtividade,
-                                                   cpi_hist_acum_class_svm[i], prec_cpi_hist_class_svm[i],
-                                                   erro_cpi_hist_class_svm[i],
-                                                   prec_cpi_acum_hist_class_svm[i], erro_cpi_acum_hist_class_svm[i],
-                                                   eac_hist_class_svm[i])
-                i += 1
-
-        return arglist[0]
+    # return arglist[0]
 
 " Calcula valores EVM "
 def CalculaEVM():
@@ -499,42 +470,83 @@ def CalculaEVM():
     contadorProjetos = 0
     lista_projeto_thread1, lista_projeto_thread2, lista_projeto_thread3, lista_projeto_thread4 = [], [], [], []
     for lista_projetos in projetosFromDatabase:
-        if contadorProjetos < 10:
+        if contadorProjetos < 16:
             lista_projeto_thread1.append(lista_projetos)
             # print lista_projeto_thread1
-        elif contadorProjetos < 20:
+        elif contadorProjetos < 32:
             lista_projeto_thread2.append(lista_projetos)
-        elif contadorProjetos < 35:
+        elif contadorProjetos < 43:
             lista_projeto_thread3.append(lista_projetos)
-        elif contadorProjetos < 40:
+        elif contadorProjetos < 64:
             lista_projeto_thread4.append(lista_projetos)
         contadorProjetos +=1
     # Para cada projeto dentro de projetosFromDatabase
 
-
-    p = Pool(processes=2)
+    p = Pool(processes=4)
     arg_list = []
-    arg_list.append(['1', lista_projeto_thread1])
-    arg_list.append(['2', lista_projeto_thread2])
-    result = p.map(CalculaEVMTreads, arg_list)
+    arg_list.append(lista_projeto_thread1)
+    arg_list.append(lista_projeto_thread2)
+    arg_list.append(lista_projeto_thread3)
+    arg_list.append(lista_projeto_thread4)
+    init = time.time()
+    p.map(CalculaEVMTreads, arg_list)
+    fim = time.time()
+    print "4 thread", fim -init
+    #
+    # lista_projeto_thread21, lista_projeto_thread22 = [], []
+    #
+    # contadorProjetos = 0
+    # for lista_projetos in projetosFromDatabase:
+    #     if contadorProjetos < 32:
+    #         lista_projeto_thread21.append(lista_projetos)
+    #         # print lista_projeto_thread1
+    #     elif contadorProjetos < 66:
+    #         lista_projeto_thread22.append(lista_projetos)
+    #     contadorProjetos +=1
+    #
+    #
+    # p2 = Pool(processes=2)
+    # arg_list2 = []
+    # arg_list2.append(lista_projeto_thread21)
+    # arg_list2.append(lista_projeto_thread22)
+    # init2 = time.time()
+    # p2.map(CalculaEVMTreads, arg_list2)
+    # fim2 = time.time()
+    # print "2 thread", fim2 -init2
+
+    # lista_projeto_thread = []
+    # contadorProjetos = 0
+    # for lista_projetos in projetosFromDatabase:
+    #     if contadorProjetos < 64 :
+    #         lista_projeto_thread.append(lista_projetos)
+    #         # print lista_projeto_thread
+    #     contadorProjetos +=1
+    #
+    # pool = Pool()
+    # init1 = time.time()
+    # arg_list1 = []
+    # arg_list1.append(lista_projeto_thread)
+    # pool.map(CalculaEVMTreads, arg_list1)
+    # fim1 = time.time()
+    # print "1 thread", fim1 - init1
 
     counterAtividades = 0
     contaprojetosThead = 0
-    for lista_projeto in projetosFromDatabase:
-        contaprojetosThead += 1
-        lista_est, lista_real, lista_id_fase, lista_id_projeto, lista_id_atividades, lista_nome_responsavel = [], [], [], [], [], []
-        # enquanto o contator de atividades for menor que a lista de projetos
-        # ele adiciona cada coluna de atividades em uma lista
-        while (counterAtividades < len(lista_projeto)):
-            lista_est.append(lista_projeto[counterAtividades].esforco_est)
-            lista_real.append(lista_projeto[counterAtividades].esforco_real)
-            lista_id_fase.append(lista_projeto[counterAtividades].fases_id_fase)
-            lista_id_projeto.append(lista_projeto[counterAtividades].projetos_id_projeto)
-            lista_id_atividades.append(lista_projeto[counterAtividades].id)
-            lista_nome_responsavel.append(lista_projeto[counterAtividades].responsavel)
-
-            counterAtividades += 1
-        print lista_id_projeto
+    # for lista_projeto in projetosFromDatabase:
+    #     contaprojetosThead += 1
+    #     lista_est, lista_real, lista_id_fase, lista_id_projeto, lista_id_atividades, lista_nome_responsavel = [], [], [], [], [], []
+    #     # enquanto o contator de atividades for menor que a lista de projetos
+    #     # ele adiciona cada coluna de atividades em uma lista
+    #     while (counterAtividades < len(lista_projeto)):
+    #         lista_est.append(lista_projeto[counterAtividades].esforco_est)
+    #         lista_real.append(lista_projeto[counterAtividades].esforco_real)
+    #         lista_id_fase.append(lista_projeto[counterAtividades].fases_id_fase)
+    #         lista_id_projeto.append(lista_projeto[counterAtividades].projetos_id_projeto)
+    #         lista_id_atividades.append(lista_projeto[counterAtividades].id)
+    #         lista_nome_responsavel.append(lista_projeto[counterAtividades].responsavel)
+    #         counterAtividades += 1
+    #     counterAtividades = 0
+    #     print lista_id_projeto
 
     """1 Thread"""
     # ini = time.time()

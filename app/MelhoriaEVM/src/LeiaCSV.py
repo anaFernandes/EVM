@@ -34,7 +34,7 @@ class LeiaCSV(object):
         clear()
         oi = 0
         pp = pprint.PrettyPrinter(indent=3)
-        with open('projeto100.csv') as csvfile:
+        with open('projetoRealSimulado.csv') as csvfile:
             reader = csv.DictReader(csvfile)
 
             # Create hash of cache file

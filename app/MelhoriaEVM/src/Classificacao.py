@@ -17,7 +17,7 @@ class Classificacao(object):
         for projeto in self.todos_projetos:
             if(projeto.id <= id_projeto):
                 lista_id_projetos.append(projeto.id)
-
+        print lista_id_projetos
         return lista_id_projetos
 
     #Separa os projetos pela data, projetos com datas parecidas não podem ser usados para fazer a classificação
